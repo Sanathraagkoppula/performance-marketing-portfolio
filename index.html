@@ -1421,17 +1421,20 @@ body { background:#090909; }
 .email-form { width:min(440px,calc(100vw - 40px)); height:52px; padding:5px 6px 5px 18px; border-radius:28px; margin-bottom:28px; background:rgba(255,255,255,.075); border-color:rgba(255,255,255,.09); box-shadow:inset 0 1px rgba(255,255,255,.04),0 14px 40px rgba(0,0,0,.35); }
 .email-input { flex:1; min-width:0; width:auto; padding:0; }
 .send-code-btn { border-radius:24px; padding:11px 24px; background:#ededeb; }
-.dashboard-grid { display:block; width:min(1240px,100%); height:410px; max-width:none; margin-top:0; position:relative; }
+.dashboard-grid { display:block; width:min(1240px,100%); height:540px; max-width:none; margin-top:0; position:relative; }
 .card { position:absolute; padding:18px; border-radius:17px; background:linear-gradient(145deg,rgba(38,37,37,.78),rgba(22,22,22,.72)); border:1px solid rgba(255,255,255,.055); box-shadow:0 22px 55px rgba(0,0,0,.44),inset 0 1px rgba(255,255,255,.035); backdrop-filter:blur(22px); }
-.balance-card { width:190px;height:148px;left:1%;top:-55px; }
-.investment-card { width:430px;height:225px;left:50%;top:82px;transform:translateX(-50%);z-index:3; }
-.channel-card { width:220px;height:165px;right:2%;top:-48px; }
-.progress-card { width:210px;height:155px;left:-7%;top:160px; }
-.activity-card { width:250px;height:145px;right:-5%;top:158px; }
+/* Big centered card, elevated above the rest */
+.investment-card { width:520px;height:300px;left:50%;top:50%;transform:translate(-50%,-50%);z-index:5;box-shadow:0 40px 90px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.08),inset 0 1px rgba(255,255,255,.05); }
+/* Smaller cards tucked behind the big card, overlapping its corners */
+.balance-card    { width:190px;height:148px;left:calc(50% - 420px);top:calc(50% - 245px);z-index:1;opacity:.9; }
+.channel-card    { width:220px;height:165px;left:calc(50% + 210px);top:calc(50% - 250px);z-index:1;opacity:.9; }
+.progress-card   { width:210px;height:155px;left:calc(50% - 430px);top:calc(50% + 95px);z-index:1;opacity:.9; }
+.activity-card   { width:250px;height:145px;left:calc(50% + 190px);top:calc(50% + 100px);z-index:1;opacity:.9; }
+.balance-card,.channel-card,.progress-card,.activity-card { box-shadow:0 18px 40px rgba(0,0,0,.4),inset 0 1px rgba(255,255,255,.03); }
 .card-label { font-size:9px; }
 .card-value { font-size:22px; }
-.investment-value { font-size:29px; }
-.line-chart-container { min-height:105px; }
+.investment-value { font-size:34px; }
+.line-chart-container { min-height:130px; }
 .chart-legend { gap:12px;margin-top:8px; }
 .legend-item { font-size:9px; }
 .channel-list { gap:10px; }
@@ -1440,7 +1443,7 @@ body { background:#090909; }
   .hero { min-height:auto;padding:42px 20px 70px; }
   .hero-title { letter-spacing:-2px; }
   .dashboard-grid { display:grid;height:auto;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px; }
-  .card,.balance-card,.investment-card,.channel-card,.progress-card,.activity-card { position:relative;inset:auto;width:auto;height:auto;transform:none;min-height:160px; }
+  .card,.balance-card,.investment-card,.channel-card,.progress-card,.activity-card { position:relative;inset:auto;width:auto;height:auto;transform:none;min-height:160px;opacity:1;box-shadow:0 22px 55px rgba(0,0,0,.44),inset 0 1px rgba(255,255,255,.035); }
   .investment-card { grid-column:1 / -1;grid-row:2;min-height:250px; }
 }
 @media (max-width:620px) {
