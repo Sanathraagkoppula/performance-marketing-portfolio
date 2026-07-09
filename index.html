@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paymark - Finance Management</title>
+    <title>Sai Performance Marketing Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -128,13 +128,6 @@
             display: flex;
             align-items: center;
             gap: 20px;
-        }
-
-        .cart-icon {
-            width: 20px;
-            height: 20px;
-            color: rgba(255, 255, 255, 0.7);
-            cursor: pointer;
         }
 
         .login-btn {
@@ -361,88 +354,60 @@
             border-radius: 50%;
         }
 
-        /* Card 3 - Payment Success */
-        .payment-card {
+        /* Card 3 - Channel Mix */
+        .channel-card {
             grid-column: 3;
             grid-row: 1;
         }
 
-        .check-circle {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #f97316, #ef4444);
+        .channel-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 6px;
+        }
+
+        .channel-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            grid-template-rows: auto auto;
+            row-gap: 6px;
+            align-items: center;
+        }
+
+        .channel-name {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .channel-dot {
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
-            box-shadow: 0 4px 20px rgba(249, 115, 22, 0.3);
+            display: inline-block;
+            flex-shrink: 0;
         }
 
-        .check-circle svg {
-            width: 20px;
-            height: 20px;
-            color: #fff;
-        }
-
-        .payment-amount {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .payment-status {
-            font-size: 11px;
-            color: rgba(255, 255, 255, 0.4);
-            margin-bottom: 16px;
-        }
-
-        .payment-details {
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            padding-top: 12px;
-        }
-
-        .detail-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 10px;
-            color: rgba(255, 255, 255, 0.3);
-            margin-bottom: 4px;
-        }
-
-        .detail-row span:last-child {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 12px;
-            padding-top: 12px;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .user-avatar {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #4b5563, #1f2937);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .channel-pct {
             font-size: 12px;
             font-weight: 600;
+            justify-self: end;
         }
 
-        .user-name {
-            font-size: 12px;
-            font-weight: 500;
+        .channel-track {
+            grid-column: 1 / 3;
+            height: 6px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.06);
+            overflow: hidden;
         }
 
-        .user-role {
-            font-size: 10px;
-            color: rgba(255, 255, 255, 0.4);
+        .channel-fill {
+            height: 100%;
+            border-radius: 4px;
         }
 
         /* Card 4 - Progress */
@@ -490,54 +455,7 @@
             background: linear-gradient(180deg, #f97316, #ef4444);
         }
 
-        /* Card 5 - Transactions */
-        .transactions-card {
-            grid-column: 2;
-            grid-row: 2;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .txn-item {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            padding: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .txn-left {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .txn-type {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .txn-amount {
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        .txn-balance {
-            font-size: 10px;
-            color: rgba(255, 255, 255, 0.3);
-        }
-
-        .txn-currency {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.4);
-            background: rgba(255, 255, 255, 0.05);
-            padding: 4px 10px;
-            border-radius: 8px;
-        }
-
-        /* Card 6 - Recent Activity */
+        /* Card 5 - Recent Activity */
         .activity-card {
             grid-column: 3;
             grid-row: 2;
@@ -596,10 +514,11 @@
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: auto;
             }
-            .investment-card {
-                grid-column: 1 / 3;
-                grid-row: auto;
-            }
+            .balance-card   { grid-column: 1; grid-row: 1; }
+            .channel-card   { grid-column: 2; grid-row: 1; }
+            .investment-card{ grid-column: 1 / 3; grid-row: 2; }
+            .progress-card  { grid-column: 1; grid-row: 3; }
+            .activity-card  { grid-column: 2; grid-row: 3; }
             .hero-title {
                 font-size: 40px;
             }
@@ -621,8 +540,13 @@
             .dashboard-grid {
                 grid-template-columns: 1fr;
             }
-            .investment-card {
+            .balance-card,
+            .channel-card,
+            .investment-card,
+            .progress-card,
+            .activity-card {
                 grid-column: 1;
+                grid-row: auto;
             }
             .email-form {
                 flex-direction: column;
@@ -631,6 +555,46 @@
             }
             .email-input {
                 width: 100%;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid > div:first-child {
+                grid-column: auto;
+            }
+        }
+
+        @media (max-width: 400px) {
+            nav {
+                padding: 16px;
+            }
+            .logo {
+                font-size: 15px;
+            }
+            .hero-title {
+                font-size: 26px;
+            }
+            .hero {
+                padding: 32px 16px 64px;
+            }
+            .nav-right {
+                gap: 10px;
+            }
+            .open-account {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+            .login-btn {
+                font-size: 13px;
+            }
+            .section {
+                padding: 48px 16px;
+            }
+            .section-title {
+                font-size: 24px;
             }
         }
 
@@ -1213,12 +1177,21 @@
             }
             .features-grid,
             .pricing-grid,
-            .blog-grid,
-            .footer-grid {
+            .blog-grid {
                 grid-template-columns: 1fr;
             }
             .price-card.featured {
                 order: -1;
+            }
+            footer {
+                padding: 48px 24px 24px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px 24px;
+            }
+            .footer-grid > div:first-child {
+                grid-column: 1 / -1;
             }
             .cta-banner {
                 padding: 48px 24px;
@@ -1383,10 +1356,102 @@
                 font-size: 28px;
             }
         }
+    
+        /* ===================== Portfolio additions ===================== */
+        .metrics-note { margin-top: 22px; font-size: 11px; color: rgba(255,255,255,.28); }
+        .profile-section { padding-top: 40px; }
+        .profile-grid { display: grid; grid-template-columns: 260px 1fr .85fr; gap: 24px; align-items: stretch; }
+        .profile-copy, .profile-panel, .principle-card, .faq-list details { background: rgba(20,20,20,.6); border: 1px solid rgba(255,255,255,.06); border-radius: 20px; }
+        .profile-photo-card { border-radius: 20px; overflow: hidden; background: linear-gradient(160deg, rgba(249,115,22,.3), rgba(239,68,68,.15) 60%, rgba(20,20,20,.8)); border: 1px solid rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; min-height: 340px; }
+        .profile-photo-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .profile-photo-card svg { width: 30%; max-width: 90px; color: rgba(255,255,255,.55); }
+        .profile-name-block { margin-bottom: 22px; }
+        .profile-name { font-size: 20px; font-weight: 600; }
+        .profile-role { font-size: 13px; color: rgba(255,255,255,.5); margin-top: 4px; }
+        .profile-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+        .profile-chip { padding: 8px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); font-size: 12px; color: rgba(255,255,255,.6); }
+        .profile-copy { padding: 42px; }
+        .profile-copy .section-title { max-width: 620px; }
+        .profile-copy p { color: rgba(255,255,255,.52); font-size: 14px; line-height: 1.75; margin-top: 14px; }
+        .profile-panel { padding: 36px; background: radial-gradient(circle at 90% 0%,rgba(249,115,22,.1),transparent 48%),rgba(20,20,20,.6); }
+        .panel-label { color: #f97316; text-transform: uppercase; letter-spacing: 1.2px; font-size: 11px; margin-bottom: 14px; }
+        .profile-panel h3 { font-size: 22px; line-height: 1.35; margin-bottom: 22px; }
+        .profile-list { list-style: none; display: grid; gap: 14px; }
+        .profile-list li { color: rgba(255,255,255,.58); font-size: 13px; padding-left: 18px; position: relative; }
+        .profile-list li:before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #f97316; position: absolute; left: 0; top: 6px; }
+        .availability { margin-top: 22px; color: rgba(255,255,255,.7); font-size: 12px; display: flex; align-items: center; gap: 9px; }
+        .availability span { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 12px rgba(34,197,94,.7); }
+        .tool-stack { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+        .tool-stack span { padding: 9px 14px; border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); border-radius: 999px; color: rgba(255,255,255,.55); font-size: 12px; }
+        .principles-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+        .principle-card { padding: 30px; }
+        .principle-number { color: #f97316; font-size: 11px; letter-spacing: 1px; margin-bottom: 28px; }
+        .principle-card h3 { font-size: 17px; margin-bottom: 10px; }
+        .principle-card p { color: rgba(255,255,255,.45); font-size: 13px; line-height: 1.65; }
+        .faq-list { max-width: 820px; margin: 0 auto; display: grid; gap: 12px; }
+        .faq-list details { padding: 22px 24px; border-radius: 14px; }
+        .faq-list summary { cursor: pointer; font-size: 14px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; }
+        .faq-list summary:after { content: '+'; color: #f97316; font-size: 18px; }
+        .faq-list details[open] summary:after { content: 'âˆ’'; }
+        .faq-list p { color: rgba(255,255,255,.46); font-size: 13px; line-height: 1.65; margin-top: 14px; padding-right: 32px; }
+        @media (max-width: 1024px) {
+            .profile-grid { grid-template-columns: 200px 1fr; }
+            .profile-panel { grid-column: 1 / -1; }
+        }
+        @media (max-width: 768px) { .profile-grid, .principles-grid { grid-template-columns: 1fr; } .profile-copy, .profile-panel { padding: 28px; } }
+        @media (max-width: 400px) { .profile-photo-card { min-height: 220px; } }
     </style>
 <base target="_blank">
 <base target="_blank">
-</head>
+<style id="reference-hero-overrides">
+/* Hero matched to the supplied dark fintech reference */
+body { background:#090909; }
+.hero {
+  max-width:none; min-height:760px; padding:34px 24px 80px; overflow:hidden;
+  background:
+    radial-gradient(ellipse at 52% 20%, rgba(177,92,68,.18), transparent 37%),
+    radial-gradient(ellipse at 12% 64%, rgba(255,130,80,.06), transparent 25%),
+    linear-gradient(180deg,#0d0d0d 0%,#090909 82%);
+}
+.hero::before,.hero::after { content:""; position:absolute; pointer-events:none; z-index:-1; }
+.hero::before { inset:0; opacity:.38; background:repeating-linear-gradient(90deg,transparent 0 94px,rgba(255,255,255,.018) 95px); }
+.hero::after { width:540px;height:260px;left:50%;top:95px;transform:translateX(-50%);background:rgba(196,104,76,.11);filter:blur(70px);border-radius:50%; }
+.hero-title { font-size:clamp(44px,5vw,72px); line-height:1.02; letter-spacing:-3.5px; margin:0 0 18px; font-weight:500; }
+.hero-subtitle { max-width:620px; font-size:15px; line-height:1.55; margin-bottom:18px; color:rgba(255,255,255,.58); }
+.email-form { width:min(440px,calc(100vw - 40px)); height:52px; padding:5px 6px 5px 18px; border-radius:28px; margin-bottom:28px; background:rgba(255,255,255,.075); border-color:rgba(255,255,255,.09); box-shadow:inset 0 1px rgba(255,255,255,.04),0 14px 40px rgba(0,0,0,.35); }
+.email-input { flex:1; min-width:0; width:auto; padding:0; }
+.send-code-btn { border-radius:24px; padding:11px 24px; background:#ededeb; }
+.dashboard-grid { display:block; width:min(1240px,100%); height:410px; max-width:none; margin-top:0; position:relative; }
+.card { position:absolute; padding:18px; border-radius:17px; background:linear-gradient(145deg,rgba(38,37,37,.78),rgba(22,22,22,.72)); border:1px solid rgba(255,255,255,.055); box-shadow:0 22px 55px rgba(0,0,0,.44),inset 0 1px rgba(255,255,255,.035); backdrop-filter:blur(22px); }
+.balance-card { width:190px;height:148px;left:1%;top:-55px; }
+.investment-card { width:430px;height:225px;left:50%;top:82px;transform:translateX(-50%);z-index:3; }
+.channel-card { width:220px;height:165px;right:2%;top:-48px; }
+.progress-card { width:210px;height:155px;left:-7%;top:160px; }
+.activity-card { width:250px;height:145px;right:-5%;top:158px; }
+.card-label { font-size:9px; }
+.card-value { font-size:22px; }
+.investment-value { font-size:29px; }
+.line-chart-container { min-height:105px; }
+.chart-legend { gap:12px;margin-top:8px; }
+.legend-item { font-size:9px; }
+.channel-list { gap:10px; }
+.activity-item { padding:9px 0; }
+@media (max-width:900px) {
+  .hero { min-height:auto;padding:42px 20px 70px; }
+  .hero-title { letter-spacing:-2px; }
+  .dashboard-grid { display:grid;height:auto;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px; }
+  .card,.balance-card,.investment-card,.channel-card,.progress-card,.activity-card { position:relative;inset:auto;width:auto;height:auto;transform:none;min-height:160px; }
+  .investment-card { grid-column:1 / -1;grid-row:2;min-height:250px; }
+}
+@media (max-width:620px) {
+  .hero-title { font-size:40px; }
+  .hero-subtitle { font-size:14px; }
+  .dashboard-grid { grid-template-columns:1fr; }
+  .investment-card { grid-column:auto;grid-row:auto; }
+  .email-form { margin-bottom:16px; }
+}
+</style>
+<style id="enhanced-glass-effects">.card{background:linear-gradient(135deg,rgba(255,255,255,.11),rgba(255,255,255,.025) 42%,rgba(12,12,12,.38)),rgba(28,25,25,.48)!important;border:1px solid rgba(255,255,255,.13)!important;border-top-color:rgba(255,255,255,.22)!important;border-left-color:rgba(255,255,255,.17)!important;-webkit-backdrop-filter:blur(30px) saturate(150%);backdrop-filter:blur(30px) saturate(150%);box-shadow:0 28px 70px rgba(0,0,0,.58),inset 0 1px 0 rgba(255,255,255,.15),inset 0 -1px rgba(255,255,255,.03),0 0 0 1px rgba(0,0,0,.2)}.card::before{height:58%;background:linear-gradient(150deg,rgba(255,255,255,.16),rgba(255,255,255,.025) 43%,transparent 70%)!important;opacity:.75;pointer-events:none}.card::after{content:"";position:absolute;width:145px;height:145px;right:-68px;top:-74px;border-radius:50%;background:radial-gradient(circle,rgba(255,145,110,.2),rgba(255,120,90,.04) 46%,transparent 72%);pointer-events:none}.email-form{background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.045))!important;border:1px solid rgba(255,255,255,.16)!important;border-top-color:rgba(255,255,255,.24)!important;-webkit-backdrop-filter:blur(26px) saturate(150%);backdrop-filter:blur(26px) saturate(150%);box-shadow:0 18px 50px rgba(0,0,0,.46),inset 0 1px rgba(255,255,255,.13)}.send-code-btn{box-shadow:inset 0 1px rgba(255,255,255,.9),0 8px 22px rgba(0,0,0,.22)}.dashboard-grid::before{content:"";position:absolute;left:50%;top:28%;width:72%;height:45%;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(207,105,75,.15),transparent 70%);filter:blur(48px);pointer-events:none}</style></head>
 <body>
     <!-- Background Effects -->
     <div class="bg-glow">
@@ -1433,39 +1498,36 @@
                     <circle cx="14" cy="14" r="2" fill="rgba(249,115,22,0.8)"/>
                 </svg>
             </div>
-            PAYMARK
+            SAI GROWTH
         </div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#features">Services</a></li>
+            <li><a href="#case-studies">Case Studies</a></li>
+            <li><a href="#blogs">Insights</a></li>
         </ul>
         <div class="nav-right">
-            <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
-            </svg>
-            <a href="#" class="login-btn">Login</a>
-            <a href="#" class="open-account">Open Account</a>
+            <a href="#" class="login-btn">Resume</a>
+            <a href="#" class="open-account">Let's Talk</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1 class="hero-title">Explore the reality<br>of finance management</h1>
-        <p class="hero-subtitle">Say goodbye to complexity and hello to simplicity as Wepay transforms the way you manage your finance.</p>
+        <h1 class="hero-title">Performance marketing<br>that drives real growth</h1>
+        <p class="hero-subtitle">I help ambitious brands acquire customers profitably through Meta and Google Ads, backed by clear tracking and relentless testing.</p>
 
         <div class="email-form">
-            <input type="email" class="email-input" placeholder="Enter Your Email">
-            <button class="send-code-btn">Send Code</button>
+            <input type="email" class="email-input" placeholder="Enter your work email">
+            <button class="send-code-btn">Get a Free Audit</button>
         </div>
 
         <!-- Dashboard Cards -->
         <div class="dashboard-grid">
             <!-- Card 1: Your Balance -->
             <div class="card balance-card">
-                <div class="card-label">Your Balance</div>
-                <div class="card-value">$15,437</div>
+                <div class="card-label">Monthly Ad Spend</div>
+                <div class="card-value">INR 15.4L</div>
                 <div class="bar-chart">
                     <div class="bar" style="height: 30%; background: rgba(255,255,255,0.15);"></div>
                     <div class="bar" style="height: 55%; background: linear-gradient(180deg, #fbbf24, #f97316);"></div>
@@ -1482,8 +1544,8 @@
 
             <!-- Card 2: Investment -->
             <div class="card investment-card">
-                <div class="investment-value">$521K</div>
-                <div class="investment-label">Your investment is growing</div>
+                <div class="investment-value">4.8x</div>
+                <div class="investment-label">Average return on ad spend</div>
                 <div class="line-chart-container">
                     <svg viewBox="0 0 400 150" preserveAspectRatio="none" style="width:100%;height:100%;">
                         <defs>
@@ -1501,64 +1563,58 @@
                             </linearGradient>
                         </defs>
                         <!-- Grid lines -->
-                        <line x1="0" y1="37.5" x2="400" y2="37.5" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-                        <line x1="0" y1="75" x2="400" y2="75" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-                        <line x1="0" y1="112.5" x2="400" y2="112.5" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-                        <!-- Line 1 -->
-                        <path d="M 0 100 Q 50 80 100 90 T 200 60 T 300 70 T 400 40" fill="none" stroke="url(#line1)" stroke-width="2" opacity="0.8"/>
-                        <!-- Line 2 -->
-                        <path d="M 0 110 Q 50 100 100 85 T 200 75 T 300 50 T 400 60" fill="none" stroke="url(#line2)" stroke-width="2" opacity="0.8"/>
-                        <!-- Line 3 -->
-                        <path d="M 0 120 Q 50 110 100 100 T 200 95 T 300 80 T 400 90" fill="none" stroke="url(#line3)" stroke-width="2" opacity="0.6"/>
-                        <!-- Dots -->
-                        <circle cx="200" cy="60" r="3" fill="#f97316"/>
-                        <circle cx="300" cy="70" r="3" fill="#ef4444"/>
-                        <circle cx="300" cy="50" r="3" fill="#fbbf24"/>
+                        <line x1="0" y1="30" x2="400" y2="30" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                        <line x1="0" y1="75" x2="400" y2="75" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                        <line x1="0" y1="120" x2="400" y2="120" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                        <!-- Meta Ads: steady upward trend -->
+                        <path d="M 0 128 C 60 122, 110 108, 150 100 C 200 90, 240 78, 290 62 C 330 50, 365 32, 400 22" fill="none" stroke="url(#line1)" stroke-width="2.5" stroke-linecap="round" opacity="0.95"/>
+                        <!-- Google Ads: steady upward trend -->
+                        <path d="M 0 118 C 60 114, 110 105, 150 98 C 200 92, 240 84, 290 72 C 330 62, 365 50, 400 42" fill="none" stroke="url(#line2)" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+                        <!-- LinkedIn Ads: gentler upward trend -->
+                        <path d="M 0 132 C 60 130, 110 126, 150 122 C 200 118, 240 112, 290 104 C 330 98, 365 90, 400 82" fill="none" stroke="url(#line3)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                        <!-- End-point markers -->
+                        <circle cx="400" cy="22" r="4" fill="#f97316"/>
+                        <circle cx="400" cy="42" r="4" fill="#fbbf24"/>
+                        <circle cx="400" cy="82" r="4" fill="rgba(255,255,255,0.7)"/>
                     </svg>
                 </div>
                 <div class="chart-legend">
                     <div class="legend-item">
                         <div class="legend-dot" style="background: #f97316;"></div>
-                        <span>Education</span>
+                        <span>Meta Ads</span>
                         <span style="color: #f97316; margin-left: 4px;">+42%</span>
                     </div>
                     <div class="legend-item">
                         <div class="legend-dot" style="background: #fbbf24;"></div>
-                        <span>Health</span>
+                        <span>Google Ads</span>
                         <span style="color: #fbbf24; margin-left: 4px;">+47%</span>
                     </div>
                     <div class="legend-item">
                         <div class="legend-dot" style="background: rgba(255,255,255,0.5);"></div>
-                        <span>Saving</span>
+                        <span>LinkedIn Ads</span>
                         <span style="color: rgba(255,255,255,0.5); margin-left: 4px;">+33%</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 3: Payment Success -->
-            <div class="card payment-card">
-                <div class="check-circle">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                        <path d="M5 13l4 4L19 7"/>
-                    </svg>
-                </div>
-                <div class="payment-amount">$128.12</div>
-                <div class="payment-status">Payment has been successfully</div>
-                <div class="payment-details">
-                    <div class="detail-row">
-                        <span>Payment Code</span>
-                        <span>#1234567890</span>
+            <!-- Card 3: Channel Mix -->
+            <div class="card channel-card">
+                <div class="card-label">Spend by channel</div>
+                <div class="channel-list">
+                    <div class="channel-row">
+                        <div class="channel-name"><span class="channel-dot" style="background:#f97316;"></span>Meta Ads</div>
+                        <div class="channel-track"><div class="channel-fill" style="width:52%; background:linear-gradient(90deg,#f97316,#ef4444);"></div></div>
+                        <div class="channel-pct">52%</div>
                     </div>
-                    <div class="detail-row">
-                        <span>Date</span>
-                        <span>8 Feb 2026</span>
+                    <div class="channel-row">
+                        <div class="channel-name"><span class="channel-dot" style="background:#fbbf24;"></span>Google Ads</div>
+                        <div class="channel-track"><div class="channel-fill" style="width:38%; background:linear-gradient(90deg,#fbbf24,#f97316);"></div></div>
+                        <div class="channel-pct">38%</div>
                     </div>
-                </div>
-                <div class="user-info">
-                    <div class="user-avatar">EC</div>
-                    <div>
-                        <div class="user-name">EDWARD COLLINS</div>
-                        <div class="user-role">User</div>
+                    <div class="channel-row">
+                        <div class="channel-name"><span class="channel-dot" style="background:rgba(255,255,255,0.5);"></span>LinkedIn</div>
+                        <div class="channel-track"><div class="channel-fill" style="width:10%; background:rgba(255,255,255,0.5);"></div></div>
+                        <div class="channel-pct">10%</div>
                     </div>
                 </div>
             </div>
@@ -1566,10 +1622,10 @@
             <!-- Card 4: Progress -->
             <div class="card progress-card">
                 <div class="progress-header">
-                    <div class="card-label" style="margin:0;">Progress</div>
-                    <div class="progress-badge">1.0.8%</div>
+                    <div class="card-label" style="margin:0;">Conversion Rate</div>
+                    <div class="progress-badge">8.4%</div>
                 </div>
-                <div class="progress-value">$128.12K</div>
+                <div class="progress-value">â‚¹12.8L</div>
                 <div class="mini-bars">
                     <div class="mini-bar active" style="height: 40%;"></div>
                     <div class="mini-bar active" style="height: 60%;"></div>
@@ -1586,95 +1642,117 @@
                 </div>
             </div>
 
-            <!-- Card 5: Transactions -->
-            <div class="card transactions-card">
-                <div class="txn-item">
-                    <div class="txn-left">
-                        <div class="txn-type">Sent</div>
-                        <div class="txn-amount">€9,561</div>
-                        <div class="txn-balance">Balance: €128,125.00</div>
-                    </div>
-                    <div class="txn-currency">EUR</div>
-                </div>
-                <div class="txn-item">
-                    <div class="txn-left">
-                        <div class="txn-type">Receive</div>
-                        <div class="txn-amount">€12,458</div>
-                        <div class="txn-balance">Balance: €128,125.00</div>
-                    </div>
-                    <div class="txn-currency">EUR</div>
-                </div>
-            </div>
-
-            <!-- Card 6: Recent Activity -->
+            <!-- Card 5: Recent Activity -->
             <div class="card activity-card">
                 <div class="activity-item">
                     <div class="activity-left">
-                        <div class="activity-from">From Alex Manda</div>
-                        <div class="activity-time">Today, 10:16</div>
+                        <div class="activity-from">Google Search</div>
+                        <div class="activity-time">ROAS updated today</div>
                     </div>
                     <div class="activity-right">
-                        <div class="activity-badge">Sent</div>
-                        <div class="activity-amount">-$200</div>
+                        <div class="activity-badge">Spend</div>
+                        <div class="activity-amount">+5.2x</div>
                     </div>
                 </div>
                 <div class="activity-item">
                     <div class="activity-left">
-                        <div class="activity-from">To Laura Santos</div>
-                        <div class="activity-time">Today, 09:45</div>
+                        <div class="activity-from">Meta Prospecting</div>
+                        <div class="activity-time">CPA improved today</div>
                     </div>
                     <div class="activity-right">
-                        <div class="activity-badge">Sent</div>
-                        <div class="activity-amount">-$37</div>
+                        <div class="activity-badge">Spend</div>
+                        <div class="activity-amount">-27%</div>
                     </div>
                 </div>
             </div>
         </div>
+        <p class="metrics-note">Representative dashboard â€” replace figures with your verified campaign results before publishing.</p>
     </section>
 
     <!-- About / Trust bar + How it works -->
     <section class="section about-section" id="about">
         <div class="stats-row">
             <div class="stat">
-                <div class="stat-value">2.4M+</div>
-                <div class="stat-label">Accounts managed</div>
+                <div class="stat-value">Meta + Google</div>
+                <div class="stat-label">Paid acquisition channels</div>
             </div>
             <div class="stat">
-                <div class="stat-value">$3.1B</div>
-                <div class="stat-label">Processed this year</div>
+                <div class="stat-value">â‚¹2.1Cr+</div>
+                <div class="stat-label">Revenue attributed</div>
             </div>
             <div class="stat">
-                <div class="stat-value">128</div>
-                <div class="stat-label">Countries supported</div>
+                <div class="stat-value">GA4 + GTM</div>
+                <div class="stat-label">Conversion tracking</div>
             </div>
             <div class="stat">
-                <div class="stat-value">99.98%</div>
-                <div class="stat-label">Uptime</div>
+                <div class="stat-value">Weekly</div>
+                <div class="stat-label">Reporting and insights</div>
             </div>
+        </div>
+    </section>
+
+    <section class="section profile-section" id="profile">
+        <div class="profile-grid">
+            <!-- PLACEHOLDER PHOTO: replace the <svg> block below with <img src="images/sai.jpg" alt="Sai, Performance Marketer">  -->
+            <div class="profile-photo-card">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                    <circle cx="12" cy="8" r="4"/>
+                    <path d="M4 20c0-4 3.5-6 8-6s8 2 8 6"/>
+                </svg>
+            </div>
+            <div class="profile-copy">
+                <div class="profile-name-block">
+                    <div class="profile-name">Sai</div>
+                    <div class="profile-role">Performance Marketer &middot; Meta &amp; Google Ads</div>
+                </div>
+                <div class="section-eyebrow">About me</div>
+                <h2 class="section-title">A performance marketer focused on profitable, explainable growth</h2>
+                <p>Iâ€™m Sai. I combine media buying, creative testing, funnel thinking, and analytics to help businesses turn paid traffic into qualified leads and revenue.</p>
+                <p>My work is grounded in a simple principle: every campaign should have a clear objective, reliable measurement, and a practical path to improvement.</p>
+                <div class="profile-chips">
+                    <span class="profile-chip">3+ years running paid media</span>
+                    <span class="profile-chip">15+ campaigns launched</span>
+                    <span class="profile-chip">E-commerce &amp; SaaS focus</span>
+                </div>
+                <div class="availability"><span></span> Available for freelance and contract projects</div>
+            </div>
+            <div class="profile-panel">
+                <div class="panel-label">Best fit</div>
+                <h3>Growth-minded teams that value clarity</h3>
+                <ul class="profile-list">
+                    <li>E-commerce brands ready to scale acquisition</li>
+                    <li>Service businesses seeking qualified leads</li>
+                    <li>SaaS teams improving demos and trials</li>
+                    <li>Founders who need a reliable paid-media system</li>
+                </ul>
+            </div>
+        </div>
+        <div class="tool-stack">
+            <span>Meta Ads</span><span>Google Ads</span><span>GA4</span><span>Google Tag Manager</span><span>Looker Studio</span><span>Shopify</span><span>HubSpot</span><span>Canva</span>
         </div>
     </section>
 
     <section class="section" style="padding-top: 0;">
         <div class="section-head">
-            <div class="section-eyebrow">How it works</div>
-            <h2 class="section-title">Set up once, stay in control</h2>
-            <p class="section-subtitle">Three steps take you from signup to a live view of every account you own.</p>
+            <div class="section-eyebrow">My approach</div>
+            <h2 class="section-title">A clear system for profitable growth</h2>
+            <p class="section-subtitle">From research to optimization, every decision is tied to measurable business outcomes.</p>
         </div>
         <div class="steps-track">
             <div class="step">
                 <div class="step-node">01</div>
-                <div class="step-title">Open your account</div>
-                <div class="step-desc">Verify your identity in minutes and get a Paymark account with no paperwork to mail in.</div>
+                <div class="step-title">Research & strategy</div>
+                <div class="step-desc">I study your audience, offer, competitors, and funnel to build a focused acquisition plan.</div>
             </div>
             <div class="step">
                 <div class="step-node">02</div>
-                <div class="step-title">Connect your money</div>
-                <div class="step-desc">Link banks, cards, and investments. Paymark pulls balances and transactions into one dashboard.</div>
+                <div class="step-title">Launch & track</div>
+                <div class="step-desc">I build campaigns, creative tests, pixels, events, and dashboards for reliable measurement.</div>
             </div>
             <div class="step">
                 <div class="step-node">03</div>
-                <div class="step-title">Track and grow</div>
-                <div class="step-desc">Watch spending, saving, and investing update live, and get alerts before small issues become big ones.</div>
+                <div class="step-title">Optimize & scale</div>
+                <div class="step-desc">I improve CPA and ROAS continuously, then scale the combinations that produce profitable growth.</div>
             </div>
         </div>
     </section>
@@ -1688,14 +1766,14 @@
     <section class="section journey-section">
         <div class="journey-head">
             <div class="journey-title-wrap">
-                <h2 class="journey-title">Our Journey</h2>
+                <h2 class="journey-title">How I Build Growth</h2>
                 <div class="journey-dots">
                     <span></span><span></span><span></span>
                     <span></span><span></span><span></span>
                     <span></span><span></span><span></span>
                 </div>
             </div>
-            <p class="journey-subtitle">Pizza ipsum dolor meat lovers buffalo. Extra broccoli parmesan ricotta garlic dolor sauce marinara Chicago marinara. Tomato dolor pesto pesto Bianca pesto roll onions.</p>
+            <p class="journey-subtitle">A practical, data-led process that connects customer insight, strong creative, accurate tracking, and continuous experimentation.</p>
         </div>
         <div class="journey-map">
             <svg class="journey-path" viewBox="0 0 1000 430" preserveAspectRatio="none" aria-hidden="true">
@@ -1721,7 +1799,7 @@
                     <span class="step-num">1</span>
                     <div class="step-body">
                         <div class="step-name">Discover</div>
-                        <div class="step-desc">Pizza ipsum dolor meat lovers buffalo. Extra broccoli parmesan.</div>
+                        <div class="step-desc">Research the market, audience, offer, and conversion journey.</div>
                     </div>
                 </div>
             </div>
@@ -1729,8 +1807,8 @@
                 <div class="step-box">
                     <span class="step-num">2</span>
                     <div class="step-body">
-                        <div class="step-name">Discover</div>
-                        <div class="step-desc">Pizza ipsum dolor meat lovers buffalo. Extra broccoli parmesan.</div>
+                        <div class="step-name">Strategize</div>
+                        <div class="step-desc">Turn insights into a channel, funnel, budget, and testing plan.</div>
                     </div>
                 </div>
             </div>
@@ -1738,8 +1816,8 @@
                 <div class="step-box">
                     <span class="step-num">3</span>
                     <div class="step-body">
-                        <div class="step-name">Discover</div>
-                        <div class="step-desc">Pizza ipsum dolor meat lovers buffalo. Extra broccoli parmesan.</div>
+                        <div class="step-name">Launch</div>
+                        <div class="step-desc">Build campaigns, tracking, audiences, and creative experiments.</div>
                     </div>
                 </div>
             </div>
@@ -1747,8 +1825,8 @@
                 <div class="step-box">
                     <span class="step-num">4</span>
                     <div class="step-body">
-                        <div class="step-name">Discover</div>
-                        <div class="step-desc">Pizza ipsum dolor meat lovers buffalo. Extra broccoli parmesan.</div>
+                        <div class="step-name">Scale</div>
+                        <div class="step-desc">Optimize toward profit and expand proven winners responsibly.</div>
                     </div>
                 </div>
             </div>
@@ -1758,9 +1836,9 @@
     <!-- Features -->
     <section class="section" id="features">
         <div class="section-head">
-            <div class="section-eyebrow">Features</div>
-            <h2 class="section-title">Everything your money needs, in one place</h2>
-            <p class="section-subtitle">Paymark replaces the six apps you'd otherwise juggle to keep track of where your money goes.</p>
+            <div class="section-eyebrow">Services</div>
+            <h2 class="section-title">Full-funnel performance marketing expertise</h2>
+            <p class="section-subtitle">Strategy, media buying, measurement, and optimization work together to turn attention into revenue.</p>
         </div>
         <div class="features-grid">
             <div class="feature-card">
@@ -1770,8 +1848,8 @@
                         <path d="M3 20h18"/>
                     </svg>
                 </div>
-                <div class="feature-title">Live balances</div>
-                <div class="feature-desc">Every account, one number. Balances update the moment a transaction clears, not once a day.</div>
+                <div class="feature-title">Meta Ads</div>
+                <div class="feature-desc">Audience strategy, creative testing, retargeting, and scalable Facebook and Instagram campaigns.</div>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
@@ -1780,8 +1858,8 @@
                         <path d="M3 10h18M7 3v4"/>
                     </svg>
                 </div>
-                <div class="feature-title">Instant transfers</div>
-                <div class="feature-desc">Send and receive money in seconds with no routing numbers to copy or forms to fill in.</div>
+                <div class="feature-title">Google Ads</div>
+                <div class="feature-desc">High-intent Search, Performance Max, Shopping, YouTube, and remarketing campaigns.</div>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
@@ -1790,8 +1868,8 @@
                         <path d="M7 15l4-5 3 3 5-7"/>
                     </svg>
                 </div>
-                <div class="feature-title">Investment tracking</div>
-                <div class="feature-desc">See every holding next to your cash and spending, so you know your real net worth today.</div>
+                <div class="feature-title">Analytics & Attribution</div>
+                <div class="feature-desc">GA4, GTM, pixels, events, UTMs, and dashboards that reveal what truly drives conversions.</div>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
@@ -1800,8 +1878,8 @@
                         <circle cx="12" cy="9" r="2.5"/>
                     </svg>
                 </div>
-                <div class="feature-title">Smart alerts</div>
-                <div class="feature-desc">Get a nudge before a bill is due, a balance runs low, or spending drifts from your budget.</div>
+                <div class="feature-title">Conversion Optimization</div>
+                <div class="feature-desc">Landing-page and funnel experiments designed to lift conversion rates and lower acquisition costs.</div>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
@@ -1810,8 +1888,8 @@
                         <path d="M8 11V7a4 4 0 018 0v4"/>
                     </svg>
                 </div>
-                <div class="feature-title">Bank-grade security</div>
-                <div class="feature-desc">Your data is encrypted end to end, and you approve every device that ever connects.</div>
+                <div class="feature-title">Creative Strategy</div>
+                <div class="feature-desc">Performance-led concepts, hooks, briefs, and iterative ad testing shaped by real campaign data.</div>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
@@ -1819,57 +1897,57 @@
                         <path d="M12 20V10M18 20V4M6 20v-6"/>
                     </svg>
                 </div>
-                <div class="feature-title">Spending insights</div>
-                <div class="feature-desc">Categories build themselves from your habits, so your reports get sharper every month.</div>
+                <div class="feature-title">Reporting & Insights</div>
+                <div class="feature-desc">Clear reporting that turns campaign numbers into decisions your team can act on.</div>
             </div>
         </div>
     </section>
 
     <!-- Pricing -->
-    <section class="section" id="pricing">
+    <section class="section" id="case-studies">
         <div class="section-head">
-            <div class="section-eyebrow">Pricing</div>
-            <h2 class="section-title">Plans that grow with your money</h2>
-            <p class="section-subtitle">Start free. Upgrade only once Paymark is doing work you'd otherwise pay someone else for.</p>
+            <div class="section-eyebrow">Case Studies</div>
+            <h2 class="section-title">Selected campaign results</h2>
+            <p class="section-subtitle">A snapshot of how strategy, testing, and disciplined optimization created measurable growth.</p>
         </div>
         <div class="pricing-grid">
             <div class="price-card">
-                <div class="price-plan">Starter</div>
-                <div class="price-amount">$0<span>/month</span></div>
-                <div class="price-desc">For getting one view of your everyday accounts.</div>
+                <div class="price-plan">Lead Generation</div>
+                <div class="price-amount">-38%<span> CPA</span></div>
+                <div class="price-desc">Improved lead quality while reducing acquisition cost for a service business.</div>
                 <ul class="price-features">
-                    <li>Up to 2 linked accounts</li>
-                    <li>Live balance dashboard</li>
-                    <li>Basic spending categories</li>
-                    <li>Email support</li>
+                    <li>Google Search restructure</li>
+                    <li>Intent-based keyword groups</li>
+                    <li>Landing-page testing</li>
+                    <li>Weekly optimization</li>
                 </ul>
-                <a href="#" class="price-cta secondary">Get started</a>
+                <a href="#" class="price-cta secondary">View case study</a>
             </div>
             <div class="price-card featured">
-                <div class="price-badge">Most popular</div>
-                <div class="price-plan">Growth</div>
-                <div class="price-amount">$12<span>/month</span></div>
-                <div class="price-desc">For tracking spending, saving, and investing together.</div>
+                <div class="price-badge">Best ROAS</div>
+                <div class="price-plan">E-commerce</div>
+                <div class="price-amount">5.4x<span> CPA</span></div>
+                <div class="price-desc">Scaled online sales profitably across Meta and Google.</div>
                 <ul class="price-features">
-                    <li>Unlimited linked accounts</li>
-                    <li>Investment tracking</li>
-                    <li>Custom alerts and budgets</li>
-                    <li>Instant transfers</li>
-                    <li>Priority support</li>
+                    <li>Full-funnel account structure</li>
+                    <li>Analytics & Attribution</li>
+                    <li>Creative testing system</li>
+                    <li>Dynamic retargeting</li>
+                    <li>Profit-based budget scaling</li>
                 </ul>
-                <a href="#" class="price-cta primary">Start free trial</a>
+                <a href="#" class="price-cta primary">View case study</a>
             </div>
             <div class="price-card">
-                <div class="price-plan">Business</div>
-                <div class="price-amount">$34<span>/month</span></div>
-                <div class="price-desc">For teams managing shared accounts and payouts.</div>
+                <div class="price-plan">B2B SaaS</div>
+                <div class="price-amount">+186%<span> CPA</span></div>
+                <div class="price-desc">Increased qualified demo volume without sacrificing lead quality.</div>
                 <ul class="price-features">
-                    <li>Everything in Growth</li>
-                    <li>Multi-user access controls</li>
-                    <li>Payout automation</li>
-                    <li>Dedicated account manager</li>
+                    <li>LinkedIn and Google Ads</li>
+                    <li>CRM conversion tracking</li>
+                    <li>Audience and offer tests</li>
+                    <li>Pipeline-focused reporting</li>
                 </ul>
-                <a href="#" class="price-cta secondary">Talk to sales</a>
+                <a href="#" class="price-cta secondary">Discuss your project</a>
             </div>
         </div>
     </section>
@@ -1877,9 +1955,9 @@
     <!-- Blogs -->
     <section class="section" id="blogs">
         <div class="section-head">
-            <div class="section-eyebrow">Blogs</div>
-            <h2 class="section-title">Notes on money, from the Paymark team</h2>
-            <p class="section-subtitle">Short reads on saving, investing, and building habits that stick.</p>
+            <div class="section-eyebrow">Insights</div>
+            <h2 class="section-title">Performance marketing insights</h2>
+            <p class="section-subtitle">Practical thinking on paid media, creative testing, analytics, and sustainable campaign growth.</p>
         </div>
         <div class="blog-grid">
             <div class="blog-card">
@@ -1890,9 +1968,9 @@
                     </svg>
                 </div>
                 <div class="blog-content">
-                    <div class="blog-tag">Investing</div>
-                    <div class="blog-title">Building a portfolio you'll actually stick with</div>
-                    <div class="blog-excerpt">A simple framework for choosing investments that match how much risk you can really live with.</div>
+                    <div class="blog-tag">Paid Social</div>
+                    <div class="blog-title">A practical framework for testing Meta ad creative</div>
+                    <div class="blog-excerpt">How to test hooks, formats, and offers without wasting budget or drawing false conclusions.</div>
                     <div class="blog-meta"><span>5 min read</span><span>Jul 2, 2026</span></div>
                 </div>
             </div>
@@ -1904,9 +1982,9 @@
                     </svg>
                 </div>
                 <div class="blog-content">
-                    <div class="blog-tag">Budgeting</div>
-                    <div class="blog-title">The 3-bucket method for monthly spending</div>
-                    <div class="blog-excerpt">Split every paycheck into needs, goals, and flexible spending, and never reconcile a spreadsheet again.</div>
+                    <div class="blog-tag">Google Ads</div>
+                    <div class="blog-title">How to structure Search campaigns around intent</div>
+                    <div class="blog-excerpt">A cleaner account structure that improves relevance, learning speed, and control over spend.</div>
                     <div class="blog-meta"><span>4 min read</span><span>Jun 24, 2026</span></div>
                 </div>
             </div>
@@ -1918,23 +1996,51 @@
                     </svg>
                 </div>
                 <div class="blog-content">
-                    <div class="blog-tag">Security</div>
-                    <div class="blog-title">How Paymark keeps your accounts locked down</div>
-                    <div class="blog-excerpt">A look inside the encryption, device approval, and monitoring that protect every login.</div>
+                    <div class="blog-tag">Analytics</div>
+                    <div class="blog-title">The tracking setup every growth campaign needs</div>
+                    <div class="blog-excerpt">A practical guide to events, attribution, UTMs, and dashboards that support better decisions.</div>
                     <div class="blog-meta"><span>6 min read</span><span>Jun 15, 2026</span></div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Working principles -->
+    <section class="section principles-section">
+        <div class="section-head">
+            <div class="section-eyebrow">What you can expect</div>
+            <h2 class="section-title">No black-box marketing</h2>
+            <p class="section-subtitle">Clear priorities, disciplined experiments, and reporting that connects platform metrics to business outcomes.</p>
+        </div>
+        <div class="principles-grid">
+            <article class="principle-card"><div class="principle-number">01</div><h3>Commercial thinking</h3><p>I optimize for qualified leads, revenue, and profitabilityâ€”not vanity metrics.</p></article>
+            <article class="principle-card"><div class="principle-number">02</div><h3>Structured testing</h3><p>Every audience, creative, and landing-page test starts with a clear hypothesis.</p></article>
+            <article class="principle-card"><div class="principle-number">03</div><h3>Visible progress</h3><p>You receive concise reporting, useful context, and a clear list of next actions.</p></article>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-section">
+        <div class="section-head">
+            <div class="section-eyebrow">FAQ</div>
+            <h2 class="section-title">Before we start</h2>
+        </div>
+        <div class="faq-list">
+            <details open><summary>Which platforms do you manage?</summary><p>Meta Ads and Google Ads are my core channels, supported by GA4, Google Tag Manager, and reporting dashboards.</p></details>
+            <details><summary>Can you audit an existing ad account?</summary><p>Yes. I can review account structure, tracking, audiences, creative, search terms, landing pages, and budget allocation, then prioritize the biggest opportunities.</p></details>
+            <details><summary>Do you create ad creatives?</summary><p>I develop creative strategy, hooks, briefs, and testing plans, and can collaborate with your designer or content team on production.</p></details>
+            <details><summary>How do you measure success?</summary><p>We agree on business-focused KPIs before launchâ€”such as qualified CPL, CAC, ROAS, revenue, or pipelineâ€”and report against them consistently.</p></details>
+        </div>
+    </section>
+
     <!-- CTA -->
     <section class="section cta-section">
         <div class="cta-banner">
-            <h2 class="cta-title">See your whole financial picture today</h2>
-            <p class="cta-desc">Open a free Paymark account in minutes. No card required to start.</p>
+            <h2 class="cta-title">Letâ€™s find your next growth opportunity</h2>
+            <p class="cta-desc">Share your website and biggest acquisition challenge. Iâ€™ll respond with a practical first step.</p>
             <div class="cta-actions">
-                <a href="#" class="cta-btn-primary">Open Account</a>
-                <a href="#" class="cta-btn-secondary">Talk to sales</a>
+                <a href="mailto:hello@example.com" class="cta-btn-primary">Email Sai</a>
+                <a href="#case-studies" class="cta-btn-secondary">Review Case Studies</a>
             </div>
         </div>
     </section>
@@ -1951,39 +2057,39 @@
                             <circle cx="14" cy="14" r="2" fill="rgba(249,115,22,0.8)"/>
                         </svg>
                     </div>
-                    PAYMARK
+                    SAI GROWTH
                 </div>
-                <p class="footer-brand-desc">Paymark brings your spending, saving, and investing into one live dashboard, so managing money stops feeling like a second job.</p>
+                <p class="footer-brand-desc">I help ambitious brands acquire customers profitably through paid media, creative testing, and clear measurement.</p>
             </div>
             <div>
-                <div class="footer-col-title">Product</div>
+                <div class="footer-col-title">Portfolio</div>
                 <ul class="footer-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#">Security</a></li>
+                    <li><a href="#about">Results</a></li>
+                    <li><a href="#features">Services</a></li>
+                    <li><a href="#case-studies">Case Studies</a></li>
+                    <li><a href="#">Analytics</a></li>
                 </ul>
             </div>
             <div>
-                <div class="footer-col-title">Company</div>
+                <div class="footer-col-title">Connect</div>
                 <ul class="footer-links">
-                    <li><a href="#blogs">Blogs</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Press</a></li>
+                    <li><a href="#blogs">Insights</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Resume</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>
             <div>
-                <div class="footer-col-title">Legal</div>
+                <div class="footer-col-title">Resources</div>
                 <ul class="footer-links">
                     <li><a href="#">Privacy</a></li>
                     <li><a href="#">Terms</a></li>
-                    <li><a href="#">Licenses</a></li>
+                    <li><a href="#">Certifications</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <span>© 2026 Paymark. All rights reserved.</span>
+            <span>&copy; 2026 Sai Growth. All rights reserved.</span>
             <div class="footer-socials">
                 <a href="#" aria-label="Twitter">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14.86 4.48 4.48 0 002-2.48 9.1 9.1 0 01-2.88 1.1 4.52 4.52 0 00-7.7 4.13A12.8 12.8 0 013 2.9a4.52 4.52 0 001.4 6.04A4.48 4.48 0 012.3 8.4v.05a4.52 4.52 0 003.63 4.43 4.5 4.5 0 01-2.04.08 4.53 4.53 0 004.22 3.14A9.06 9.06 0 012 18.4a12.8 12.8 0 006.92 2.03c8.3 0 12.85-6.88 12.85-12.85 0-.2 0-.39-.01-.58A9.18 9.18 0 0023 3z"/></svg>
