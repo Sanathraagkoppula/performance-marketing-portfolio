@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
@@ -29,45 +30,67 @@
         }
 
         /* Scrollbar styling */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #090909; }
-        ::-webkit-scrollbar-thumb { background: rgba(249,115,22,.35); border-radius: 3px; }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #090909;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(249, 115, 22, .35);
+            border-radius: 3px;
+        }
 
         /* ===================== Background ===================== */
         .bg-glow {
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
             z-index: 0;
             overflow: hidden;
         }
+
         .glow-1 {
             position: absolute;
-            top: -10%; left: 30%;
-            width: 600px; height: 400px;
-            background: radial-gradient(ellipse, rgba(249,115,22,.15) 0%, transparent 70%);
+            top: -10%;
+            left: 30%;
+            width: 600px;
+            height: 400px;
+            background: radial-gradient(ellipse, rgba(249, 115, 22, .15) 0%, transparent 70%);
             filter: blur(60px);
         }
+
         .glow-2 {
             position: absolute;
-            bottom: -10%; right: -5%;
-            width: 500px; height: 500px;
-            background: radial-gradient(ellipse, rgba(239,68,68,.12) 0%, transparent 70%);
+            bottom: -10%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(ellipse, rgba(239, 68, 68, .12) 0%, transparent 70%);
             filter: blur(80px);
         }
+
         .glow-3 {
             position: absolute;
-            top: 40%; left: -10%;
-            width: 400px; height: 400px;
-            background: radial-gradient(ellipse, rgba(249,115,22,.08) 0%, transparent 70%);
+            top: 40%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(ellipse, rgba(249, 115, 22, .08) 0%, transparent 70%);
             filter: blur(60px);
         }
 
         .circuit-pattern {
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
             z-index: 1;
             opacity: .12;
@@ -97,9 +120,14 @@
         }
 
         .logo-icon {
-            width: 28px; height: 28px;
+            width: 28px;
+            height: 28px;
         }
-        .logo-icon svg { width: 100%; height: 100%; }
+
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+        }
 
         .nav-links {
             display: flex;
@@ -107,38 +135,53 @@
             list-style: none;
             align-items: center;
         }
+
         .nav-links a {
-            color: rgba(255,255,255,.7);
+            color: rgba(255, 255, 255, .7);
             text-decoration: none;
             font-size: 14px;
             font-weight: 400;
             transition: color .3s;
             position: relative;
         }
-        .nav-links a:hover { color: #fff; }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -4px; left: 0;
-            width: 0; height: 1.5px;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
             background: linear-gradient(90deg, #f97316, #ef4444);
             transition: width .3s;
         }
-        .nav-links a:hover::after { width: 100%; }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
         .nav-right {
             display: flex;
             align-items: center;
             gap: 16px;
         }
+
         .login-btn {
-            color: rgba(255,255,255,.7);
+            color: rgba(255, 255, 255, .7);
             text-decoration: none;
             font-size: 14px;
             font-weight: 400;
             transition: color .3s;
         }
-        .login-btn:hover { color: #fff; }
+
+        .login-btn:hover {
+            color: #fff;
+        }
+
         .open-account {
             background: #fff;
             color: #0a0a0a;
@@ -150,9 +193,10 @@
             transition: transform .2s, box-shadow .2s;
             white-space: nowrap;
         }
+
         .open-account:hover {
             transform: translateY(-1px);
-            box-shadow: 0 4px 20px rgba(255,255,255,.15);
+            box-shadow: 0 4px 20px rgba(255, 255, 255, .15);
         }
 
         /* Mobile hamburger */
@@ -166,6 +210,7 @@
             padding: 8px;
             z-index: 101;
         }
+
         .menu-toggle span {
             display: block;
             width: 24px;
@@ -174,15 +219,24 @@
             border-radius: 2px;
             transition: .3s;
         }
-        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-        .menu-toggle.active span:nth-child(2) { opacity: 0; }
-        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
 
         .mobile-nav {
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(9,9,9,.97);
+            background: rgba(9, 9, 9, .97);
             backdrop-filter: blur(20px);
             z-index: 99;
             flex-direction: column;
@@ -193,16 +247,19 @@
             pointer-events: none;
             transition: opacity .3s;
         }
+
         .mobile-nav.active {
             opacity: 1;
             pointer-events: all;
         }
+
         .mobile-nav a {
             color: #fff;
             text-decoration: none;
             font-size: 22px;
             font-weight: 500;
         }
+
         .mobile-nav .open-account {
             margin-top: 12px;
             font-size: 16px;
@@ -222,27 +279,32 @@
             text-align: center;
             overflow: hidden;
             background:
-                radial-gradient(ellipse at 52% 20%, rgba(177,92,68,.18), transparent 37%),
-                radial-gradient(ellipse at 12% 64%, rgba(255,130,80,.06), transparent 25%),
+                radial-gradient(ellipse at 52% 20%, rgba(177, 92, 68, .18), transparent 37%),
+                radial-gradient(ellipse at 12% 64%, rgba(255, 130, 80, .06), transparent 25%),
                 linear-gradient(180deg, #0d0d0d 0%, #090909 82%);
         }
-        .hero::before, .hero::after {
+
+        .hero::before,
+        .hero::after {
             content: "";
             position: absolute;
             pointer-events: none;
             z-index: -1;
         }
+
         .hero::before {
             inset: 0;
             opacity: .38;
-            background: repeating-linear-gradient(90deg, transparent 0 94px, rgba(255,255,255,.018) 95px);
+            background: repeating-linear-gradient(90deg, transparent 0 94px, rgba(255, 255, 255, .018) 95px);
         }
+
         .hero::after {
             width: min(540px, 90vw);
             height: 260px;
-            left: 50%; top: 95px;
+            left: 50%;
+            top: 95px;
             transform: translateX(-50%);
-            background: rgba(196,104,76,.11);
+            background: rgba(196, 104, 76, .11);
             filter: blur(70px);
             border-radius: 50%;
         }
@@ -253,14 +315,15 @@
             line-height: 1.05;
             letter-spacing: -2px;
             margin: 0 0 16px;
-            background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,.85) 100%);
+            background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, .85) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             max-width: 900px;
         }
+
         .hero-subtitle {
-            color: rgba(255,255,255,.55);
+            color: rgba(255, 255, 255, .55);
             font-size: clamp(14px, 1.6vw, 16px);
             max-width: 560px;
             line-height: 1.6;
@@ -275,13 +338,14 @@
             padding: 5px 6px 5px 18px;
             border-radius: 28px;
             margin-bottom: 40px;
-            background: linear-gradient(135deg, rgba(255,255,255,.13), rgba(255,255,255,.045));
-            border: 1px solid rgba(255,255,255,.16);
-            border-top-color: rgba(255,255,255,.24);
+            background: linear-gradient(135deg, rgba(255, 255, 255, .13), rgba(255, 255, 255, .045));
+            border: 1px solid rgba(255, 255, 255, .16);
+            border-top-color: rgba(255, 255, 255, .24);
             backdrop-filter: blur(26px) saturate(150%);
-            box-shadow: 0 18px 50px rgba(0,0,0,.46), inset 0 1px rgba(255,255,255,.13);
+            box-shadow: 0 18px 50px rgba(0, 0, 0, .46), inset 0 1px rgba(255, 255, 255, .13);
             gap: 8px;
         }
+
         .email-input {
             flex: 1;
             min-width: 0;
@@ -293,7 +357,11 @@
             outline: none;
             font-family: inherit;
         }
-        .email-input::placeholder { color: rgba(255,255,255,.4); }
+
+        .email-input::placeholder {
+            color: rgba(255, 255, 255, .4);
+        }
+
         .send-code-btn {
             background: #ededeb;
             color: #0a0a0a;
@@ -306,80 +374,187 @@
             transition: all .2s;
             white-space: nowrap;
             font-family: inherit;
-            box-shadow: inset 0 1px rgba(255,255,255,.9), 0 8px 22px rgba(0,0,0,.22);
+            box-shadow: inset 0 1px rgba(255, 255, 255, .9), 0 8px 22px rgba(0, 0, 0, .22);
         }
+
         .send-code-btn:hover {
             background: #fff;
             transform: translateY(-1px);
         }
 
         /* ===================== Dashboard ===================== */
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 14px;
+        /* The dashboard is always laid out on a fixed 1240x540 "canvas" using
+           absolute positioning (same design at every screen size). The
+           .dashboard-scale wrapper is a container-query container sized to
+           the available width; .dashboard-grid is scaled down to fit it via
+           CSS container query units, so the exact same bento layout and
+           reveal animation work identically on phones, tablets, and desktop. */
+        .dashboard-scale {
+            container-type: inline-size;
             width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 1240px;
+            margin: 32px auto 0;
+            aspect-ratio: 1240 / 540;
             position: relative;
         }
+
+        .dashboard-grid {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 1240px;
+            height: 540px;
+            transform-origin: top center;
+            transform: translateX(-50%) scale(calc(100cqw / 1240px));
+        }
+
+        /* Fallback for browsers without container query unit support:
+           approximate the same scale using viewport width and the hero's
+           horizontal padding at each breakpoint. */
+        @supports not (width: 1cqw) {
+            .dashboard-grid {
+                transform: translateX(-50%) scale(calc((100vw - 48px) / 1240px));
+            }
+
+            @media (min-width: 400px) {
+                .dashboard-grid {
+                    transform: translateX(-50%) scale(calc((100vw - 32px) / 1240px));
+                }
+            }
+
+            @media (min-width: 640px) {
+                .dashboard-grid {
+                    transform: translateX(-50%) scale(calc((100vw - 64px) / 1240px));
+                }
+            }
+
+            @media (min-width: 1024px) {
+                .dashboard-grid {
+                    transform: translateX(-50%) scale(min(1, calc((100vw - 96px) / 1240px)));
+                }
+            }
+        }
+
         .dashboard-grid::before {
             content: "";
             position: absolute;
-            left: 50%; top: 28%;
-            width: 72%; height: 45%;
+            left: 50%;
+            top: 28%;
+            width: 72%;
+            height: 45%;
             transform: translate(-50%, -50%);
-            background: radial-gradient(ellipse, rgba(207,105,75,.15), transparent 70%);
+            background: radial-gradient(ellipse, rgba(207, 105, 75, .15), transparent 70%);
             filter: blur(48px);
             pointer-events: none;
         }
 
         .card {
-            background: linear-gradient(135deg, rgba(255,255,255,.11), rgba(255,255,255,.025) 42%, rgba(12,12,12,.38)), rgba(28,25,25,.48);
-            border: 1px solid rgba(255,255,255,.13);
-            border-top-color: rgba(255,255,255,.22);
-            border-left-color: rgba(255,255,255,.17);
-            border-radius: 18px;
-            padding: 20px;
+            position: absolute;
+            padding: 18px;
+            border-radius: 17px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, .11), rgba(255, 255, 255, .025) 42%, rgba(12, 12, 12, .38)), rgba(28, 25, 25, .48);
+            border: 1px solid rgba(255, 255, 255, .13);
+            border-top-color: rgba(255, 255, 255, .22);
+            border-left-color: rgba(255, 255, 255, .17);
             backdrop-filter: blur(30px) saturate(150%);
             -webkit-backdrop-filter: blur(30px) saturate(150%);
-            position: relative;
             overflow: hidden;
-            box-shadow: 0 28px 70px rgba(0,0,0,.58), inset 0 1px 0 rgba(255,255,255,.15), inset 0 -1px rgba(255,255,255,.03), 0 0 0 1px rgba(0,0,0,.2);
+            box-shadow: 0 28px 70px rgba(0, 0, 0, .58), inset 0 1px 0 rgba(255, 255, 255, .15), inset 0 -1px rgba(255, 255, 255, .03), 0 0 0 1px rgba(0, 0, 0, .2);
             transition: transform .3s, box-shadow .3s;
         }
+
+        .investment-card {
+            width: 41.94%;
+            height: 55.56%;
+            left: 50%;
+            top: 50%;
+            z-index: 5;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 40px 90px rgba(0, 0, 0, .65), 0 0 0 1px rgba(255, 255, 255, .08), inset 0 1px rgba(255, 255, 255, .05);
+        }
+
+        .balance-card {
+            width: 22.58%;
+            height: 40.74%;
+            left: 11.29%;
+            top: -7.41%;
+            z-index: 6;
+            opacity: .9;
+        }
+
+        .channel-card {
+            width: 25.81%;
+            height: 44.44%;
+            left: 66.13%;
+            top: -11.11%;
+            z-index: 6;
+            opacity: .9;
+        }
+
+        .progress-card {
+            width: 24.19%;
+            height: 41.67%;
+            left: 9.68%;
+            top: 66.67%;
+            z-index: 6;
+            opacity: .9;
+        }
+
+        .activity-card {
+            width: 28.23%;
+            height: 39.81%;
+            left: 66.13%;
+            top: 66.67%;
+            z-index: 6;
+            opacity: .9;
+        }
+
+        .balance-card,
+        .channel-card,
+        .progress-card,
+        .activity-card {
+            box-shadow: 0 18px 40px rgba(0, 0, 0, .4), inset 0 1px rgba(255, 255, 255, .03);
+        }
+
         .card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 32px 80px rgba(0,0,0,.65), inset 0 1px 0 rgba(255,255,255,.18), inset 0 -1px rgba(255,255,255,.03), 0 0 0 1px rgba(0,0,0,.2);
+            box-shadow: 0 32px 80px rgba(0, 0, 0, .65), inset 0 1px 0 rgba(255, 255, 255, .18), inset 0 -1px rgba(255, 255, 255, .03), 0 0 0 1px rgba(0, 0, 0, .2);
         }
+
         .card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             height: 58%;
-            background: linear-gradient(150deg, rgba(255,255,255,.16), rgba(255,255,255,.025) 43%, transparent 70%);
+            background: linear-gradient(150deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, .025) 43%, transparent 70%);
             opacity: .75;
             pointer-events: none;
         }
+
         .card::after {
             content: "";
             position: absolute;
-            width: 145px; height: 145px;
-            right: -68px; top: -74px;
+            width: 145px;
+            height: 145px;
+            right: -68px;
+            top: -74px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(255,145,110,.2), rgba(255,120,90,.04) 46%, transparent 72%);
+            background: radial-gradient(circle, rgba(255, 145, 110, .2), rgba(255, 120, 90, .04) 46%, transparent 72%);
             pointer-events: none;
         }
 
         .card-label {
             font-size: 10px;
-            color: rgba(255,255,255,.45);
+            color: rgba(255, 255, 255, .45);
             text-transform: uppercase;
             letter-spacing: .8px;
             margin-bottom: 8px;
             position: relative;
             z-index: 2;
         }
+
         .card-value {
             font-size: 22px;
             font-weight: 600;
@@ -397,18 +572,20 @@
             position: relative;
             z-index: 2;
         }
+
         .bar {
             flex: 1;
             border-radius: 3px;
             min-width: 4px;
             transition: height .4s ease;
         }
+
         .bar-labels {
             display: flex;
             justify-content: space-between;
             margin-top: 8px;
             font-size: 9px;
-            color: rgba(255,255,255,.3);
+            color: rgba(255, 255, 255, .3);
             position: relative;
             z-index: 2;
         }
@@ -419,6 +596,7 @@
             flex-direction: column;
             min-height: 240px;
         }
+
         .investment-value {
             font-size: clamp(28px, 4vw, 34px);
             font-weight: 600;
@@ -426,19 +604,22 @@
             position: relative;
             z-index: 2;
         }
+
         .investment-label {
             font-size: 13px;
-            color: rgba(255,255,255,.45);
+            color: rgba(255, 255, 255, .45);
             margin-bottom: 18px;
             position: relative;
             z-index: 2;
         }
+
         .line-chart-container {
             flex: 1;
             position: relative;
             min-height: 110px;
             z-index: 2;
         }
+
         .chart-legend {
             display: flex;
             gap: 16px;
@@ -448,15 +629,18 @@
             position: relative;
             z-index: 2;
         }
+
         .legend-item {
             display: flex;
             align-items: center;
             gap: 6px;
             font-size: 11px;
-            color: rgba(255,255,255,.55);
+            color: rgba(255, 255, 255, .55);
         }
+
         .legend-dot {
-            width: 8px; height: 8px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             flex-shrink: 0;
         }
@@ -470,6 +654,7 @@
             position: relative;
             z-index: 2;
         }
+
         .channel-row {
             display: grid;
             grid-template-columns: 1fr auto;
@@ -477,30 +662,36 @@
             row-gap: 5px;
             align-items: center;
         }
+
         .channel-name {
             display: flex;
             align-items: center;
             gap: 8px;
             font-size: 12px;
-            color: rgba(255,255,255,.75);
+            color: rgba(255, 255, 255, .75);
         }
+
         .channel-dot {
-            width: 8px; height: 8px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             flex-shrink: 0;
         }
+
         .channel-pct {
             font-size: 12px;
             font-weight: 600;
             justify-self: end;
         }
+
         .channel-track {
             grid-column: 1 / 3;
             height: 5px;
             border-radius: 4px;
-            background: rgba(255,255,255,.06);
+            background: rgba(255, 255, 255, .06);
             overflow: hidden;
         }
+
         .channel-fill {
             height: 100%;
             border-radius: 4px;
@@ -516,14 +707,16 @@
             position: relative;
             z-index: 2;
         }
+
         .progress-badge {
-            background: rgba(249,115,22,.15);
+            background: rgba(249, 115, 22, .15);
             color: #f97316;
             padding: 4px 10px;
             border-radius: 12px;
             font-size: 11px;
             font-weight: 500;
         }
+
         .progress-value {
             font-size: 20px;
             font-weight: 600;
@@ -531,6 +724,7 @@
             position: relative;
             z-index: 2;
         }
+
         .mini-bars {
             display: flex;
             align-items: flex-end;
@@ -539,13 +733,15 @@
             position: relative;
             z-index: 2;
         }
+
         .mini-bar {
             flex: 1;
             border-radius: 2px;
-            background: rgba(255,255,255,.1);
+            background: rgba(255, 255, 255, .1);
             min-width: 3px;
             transition: height .4s ease;
         }
+
         .mini-bar.active {
             background: linear-gradient(180deg, #f97316, #ef4444);
         }
@@ -556,29 +752,44 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px 0;
-            border-bottom: 1px solid rgba(255,255,255,.04);
+            border-bottom: 1px solid rgba(255, 255, 255, .04);
             position: relative;
             z-index: 2;
         }
-        .activity-item:last-child { border-bottom: none; }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
         .activity-left {
             display: flex;
             flex-direction: column;
             gap: 2px;
         }
-        .activity-from { font-size: 12px; font-weight: 500; }
-        .activity-time { font-size: 10px; color: rgba(255,255,255,.35); }
+
+        .activity-from {
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .activity-time {
+            font-size: 10px;
+            color: rgba(255, 255, 255, .35);
+        }
+
         .activity-right {
             display: flex;
             align-items: center;
             gap: 8px;
         }
+
         .activity-badge {
-            background: rgba(255,255,255,.08);
+            background: rgba(255, 255, 255, .08);
             padding: 4px 10px;
             border-radius: 8px;
             font-size: 11px;
         }
+
         .activity-amount {
             font-size: 12px;
             color: #f97316;
@@ -590,7 +801,7 @@
         .metrics-note {
             margin-top: 18px;
             font-size: 11px;
-            color: rgba(255,255,255,.28);
+            color: rgba(255, 255, 255, .28);
             text-align: center;
         }
 
@@ -602,11 +813,13 @@
             margin: 0 auto;
             padding: 80px 24px;
         }
+
         .section-head {
             max-width: 560px;
             margin: 0 auto 48px;
             text-align: center;
         }
+
         .section-eyebrow {
             font-size: 12px;
             font-weight: 600;
@@ -615,38 +828,53 @@
             color: #f97316;
             margin-bottom: 12px;
         }
+
         .section-title {
             font-size: clamp(26px, 4vw, 36px);
             font-weight: 600;
             line-height: 1.2;
             margin-bottom: 12px;
         }
+
         .section-subtitle {
-            color: rgba(255,255,255,.5);
+            color: rgba(255, 255, 255, .5);
             font-size: 15px;
             line-height: 1.65;
         }
 
         /* ===================== Stats Row ===================== */
-        .about-section { padding-top: 20px; padding-bottom: 60px; }
+        .about-section {
+            padding-top: 20px;
+            padding-bottom: 60px;
+        }
+
         .stats-row {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1px;
             padding: 24px;
-            background: rgba(20,20,20,.6);
-            border: 1px solid rgba(255,255,255,.06);
+            background: rgba(20, 20, 20, .6);
+            border: 1px solid rgba(255, 255, 255, .06);
             border-radius: 20px;
             backdrop-filter: blur(20px);
             overflow: hidden;
         }
+
         .stat {
             text-align: center;
             padding: 20px 12px;
-            background: rgba(20,20,20,.6);
+            background: rgba(20, 20, 20, .6);
         }
-        .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,.06); }
-        .stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.06); }
+
+        .stat:nth-child(1),
+        .stat:nth-child(2) {
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+        }
+
+        .stat:nth-child(odd) {
+            border-right: 1px solid rgba(255, 255, 255, .06);
+        }
+
         .stat-value {
             font-size: clamp(18px, 2.5vw, 28px);
             font-weight: 600;
@@ -656,24 +884,29 @@
             background-clip: text;
             margin-bottom: 6px;
         }
+
         .stat-label {
             font-size: 11px;
-            color: rgba(255,255,255,.4);
+            color: rgba(255, 255, 255, .4);
         }
 
         /* ===================== Profile ===================== */
-        .profile-section { padding-top: 20px; }
+        .profile-section {
+            padding-top: 20px;
+        }
+
         .profile-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 16px;
             align-items: stretch;
         }
+
         .profile-photo-card {
             border-radius: 20px;
             overflow: hidden;
-            background: linear-gradient(160deg, rgba(249,115,22,.3), rgba(239,68,68,.15) 60%, rgba(20,20,20,.8));
-            border: 1px solid rgba(255,255,255,.08);
+            background: linear-gradient(160deg, rgba(249, 115, 22, .3), rgba(239, 68, 68, .15) 60%, rgba(20, 20, 20, .8));
+            border: 1px solid rgba(255, 255, 255, .08);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -683,58 +916,81 @@
             margin: 0 auto;
             width: 100%;
         }
+
         .profile-photo-card svg {
             width: 30%;
             max-width: 80px;
-            color: rgba(255,255,255,.55);
+            color: rgba(255, 255, 255, .55);
         }
-        .profile-copy, .profile-panel {
-            background: rgba(20,20,20,.6);
-            border: 1px solid rgba(255,255,255,.06);
+
+        .profile-copy,
+        .profile-panel {
+            background: rgba(20, 20, 20, .6);
+            border: 1px solid rgba(255, 255, 255, .06);
             border-radius: 20px;
             padding: 28px;
         }
-        .profile-name-block { margin-bottom: 18px; }
-        .profile-name { font-size: 20px; font-weight: 600; }
-        .profile-role { font-size: 13px; color: rgba(255,255,255,.5); margin-top: 4px; }
+
+        .profile-name-block {
+            margin-bottom: 18px;
+        }
+
+        .profile-name {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .profile-role {
+            font-size: 13px;
+            color: rgba(255, 255, 255, .5);
+            margin-top: 4px;
+        }
+
         .profile-copy p {
-            color: rgba(255,255,255,.52);
+            color: rgba(255, 255, 255, .52);
             font-size: 14px;
             line-height: 1.75;
             margin-top: 12px;
         }
+
         .profile-chips {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
             margin-top: 18px;
         }
+
         .profile-chip {
             padding: 8px 14px;
             border-radius: 999px;
-            border: 1px solid rgba(255,255,255,.08);
-            background: rgba(255,255,255,.03);
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(255, 255, 255, .03);
             font-size: 12px;
-            color: rgba(255,255,255,.6);
+            color: rgba(255, 255, 255, .6);
         }
+
         .availability {
             margin-top: 18px;
-            color: rgba(255,255,255,.7);
+            color: rgba(255, 255, 255, .7);
             font-size: 12px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
+
         .availability span {
-            width: 8px; height: 8px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             background: #22c55e;
-            box-shadow: 0 0 12px rgba(34,197,94,.7);
+            box-shadow: 0 0 12px rgba(34, 197, 94, .7);
             flex-shrink: 0;
         }
+
         .profile-panel {
-            background: radial-gradient(circle at 90% 0%, rgba(249,115,22,.1), transparent 48%), rgba(20,20,20,.6);
+            background: radial-gradient(circle at 90% 0%, rgba(249, 115, 22, .1), transparent 48%), rgba(20, 20, 20, .6);
         }
+
         .panel-label {
             color: #f97316;
             text-transform: uppercase;
@@ -742,43 +998,51 @@
             font-size: 11px;
             margin-bottom: 12px;
         }
+
         .profile-panel h3 {
             font-size: 20px;
             line-height: 1.35;
             margin-bottom: 18px;
         }
+
         .profile-list {
             list-style: none;
             display: grid;
             gap: 12px;
         }
+
         .profile-list li {
-            color: rgba(255,255,255,.58);
+            color: rgba(255, 255, 255, .58);
             font-size: 13px;
             padding-left: 18px;
             position: relative;
             line-height: 1.5;
         }
+
         .profile-list li::before {
             content: '';
-            width: 6px; height: 6px;
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
             background: #f97316;
             position: absolute;
-            left: 0; top: 6px;
+            left: 0;
+            top: 6px;
         }
+
         .tool-stack {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
             margin-top: 20px;
         }
+
         .tool-stack span {
             padding: 9px 14px;
-            border: 1px solid rgba(255,255,255,.08);
-            background: rgba(255,255,255,.03);
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(255, 255, 255, .03);
             border-radius: 999px;
-            color: rgba(255,255,255,.55);
+            color: rgba(255, 255, 255, .55);
             font-size: 12px;
         }
 
@@ -790,18 +1054,24 @@
             gap: 32px;
             margin-top: 8px;
         }
-        .steps-track::before { display: none; }
+
+        .steps-track::before {
+            display: none;
+        }
+
         .step {
             position: relative;
             text-align: center;
             padding: 0 16px;
         }
+
         .step-node {
-            width: 52px; height: 52px;
+            width: 52px;
+            height: 52px;
             margin: 0 auto 20px;
             border-radius: 50%;
             background: #0a0a0a;
-            border: 1px solid rgba(249,115,22,.4);
+            border: 1px solid rgba(249, 115, 22, .4);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -811,22 +1081,33 @@
             font-weight: 600;
             color: #f97316;
         }
+
         .step-title {
             font-size: 16px;
             font-weight: 600;
             margin-bottom: 8px;
         }
+
         .step-desc {
             font-size: 13px;
-            color: rgba(255,255,255,.45);
+            color: rgba(255, 255, 255, .45);
             line-height: 1.6;
             max-width: 280px;
             margin: 0 auto;
         }
 
         /* ===================== Journey ===================== */
-        .journey-section { padding-top: 20px; padding-bottom: 80px; }
-        .journey-head { max-width: 560px; margin-bottom: 40px; padding: 0 8px; }
+        .journey-section {
+            padding-top: 20px;
+            padding-bottom: 80px;
+        }
+
+        .journey-head {
+            max-width: 560px;
+            margin-bottom: 40px;
+            padding: 0 8px;
+        }
+
         .journey-title-wrap {
             display: flex;
             align-items: center;
@@ -834,11 +1115,13 @@
             margin-bottom: 12px;
             flex-wrap: wrap;
         }
+
         .journey-title {
             font-size: clamp(26px, 4vw, 36px);
             font-weight: 600;
             line-height: 1.2;
         }
+
         .journey-dots {
             display: grid;
             grid-template-columns: repeat(3, 5px);
@@ -846,17 +1129,21 @@
             gap: 3px;
             flex-shrink: 0;
         }
+
         .journey-dots span {
-            width: 5px; height: 5px;
+            width: 5px;
+            height: 5px;
             border-radius: 50%;
             background: #ef4444;
         }
+
         .journey-subtitle {
-            color: rgba(255,255,255,.5);
+            color: rgba(255, 255, 255, .5);
             font-size: 14px;
             line-height: 1.65;
             max-width: 480px;
         }
+
         .journey-map {
             position: relative;
             width: 100%;
@@ -866,6 +1153,7 @@
             gap: 24px;
             padding-left: 28px;
         }
+
         .journey-map::before {
             content: '';
             position: absolute;
@@ -876,34 +1164,50 @@
             background: linear-gradient(#f97316, #ef4444);
             opacity: .5;
         }
-        .journey-path { display: none; }
+
+        .journey-path {
+            display: none;
+        }
+
         .journey-step {
             position: relative;
             width: 100%;
         }
+
         .step-box {
             display: flex;
             align-items: flex-start;
             gap: 14px;
         }
+
         .step-num {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 36px; height: 36px;
+            width: 36px;
+            height: 36px;
             min-width: 36px;
             border: 1.5px solid #ef4444;
             border-radius: 4px;
             color: #ef4444;
             font-size: 14px;
             font-weight: 600;
-            background: rgba(239,68,68,.06);
+            background: rgba(239, 68, 68, .06);
         }
-        .step-body { padding-top: 2px; }
-        .step-name { font-size: 15px; font-weight: 600; margin-bottom: 5px; }
+
+        .step-body {
+            padding-top: 2px;
+        }
+
+        .step-name {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
         .step-desc {
             font-size: 13px;
-            color: rgba(255,255,255,.45);
+            color: rgba(255, 255, 255, .45);
             line-height: 1.6;
         }
 
@@ -913,41 +1217,59 @@
             grid-template-columns: 1fr;
             gap: 14px;
         }
+
         .feature-card {
-            background: rgba(20,20,20,.6);
-            border: 1px solid rgba(255,255,255,.06);
+            background: rgba(20, 20, 20, .6);
+            border: 1px solid rgba(255, 255, 255, .06);
             border-radius: 20px;
             padding: 28px;
             position: relative;
             overflow: hidden;
             transition: border-color .3s, transform .3s;
         }
+
         .feature-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .1), transparent);
         }
+
         .feature-card:hover {
-            border-color: rgba(249,115,22,.3);
+            border-color: rgba(249, 115, 22, .3);
             transform: translateY(-2px);
         }
+
         .feature-icon {
-            width: 44px; height: 44px;
+            width: 44px;
+            height: 44px;
             border-radius: 12px;
             background: linear-gradient(135deg, #f97316, #ef4444);
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 18px;
-            box-shadow: 0 4px 20px rgba(249,115,22,.25);
+            box-shadow: 0 4px 20px rgba(249, 115, 22, .25);
         }
-        .feature-icon svg { width: 20px; height: 20px; color: #fff; }
-        .feature-title { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+
+        .feature-icon svg {
+            width: 20px;
+            height: 20px;
+            color: #fff;
+        }
+
+        .feature-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
         .feature-desc {
             font-size: 13px;
-            color: rgba(255,255,255,.45);
+            color: rgba(255, 255, 255, .45);
             line-height: 1.65;
         }
 
@@ -958,20 +1280,23 @@
             gap: 16px;
             align-items: stretch;
         }
+
         .price-card {
-            background: rgba(20,20,20,.6);
-            border: 1px solid rgba(255,255,255,.06);
+            background: rgba(20, 20, 20, .6);
+            border: 1px solid rgba(255, 255, 255, .06);
             border-radius: 20px;
             padding: 28px;
             display: flex;
             flex-direction: column;
             position: relative;
         }
+
         .price-card.featured {
-            border-color: rgba(249,115,22,.35);
-            background: linear-gradient(180deg, rgba(249,115,22,.06), rgba(20,20,20,.6) 40%);
+            border-color: rgba(249, 115, 22, .35);
+            background: linear-gradient(180deg, rgba(249, 115, 22, .06), rgba(20, 20, 20, .6) 40%);
             order: -1;
         }
+
         .price-badge {
             position: absolute;
             top: -12px;
@@ -982,48 +1307,60 @@
             font-size: 11px;
             font-weight: 600;
         }
+
         .price-plan {
             font-size: 13px;
-            color: rgba(255,255,255,.5);
+            color: rgba(255, 255, 255, .5);
             margin-bottom: 8px;
         }
+
         .price-amount {
             font-size: clamp(28px, 4vw, 34px);
             font-weight: 600;
             margin-bottom: 2px;
         }
+
         .price-amount span {
             font-size: 14px;
             font-weight: 400;
-            color: rgba(255,255,255,.4);
+            color: rgba(255, 255, 255, .4);
         }
+
         .price-desc {
             font-size: 12px;
-            color: rgba(255,255,255,.4);
+            color: rgba(255, 255, 255, .4);
             margin-bottom: 24px;
         }
+
         .price-features {
             list-style: none;
             margin-bottom: 24px;
             flex: 1;
         }
+
         .price-features li {
             font-size: 13px;
-            color: rgba(255,255,255,.6);
+            color: rgba(255, 255, 255, .6);
             padding: 9px 0;
-            border-bottom: 1px solid rgba(255,255,255,.05);
+            border-bottom: 1px solid rgba(255, 255, 255, .05);
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        .price-features li:last-child { border-bottom: none; }
+
+        .price-features li:last-child {
+            border-bottom: none;
+        }
+
         .price-features li::before {
             content: '';
-            width: 6px; height: 6px;
+            width: 6px;
+            height: 6px;
             flex-shrink: 0;
             border-radius: 50%;
             background: linear-gradient(135deg, #f97316, #ef4444);
         }
+
         .price-cta {
             text-align: center;
             padding: 13px;
@@ -1037,20 +1374,26 @@
             align-items: center;
             justify-content: center;
         }
+
         .price-cta.primary {
             background: #fff;
             color: #0a0a0a;
         }
+
         .price-cta.primary:hover {
             transform: translateY(-1px);
-            box-shadow: 0 4px 20px rgba(255,255,255,.15);
+            box-shadow: 0 4px 20px rgba(255, 255, 255, .15);
         }
+
         .price-cta.secondary {
-            background: rgba(255,255,255,.06);
+            background: rgba(255, 255, 255, .06);
             color: #fff;
-            border: 1px solid rgba(255,255,255,.1);
+            border: 1px solid rgba(255, 255, 255, .1);
         }
-        .price-cta.secondary:hover { background: rgba(255,255,255,.1); }
+
+        .price-cta.secondary:hover {
+            background: rgba(255, 255, 255, .1);
+        }
 
         /* ===================== Blog ===================== */
         .blog-grid {
@@ -1058,17 +1401,20 @@
             grid-template-columns: 1fr;
             gap: 16px;
         }
+
         .blog-card {
-            background: rgba(20,20,20,.6);
-            border: 1px solid rgba(255,255,255,.06);
+            background: rgba(20, 20, 20, .6);
+            border: 1px solid rgba(255, 255, 255, .06);
             border-radius: 20px;
             overflow: hidden;
             transition: border-color .3s, transform .3s;
         }
+
         .blog-card:hover {
-            border-color: rgba(249,115,22,.3);
+            border-color: rgba(249, 115, 22, .3);
             transform: translateY(-2px);
         }
+
         .blog-image {
             height: 140px;
             position: relative;
@@ -1076,8 +1422,17 @@
             align-items: center;
             justify-content: center;
         }
-        .blog-image svg { width: 28px; height: 28px; color: rgba(255,255,255,.8); }
-        .blog-content { padding: 22px; }
+
+        .blog-image svg {
+            width: 28px;
+            height: 28px;
+            color: rgba(255, 255, 255, .8);
+        }
+
+        .blog-content {
+            padding: 22px;
+        }
+
         .blog-tag {
             font-size: 11px;
             font-weight: 600;
@@ -1086,25 +1441,28 @@
             color: #f97316;
             margin-bottom: 8px;
         }
+
         .blog-title {
             font-size: 15px;
             font-weight: 600;
             line-height: 1.4;
             margin-bottom: 8px;
         }
+
         .blog-excerpt {
             font-size: 13px;
-            color: rgba(255,255,255,.45);
+            color: rgba(255, 255, 255, .45);
             line-height: 1.6;
             margin-bottom: 16px;
         }
+
         .blog-meta {
             display: flex;
             justify-content: space-between;
             font-size: 11px;
-            color: rgba(255,255,255,.3);
+            color: rgba(255, 255, 255, .3);
             padding-top: 14px;
-            border-top: 1px solid rgba(255,255,255,.06);
+            border-top: 1px solid rgba(255, 255, 255, .06);
         }
 
         /* ===================== Principles ===================== */
@@ -1113,12 +1471,14 @@
             grid-template-columns: 1fr;
             gap: 14px;
         }
+
         .principle-card {
-            background: rgba(20,20,20,.6);
-            border: 1px solid rgba(255,255,255,.06);
+            background: rgba(20, 20, 20, .6);
+            border: 1px solid rgba(255, 255, 255, .06);
             border-radius: 20px;
             padding: 26px;
         }
+
         .principle-number {
             color: #f97316;
             font-size: 11px;
@@ -1126,9 +1486,14 @@
             margin-bottom: 14px;
             font-weight: 600;
         }
-        .principle-card h3 { font-size: 16px; margin-bottom: 8px; }
+
+        .principle-card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
         .principle-card p {
-            color: rgba(255,255,255,.45);
+            color: rgba(255, 255, 255, .45);
             font-size: 13px;
             line-height: 1.65;
         }
@@ -1140,14 +1505,19 @@
             display: grid;
             gap: 10px;
         }
+
         .faq-list details {
-            background: rgba(20,20,20,.6);
-            border: 1px solid rgba(255,255,255,.06);
+            background: rgba(20, 20, 20, .6);
+            border: 1px solid rgba(255, 255, 255, .06);
             padding: 18px 20px;
             border-radius: 14px;
             transition: border-color .2s;
         }
-        .faq-list details:hover { border-color: rgba(255,255,255,.1); }
+
+        .faq-list details:hover {
+            border-color: rgba(255, 255, 255, .1);
+        }
+
         .faq-list summary {
             cursor: pointer;
             font-size: 14px;
@@ -1158,6 +1528,7 @@
             align-items: center;
             gap: 12px;
         }
+
         .faq-list summary::after {
             content: '+';
             color: #f97316;
@@ -1165,9 +1536,13 @@
             font-weight: 400;
             flex-shrink: 0;
         }
-        .faq-list details[open] summary::after { content: '−'; }
+
+        .faq-list details[open] summary::after {
+            content: '−';
+        }
+
         .faq-list p {
-            color: rgba(255,255,255,.46);
+            color: rgba(255, 255, 255, .46);
             font-size: 13px;
             line-height: 1.65;
             margin-top: 12px;
@@ -1175,35 +1550,43 @@
         }
 
         /* ===================== CTA ===================== */
-        .cta-section { padding-top: 20px; padding-bottom: 80px; }
+        .cta-section {
+            padding-top: 20px;
+            padding-bottom: 80px;
+        }
+
         .cta-banner {
             position: relative;
             overflow: hidden;
             text-align: center;
             padding: 48px 24px;
             border-radius: 24px;
-            border: 1px solid rgba(249,115,22,.2);
-            background: radial-gradient(ellipse at 50% 0%, rgba(249,115,22,.12), transparent 70%), rgba(20,20,20,.6);
+            border: 1px solid rgba(249, 115, 22, .2);
+            background: radial-gradient(ellipse at 50% 0%, rgba(249, 115, 22, .12), transparent 70%), rgba(20, 20, 20, .6);
         }
+
         .cta-title {
             font-size: clamp(22px, 3.5vw, 30px);
             font-weight: 600;
             margin-bottom: 12px;
         }
+
         .cta-desc {
-            color: rgba(255,255,255,.5);
+            color: rgba(255, 255, 255, .5);
             font-size: 15px;
             margin-bottom: 28px;
             max-width: 480px;
             margin-left: auto;
             margin-right: auto;
         }
+
         .cta-actions {
             display: flex;
             gap: 12px;
             justify-content: center;
             flex-wrap: wrap;
         }
+
         .cta-btn-primary {
             background: #fff;
             color: #0a0a0a;
@@ -1218,34 +1601,40 @@
             align-items: center;
             justify-content: center;
         }
+
         .cta-btn-primary:hover {
             transform: translateY(-1px);
-            box-shadow: 0 4px 20px rgba(255,255,255,.15);
+            box-shadow: 0 4px 20px rgba(255, 255, 255, .15);
         }
+
         .cta-btn-secondary {
             background: transparent;
-            color: rgba(255,255,255,.8);
+            color: rgba(255, 255, 255, .8);
             padding: 14px 28px;
             border-radius: 24px;
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
-            border: 1px solid rgba(255,255,255,.15);
+            border: 1px solid rgba(255, 255, 255, .15);
             transition: border-color .2s;
             min-height: 44px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
         }
-        .cta-btn-secondary:hover { border-color: rgba(255,255,255,.4); }
+
+        .cta-btn-secondary:hover {
+            border-color: rgba(255, 255, 255, .4);
+        }
 
         /* ===================== Footer ===================== */
         footer {
             position: relative;
             z-index: 5;
-            border-top: 1px solid rgba(255,255,255,.06);
+            border-top: 1px solid rgba(255, 255, 255, .06);
             padding: 48px 24px 28px;
         }
+
         .footer-grid {
             max-width: 1200px;
             margin: 0 auto 32px;
@@ -1253,166 +1642,361 @@
             grid-template-columns: 1fr 1fr;
             gap: 32px 24px;
         }
-        .footer-grid > div:first-child { grid-column: 1 / -1; }
+
+        .footer-grid>div:first-child {
+            grid-column: 1 / -1;
+        }
+
         .footer-brand-desc {
-            color: rgba(255,255,255,.4);
+            color: rgba(255, 255, 255, .4);
             font-size: 13px;
             line-height: 1.65;
             margin-top: 14px;
             max-width: 280px;
         }
+
         .footer-col-title {
             font-size: 12px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: .5px;
-            color: rgba(255,255,255,.4);
+            color: rgba(255, 255, 255, .4);
             margin-bottom: 16px;
         }
+
         .footer-links {
             list-style: none;
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
+
         .footer-links a {
-            color: rgba(255,255,255,.6);
+            color: rgba(255, 255, 255, .6);
             text-decoration: none;
             font-size: 13px;
             transition: color .2s;
             display: inline-block;
             padding: 2px 0;
         }
-        .footer-links a:hover { color: #fff; }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
         .footer-bottom {
             max-width: 1200px;
             margin: 0 auto;
             padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,.06);
+            border-top: 1px solid rgba(255, 255, 255, .06);
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 16px;
             font-size: 12px;
-            color: rgba(255,255,255,.3);
+            color: rgba(255, 255, 255, .3);
             text-align: center;
         }
+
         .footer-socials {
             display: flex;
             gap: 16px;
         }
+
         .footer-socials a {
-            color: rgba(255,255,255,.4);
+            color: rgba(255, 255, 255, .4);
             transition: color .2s;
             padding: 4px;
         }
-        .footer-socials a:hover { color: #fff; }
-        .footer-socials svg { width: 18px; height: 18px; }
+
+        .footer-socials a:hover {
+            color: #fff;
+        }
+
+        .footer-socials svg {
+            width: 18px;
+            height: 18px;
+        }
 
         /* ===================== Animations ===================== */
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
+
         @keyframes scaleIn {
-            from { opacity: 0; transform: scale(.92); }
-            to { opacity: 1; transform: scale(1); }
+            from {
+                opacity: 0;
+                transform: scale(.92);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
+
+        @keyframes bigScaleIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(.92);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
         @keyframes slideRight {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
+
         @keyframes barGrow {
-            from { transform: scaleY(0); }
-            to { transform: scaleY(1); }
+            from {
+                transform: scaleY(0);
+            }
+
+            to {
+                transform: scaleY(1);
+            }
         }
+
         @keyframes trackFill {
-            from { width: 0; }
+            from {
+                width: 0;
+            }
         }
+
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: .6; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: .6;
+            }
         }
 
         .animate-fade-up {
             opacity: 0;
-            animation: fadeUp .7s cubic-bezier(.16,1,.3,1) forwards;
+            animation: fadeUp .7s cubic-bezier(.16, 1, .3, 1) forwards;
         }
+
         .animate-fade-in {
             opacity: 0;
             animation: fadeIn .6s ease forwards;
         }
+
         .animate-scale-in {
             opacity: 0;
-            animation: scaleIn .6s cubic-bezier(.16,1,.3,1) forwards;
+            animation: scaleIn .6s cubic-bezier(.16, 1, .3, 1) forwards;
         }
 
-        .delay-1 { animation-delay: .1s; }
-        .delay-2 { animation-delay: .2s; }
-        .delay-3 { animation-delay: .3s; }
-        .delay-4 { animation-delay: .4s; }
-        .delay-5 { animation-delay: .5s; }
-        .delay-6 { animation-delay: .6s; }
+        .delay-1 {
+            animation-delay: .1s;
+        }
+
+        .delay-2 {
+            animation-delay: .2s;
+        }
+
+        .delay-3 {
+            animation-delay: .3s;
+        }
+
+        .delay-4 {
+            animation-delay: .4s;
+        }
+
+        .delay-5 {
+            animation-delay: .5s;
+        }
+
+        .delay-6 {
+            animation-delay: .6s;
+        }
 
         /* Bar chart animation */
         .bar-chart .bar {
             transform-origin: bottom;
-            animation: barGrow .8s cubic-bezier(.16,1,.3,1) forwards;
+            animation: barGrow .8s cubic-bezier(.16, 1, .3, 1) forwards;
         }
-        .bar-chart .bar:nth-child(1) { animation-delay: .1s; transform: scaleY(0); }
-        .bar-chart .bar:nth-child(2) { animation-delay: .2s; transform: scaleY(0); }
-        .bar-chart .bar:nth-child(3) { animation-delay: .3s; transform: scaleY(0); }
-        .bar-chart .bar:nth-child(4) { animation-delay: .4s; transform: scaleY(0); }
-        .bar-chart .bar:nth-child(5) { animation-delay: .5s; transform: scaleY(0); }
-        .bar-chart .bar:nth-child(6) { animation-delay: .6s; transform: scaleY(0); }
-        .bar-chart .bar:nth-child(7) { animation-delay: .7s; transform: scaleY(0); }
+
+        .bar-chart .bar:nth-child(1) {
+            animation-delay: .1s;
+            transform: scaleY(0);
+        }
+
+        .bar-chart .bar:nth-child(2) {
+            animation-delay: .2s;
+            transform: scaleY(0);
+        }
+
+        .bar-chart .bar:nth-child(3) {
+            animation-delay: .3s;
+            transform: scaleY(0);
+        }
+
+        .bar-chart .bar:nth-child(4) {
+            animation-delay: .4s;
+            transform: scaleY(0);
+        }
+
+        .bar-chart .bar:nth-child(5) {
+            animation-delay: .5s;
+            transform: scaleY(0);
+        }
+
+        .bar-chart .bar:nth-child(6) {
+            animation-delay: .6s;
+            transform: scaleY(0);
+        }
+
+        .bar-chart .bar:nth-child(7) {
+            animation-delay: .7s;
+            transform: scaleY(0);
+        }
 
         /* Channel fill animation */
         .channel-fill {
-            animation: trackFill 1.2s cubic-bezier(.16,1,.3,1) forwards;
+            animation: trackFill 1.2s cubic-bezier(.16, 1, .3, 1) forwards;
         }
 
         /* Mini bars animation */
         .mini-bars .mini-bar {
             transform-origin: bottom;
-            animation: barGrow .6s cubic-bezier(.16,1,.3,1) forwards;
+            animation: barGrow .6s cubic-bezier(.16, 1, .3, 1) forwards;
         }
-        .mini-bars .mini-bar:nth-child(1) { animation-delay: .05s; transform: scaleY(0); }
-        .mini-bars .mini-bar:nth-child(2) { animation-delay: .1s; transform: scaleY(0); }
-        .mini-bars .mini-bar:nth-child(3) { animation-delay: .15s; transform: scaleY(0); }
-        .mini-bars .mini-bar:nth-child(4) { animation-delay: .2s; transform: scaleY(0); }
-        .mini-bars .mini-bar:nth-child(5) { animation-delay: .25s; transform: scaleY(0); }
-        .mini-bars .mini-bar:nth-child(6) { animation-delay: .3s; transform: scaleY(0); }
-        .mini-bars .mini-bar:nth-child(7) { animation-delay: .35s; transform: scaleY(0); }
-        .mini-bars .mini-bar:nth-child(8) { animation-delay: .4s; transform: scaleY(0); }
-        .mini-bars .mini-bar:nth-child(9) { animation-delay: .45s; transform: scaleY(0); }
-        .mini-bars .mini-bar:nth-child(10) { animation-delay: .5s; transform: scaleY(0); }
-        .mini-bars .mini-bar:nth-child(11) { animation-delay: .55s; transform: scaleY(0); }
-        .mini-bars .mini-bar:nth-child(12) { animation-delay: .6s; transform: scaleY(0); }
+
+        .mini-bars .mini-bar:nth-child(1) {
+            animation-delay: .05s;
+            transform: scaleY(0);
+        }
+
+        .mini-bars .mini-bar:nth-child(2) {
+            animation-delay: .1s;
+            transform: scaleY(0);
+        }
+
+        .mini-bars .mini-bar:nth-child(3) {
+            animation-delay: .15s;
+            transform: scaleY(0);
+        }
+
+        .mini-bars .mini-bar:nth-child(4) {
+            animation-delay: .2s;
+            transform: scaleY(0);
+        }
+
+        .mini-bars .mini-bar:nth-child(5) {
+            animation-delay: .25s;
+            transform: scaleY(0);
+        }
+
+        .mini-bars .mini-bar:nth-child(6) {
+            animation-delay: .3s;
+            transform: scaleY(0);
+        }
+
+        .mini-bars .mini-bar:nth-child(7) {
+            animation-delay: .35s;
+            transform: scaleY(0);
+        }
+
+        .mini-bars .mini-bar:nth-child(8) {
+            animation-delay: .4s;
+            transform: scaleY(0);
+        }
+
+        .mini-bars .mini-bar:nth-child(9) {
+            animation-delay: .45s;
+            transform: scaleY(0);
+        }
+
+        .mini-bars .mini-bar:nth-child(10) {
+            animation-delay: .5s;
+            transform: scaleY(0);
+        }
+
+        .mini-bars .mini-bar:nth-child(11) {
+            animation-delay: .55s;
+            transform: scaleY(0);
+        }
+
+        .mini-bars .mini-bar:nth-child(12) {
+            animation-delay: .6s;
+            transform: scaleY(0);
+        }
 
         /* Line chart draw animation */
         @keyframes drawLine {
-            to { stroke-dashoffset: 0; }
+            to {
+                stroke-dashoffset: 0;
+            }
         }
+
         .line-chart-container path {
             stroke-dasharray: 600;
             stroke-dashoffset: 600;
-            animation: drawLine 1.5s cubic-bezier(.16,1,.3,1) forwards;
+            animation: drawLine 1.5s cubic-bezier(.16, 1, .3, 1) forwards;
         }
-        .line-chart-container path:nth-child(5) { animation-delay: .2s; }
-        .line-chart-container path:nth-child(6) { animation-delay: .4s; }
-        .line-chart-container path:nth-child(7) { animation-delay: .6s; }
+
+        .line-chart-container path:nth-child(5) {
+            animation-delay: .2s;
+        }
+
+        .line-chart-container path:nth-child(6) {
+            animation-delay: .4s;
+        }
+
+        .line-chart-container path:nth-child(7) {
+            animation-delay: .6s;
+        }
+
         .line-chart-container circle {
             opacity: 0;
             animation: fadeIn .4s ease forwards;
         }
-        .line-chart-container circle:nth-child(9) { animation-delay: 1.2s; }
-        .line-chart-container circle:nth-child(10) { animation-delay: 1.4s; }
-        .line-chart-container circle:nth-child(11) { animation-delay: 1.6s; }
+
+        .line-chart-container circle:nth-child(9) {
+            animation-delay: 1.2s;
+        }
+
+        .line-chart-container circle:nth-child(10) {
+            animation-delay: 1.4s;
+        }
+
+        .line-chart-container circle:nth-child(11) {
+            animation-delay: 1.6s;
+        }
 
         /* Availability dot pulse */
         .availability span {
@@ -1421,7 +2005,10 @@
 
         /* Reduced motion */
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
+
+            *,
+            *::before,
+            *::after {
                 animation-duration: .01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: .01ms !important;
@@ -1430,26 +2017,99 @@
 
         /* ===================== TABLET (>= 640px) ===================== */
         @media (min-width: 640px) {
-            nav { padding: 20px 32px; }
-            .hero { padding: 50px 32px 80px; }
-            .section { padding: 90px 32px; }
-            .stats-row { grid-template-columns: repeat(4, 1fr); padding: 32px; }
-            .stat { border-bottom: none !important; border-right: 1px solid rgba(255,255,255,.06); padding: 0 12px; }
-            .stat:nth-child(4) { border-right: none; }
-            .features-grid { grid-template-columns: repeat(2, 1fr); }
-            .pricing-grid { grid-template-columns: repeat(2, 1fr); }
-            .price-card.featured { order: 0; grid-column: 1 / -1; }
-            .blog-grid { grid-template-columns: repeat(2, 1fr); }
-            .principles-grid { grid-template-columns: repeat(2, 1fr); }
-            .footer-grid { grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; }
-            .footer-grid > div:first-child { grid-column: auto; }
-            .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; }
-            .cta-banner { padding: 56px 40px; }
-            .profile-grid { grid-template-columns: 200px 1fr; gap: 20px; }
-            .profile-photo-card { aspect-ratio: auto; min-height: 340px; margin: 0; max-width: none; }
-            .profile-copy, .profile-panel { padding: 32px; }
-            .profile-panel { grid-column: 1 / -1; }
-            .steps-track { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+            nav {
+                padding: 20px 32px;
+            }
+
+            .hero {
+                padding: 50px 32px 80px;
+            }
+
+            .section {
+                padding: 90px 32px;
+            }
+
+            .stats-row {
+                grid-template-columns: repeat(4, 1fr);
+                padding: 32px;
+            }
+
+            .stat {
+                border-bottom: none !important;
+                border-right: 1px solid rgba(255, 255, 255, .06);
+                padding: 0 12px;
+            }
+
+            .stat:nth-child(4) {
+                border-right: none;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .price-card.featured {
+                order: 0;
+                grid-column: 1 / -1;
+            }
+
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .principles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1.6fr 1fr 1fr 1fr;
+                gap: 40px;
+            }
+
+            .footer-grid>div:first-child {
+                grid-column: auto;
+            }
+
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+
+            .cta-banner {
+                padding: 56px 40px;
+            }
+
+            .profile-grid {
+                grid-template-columns: 200px 1fr;
+                gap: 20px;
+            }
+
+            .profile-photo-card {
+                aspect-ratio: auto;
+                min-height: 340px;
+                margin: 0;
+                max-width: none;
+            }
+
+            .profile-copy,
+            .profile-panel {
+                padding: 32px;
+            }
+
+            .profile-panel {
+                grid-column: 1 / -1;
+            }
+
+            .steps-track {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
+            }
+
             .steps-track::before {
                 display: block;
                 content: '';
@@ -1458,140 +2118,316 @@
                 left: 16%;
                 right: 16%;
                 height: 1px;
-                background: linear-gradient(90deg, transparent, rgba(249,115,22,.5), rgba(239,68,68,.5), transparent);
+                background: linear-gradient(90deg, transparent, rgba(249, 115, 22, .5), rgba(239, 68, 68, .5), transparent);
             }
+
             .journey-map {
                 display: block;
                 height: 430px;
                 padding-left: 0;
             }
-            .journey-map::before { display: none; }
-            .journey-path { display: block; }
+
+            .journey-map::before {
+                display: none;
+            }
+
+            .journey-path {
+                display: block;
+            }
+
             .journey-step {
                 position: absolute;
                 width: 230px;
             }
-            .step-1 { left: 2%; top: 7%; }
-            .step-2 { left: 29%; top: 58%; }
-            .step-3 { left: 55%; top: 6%; }
-            .step-4 { left: 76%; top: 61%; }
+
+            .step-1 {
+                left: 2%;
+                top: 7%;
+            }
+
+            .step-2 {
+                left: 29%;
+                top: 58%;
+            }
+
+            .step-3 {
+                left: 55%;
+                top: 6%;
+            }
+
+            .step-4 {
+                left: 76%;
+                top: 61%;
+            }
         }
 
         /* ===================== DESKTOP (>= 1024px) ===================== */
         @media (min-width: 1024px) {
-            .menu-toggle { display: none; }
-            .mobile-nav { display: none !important; }
-            nav { padding: 24px 48px; }
-            .hero { padding: 60px 48px 100px; min-height: 760px; }
-            .hero-title { letter-spacing: -3.5px; }
-            .section { padding: 100px 48px; }
-            .dashboard-grid {
-                display: block;
-                width: min(1240px, 100%);
-                height: 540px;
-                max-width: none;
-                margin-top: 0;
+            .menu-toggle {
+                display: none;
             }
-            .card {
-                position: absolute;
-                padding: 18px;
-                border-radius: 17px;
+
+            .mobile-nav {
+                display: none !important;
             }
-            .investment-card {
-                width: 520px; height: 300px;
-                left: 50%; top: 50%;
-                z-index: 5;
-                transform: translate(-50%, -50%);
-                box-shadow: 0 40px 90px rgba(0,0,0,.65), 0 0 0 1px rgba(255,255,255,.08), inset 0 1px rgba(255,255,255,.05);
+
+            nav {
+                padding: 24px 48px;
             }
-            .balance-card {
-                width: 280px; height: 220px;
-                left: calc(50% - 470px); top: calc(50% - 285px);
-                z-index: 6; opacity: .9;
+
+            .hero {
+                padding: 60px 48px 100px;
+                min-height: 760px;
             }
-            .channel-card {
-                width: 320px; height: 240px;
-                left: calc(50% + 240px); top: calc(50% - 290px);
-                z-index: 6; opacity: .9;
+
+            .hero-title {
+                letter-spacing: -3.5px;
             }
-            .progress-card {
-                width: 300px; height: 225px;
-                left: calc(50% - 480px); top: calc(50% + 110px);
-                z-index: 6; opacity: .9;
+
+            .section {
+                padding: 100px 48px;
             }
-            .activity-card {
-                width: 350px; height: 215px;
-                left: calc(50% + 210px); top: calc(50% + 115px);
-                z-index: 6; opacity: .9;
+
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
-            .balance-card, .channel-card, .progress-card, .activity-card {
-                box-shadow: 0 18px 40px rgba(0,0,0,.4), inset 0 1px rgba(255,255,255,.03);
+
+            .pricing-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
-            .features-grid { grid-template-columns: repeat(3, 1fr); }
-            .pricing-grid { grid-template-columns: repeat(3, 1fr); }
-            .price-card.featured { grid-column: auto; order: 0; }
-            .blog-grid { grid-template-columns: repeat(3, 1fr); }
-            .principles-grid { grid-template-columns: repeat(3, 1fr); }
-            .profile-grid { grid-template-columns: 260px 1fr .85fr; }
-            .profile-panel { grid-column: auto; }
-            .profile-copy, .profile-panel { padding: 36px 42px; }
-            .profile-photo-card { min-height: 340px; }
-            .cta-banner { padding: 64px 48px; }
-            .cta-actions { flex-direction: row; }
-            .cta-title { font-size: 30px; }
-            footer { padding: 60px 48px 32px; }
+
+            .price-card.featured {
+                grid-column: auto;
+                order: 0;
+            }
+
+            .blog-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .principles-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .profile-grid {
+                grid-template-columns: 260px 1fr .85fr;
+            }
+
+            .profile-panel {
+                grid-column: auto;
+            }
+
+            .profile-copy,
+            .profile-panel {
+                padding: 36px 42px;
+            }
+
+            .profile-photo-card {
+                min-height: 340px;
+            }
+
+            .cta-banner {
+                padding: 64px 48px;
+            }
+
+            .cta-actions {
+                flex-direction: row;
+            }
+
+            .cta-title {
+                font-size: 30px;
+            }
+
+            footer {
+                padding: 60px 48px 32px;
+            }
+        }
+
+        /* ===================== HERO REVEAL (all screen sizes) =====================
+           Big square shows first; after 3s the small squares slide out
+           from behind the back of the big square. Runs at every viewport
+           width now, since the dashboard canvas scales down uniformly. */
+        .dashboard-grid.reveal-ready .investment-card {
+            animation: bigScaleIn 1s cubic-bezier(.16, 1, .3, 1) both;
+        }
+
+        /* Satellite cards fade/scale in from a small offset in their own
+           corner instead of traveling in from behind the big card - this
+           avoids any mid-transition frame where they visually overlap
+           the investment card (which happened when opacity finished
+           animating before the long-distance transform did). */
+        .dashboard-grid.reveal-ready .balance-card,
+        .dashboard-grid.reveal-ready .channel-card,
+        .dashboard-grid.reveal-ready .progress-card,
+        .dashboard-grid.reveal-ready .activity-card {
+            opacity: 0;
+            z-index: 6;
+            transition: transform .8s cubic-bezier(.16, 1, .3, 1), opacity .8s ease;
+        }
+
+        .dashboard-grid.reveal-ready .balance-card {
+            transform: translate(-16px, -16px) scale(.94);
+        }
+
+        .dashboard-grid.reveal-ready .channel-card {
+            transform: translate(16px, -16px) scale(.94);
+        }
+
+        .dashboard-grid.reveal-ready .progress-card {
+            transform: translate(-16px, 16px) scale(.94);
+        }
+
+        .dashboard-grid.reveal-ready .activity-card {
+            transform: translate(16px, 16px) scale(.94);
+        }
+
+        .dashboard-grid.revealed .balance-card,
+        .dashboard-grid.revealed .channel-card,
+        .dashboard-grid.revealed .progress-card,
+        .dashboard-grid.revealed .activity-card {
+            opacity: .9;
+            z-index: 6;
+            transform: none;
+            transition: transform .8s cubic-bezier(.16, 1, .3, 1), opacity .8s ease;
+        }
+
+        .dashboard-grid.revealed .balance-card {
+            transition-delay: 0s;
+        }
+
+        .dashboard-grid.revealed .progress-card {
+            transition-delay: .08s;
+        }
+
+        .dashboard-grid.revealed .channel-card {
+            transition-delay: .16s;
+        }
+
+        .dashboard-grid.revealed .activity-card {
+            transition-delay: .24s;
         }
 
         /* ===================== SMALL PHONE (< 400px) ===================== */
         @media (max-width: 399px) {
-            .hero { padding: 32px 16px 48px; }
-            .hero-title { font-size: 28px; letter-spacing: -1.2px; }
-            .hero-subtitle { font-size: 13px; }
-            .email-form { height: 48px; padding: 4px 4px 4px 14px; }
-            .send-code-btn { padding: 10px 16px; font-size: 13px; }
-            .card { padding: 16px; border-radius: 14px; }
-            .card-value { font-size: 18px; }
-            .investment-value { font-size: 24px; }
-            .line-chart-container { min-height: 90px; }
-            .section { padding: 56px 16px; }
-            .section-title { font-size: 24px; }
-            .stats-row { padding: 16px; }
-            .stat-value { font-size: 16px; }
-            .profile-photo-card { min-height: 220px; }
-            .profile-copy, .profile-panel { padding: 22px; }
-            .journey-map { padding-left: 24px; }
-            .step-num { width: 32px; height: 32px; min-width: 32px; font-size: 12px; }
-            .faq-list details { padding: 16px; }
-            .cta-banner { padding: 36px 16px; border-radius: 16px; }
-            .price-card { padding: 22px; }
-            .blog-content { padding: 18px; }
-            .feature-card { padding: 22px; }
-            .principle-card { padding: 22px; }
-            footer { padding: 40px 16px 24px; }
-            .footer-grid { gap: 24px 16px; }
+            .hero {
+                padding: 32px 16px 48px;
+            }
+
+            .hero-title {
+                font-size: 28px;
+                letter-spacing: -1.2px;
+            }
+
+            .hero-subtitle {
+                font-size: 13px;
+            }
+
+            .email-form {
+                height: 48px;
+                padding: 4px 4px 4px 14px;
+            }
+
+            .send-code-btn {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+
+            .section {
+                padding: 56px 16px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .stats-row {
+                padding: 16px;
+            }
+
+            .stat-value {
+                font-size: 16px;
+            }
+
+            .profile-photo-card {
+                min-height: 220px;
+            }
+
+            .profile-copy,
+            .profile-panel {
+                padding: 22px;
+            }
+
+            .journey-map {
+                padding-left: 24px;
+            }
+
+            .step-num {
+                width: 32px;
+                height: 32px;
+                min-width: 32px;
+                font-size: 12px;
+            }
+
+            .faq-list details {
+                padding: 16px;
+            }
+
+            .cta-banner {
+                padding: 36px 16px;
+                border-radius: 16px;
+            }
+
+            .price-card {
+                padding: 22px;
+            }
+
+            .blog-content {
+                padding: 18px;
+            }
+
+            .feature-card {
+                padding: 22px;
+            }
+
+            .principle-card {
+                padding: 22px;
+            }
+
+            footer {
+                padding: 40px 16px 24px;
+            }
+
+            .footer-grid {
+                gap: 24px 16px;
+            }
         }
 
         /* ===================== VERY SMALL (< 340px) ===================== */
         @media (max-width: 339px) {
-            .hero-title { font-size: 26px; }
-            .card { padding: 14px; }
-            .card-label { font-size: 9px; }
-            .card-value { font-size: 17px; }
-            .investment-value { font-size: 22px; }
-            .legend-item { font-size: 10px; }
-            .channel-name { font-size: 11px; }
-            .channel-pct { font-size: 11px; }
-            .activity-from { font-size: 11px; }
-            .activity-badge { padding: 3px 8px; font-size: 10px; }
-            .activity-amount { font-size: 11px; }
-            .price-amount { font-size: 26px; }
-            .price-features li { font-size: 12px; }
-            .step-name { font-size: 14px; }
-            .step-desc { font-size: 12px; }
+            .hero-title {
+                font-size: 26px;
+            }
+
+            .price-amount {
+                font-size: 26px;
+            }
+
+            .price-features li {
+                font-size: 12px;
+            }
+
+            .step-name {
+                font-size: 14px;
+            }
+
+            .step-desc {
+                font-size: 12px;
+            }
         }
     </style>
-<base target="_blank">
+    <base target="_blank">
 </head>
+
 <body>
     <!-- Background Effects -->
     <div class="bg-glow">
@@ -1609,20 +2445,20 @@
                 <stop offset="100%" style="stop-color:rgba(249,115,22,0);stop-opacity:0" />
             </linearGradient>
         </defs>
-        <path d="M 0 200 L 80 200 L 120 240 L 200 240" stroke="url(#lineGrad)" stroke-width="1" fill="none"/>
-        <path d="M 0 280 L 60 280 L 100 320 L 180 320" stroke="url(#lineGrad)" stroke-width="1" fill="none"/>
-        <path d="M 0 360 L 100 360 L 140 400 L 220 400" stroke="url(#lineGrad)" stroke-width="1" fill="none"/>
-        <path d="M 0 440 L 80 440 L 120 480 L 200 480" stroke="url(#lineGrad)" stroke-width="1" fill="none"/>
-        <path d="M 1440 200 L 1360 200 L 1320 240 L 1240 240" stroke="url(#lineGrad)" stroke-width="1" fill="none"/>
-        <path d="M 1440 280 L 1380 280 L 1340 320 L 1260 320" stroke="url(#lineGrad)" stroke-width="1" fill="none"/>
-        <path d="M 1440 360 L 1340 360 L 1300 400 L 1220 400" stroke="url(#lineGrad)" stroke-width="1" fill="none"/>
-        <path d="M 1440 440 L 1360 440 L 1320 480 L 1240 480" stroke="url(#lineGrad)" stroke-width="1" fill="none"/>
-        <circle cx="120" cy="240" r="2" fill="rgba(249,115,22,0.5)"/>
-        <circle cx="100" cy="320" r="2" fill="rgba(249,115,22,0.5)"/>
-        <circle cx="140" cy="400" r="2" fill="rgba(249,115,22,0.5)"/>
-        <circle cx="1320" cy="240" r="2" fill="rgba(249,115,22,0.5)"/>
-        <circle cx="1340" cy="320" r="2" fill="rgba(249,115,22,0.5)"/>
-        <circle cx="1300" cy="400" r="2" fill="rgba(249,115,22,0.5)"/>
+        <path d="M 0 200 L 80 200 L 120 240 L 200 240" stroke="url(#lineGrad)" stroke-width="1" fill="none" />
+        <path d="M 0 280 L 60 280 L 100 320 L 180 320" stroke="url(#lineGrad)" stroke-width="1" fill="none" />
+        <path d="M 0 360 L 100 360 L 140 400 L 220 400" stroke="url(#lineGrad)" stroke-width="1" fill="none" />
+        <path d="M 0 440 L 80 440 L 120 480 L 200 480" stroke="url(#lineGrad)" stroke-width="1" fill="none" />
+        <path d="M 1440 200 L 1360 200 L 1320 240 L 1240 240" stroke="url(#lineGrad)" stroke-width="1" fill="none" />
+        <path d="M 1440 280 L 1380 280 L 1340 320 L 1260 320" stroke="url(#lineGrad)" stroke-width="1" fill="none" />
+        <path d="M 1440 360 L 1340 360 L 1300 400 L 1220 400" stroke="url(#lineGrad)" stroke-width="1" fill="none" />
+        <path d="M 1440 440 L 1360 440 L 1320 480 L 1240 480" stroke="url(#lineGrad)" stroke-width="1" fill="none" />
+        <circle cx="120" cy="240" r="2" fill="rgba(249,115,22,0.5)" />
+        <circle cx="100" cy="320" r="2" fill="rgba(249,115,22,0.5)" />
+        <circle cx="140" cy="400" r="2" fill="rgba(249,115,22,0.5)" />
+        <circle cx="1320" cy="240" r="2" fill="rgba(249,115,22,0.5)" />
+        <circle cx="1340" cy="320" r="2" fill="rgba(249,115,22,0.5)" />
+        <circle cx="1300" cy="400" r="2" fill="rgba(249,115,22,0.5)" />
     </svg>
 
     <!-- Navigation -->
@@ -1630,9 +2466,10 @@
         <a href="#" class="logo">
             <div class="logo-icon">
                 <svg viewBox="0 0 28 28" fill="none">
-                    <path d="M14 2L4 8v12l10 6 10-6V8L14 2z" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" fill="none"/>
-                    <path d="M14 8v12M8 11l6 3 6-3" stroke="rgba(255,255,255,0.6)" stroke-width="1.2" fill="none"/>
-                    <circle cx="14" cy="14" r="2" fill="rgba(249,115,22,0.8)"/>
+                    <path d="M14 2L4 8v12l10 6 10-6V8L14 2z" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"
+                        fill="none" />
+                    <path d="M14 8v12M8 11l6 3 6-3" stroke="rgba(255,255,255,0.6)" stroke-width="1.2" fill="none" />
+                    <circle cx="14" cy="14" r="2" fill="rgba(249,115,22,0.8)" />
                 </svg>
             </div>
             SAI GROWTH
@@ -1647,7 +2484,8 @@
             <a href="#" class="login-btn">Resume</a>
             <a href="#" class="open-account">Let's Talk</a>
         </div>
-        <button class="menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('.mobile-nav').classList.toggle('active'); this.classList.toggle('active');">
+        <button class="menu-toggle" aria-label="Toggle menu"
+            onclick="document.querySelector('.mobile-nav').classList.toggle('active'); this.classList.toggle('active');">
             <span></span><span></span><span></span>
         </button>
     </nav>
@@ -1664,9 +2502,11 @@
     <!-- Hero Section -->
     <section class="hero">
         <h1 class="hero-title animate-fade-up">Performance marketing<br>that drives real growth</h1>
-        <p class="hero-subtitle animate-fade-up delay-1">I help ambitious brands acquire customers profitably through Meta and Google Ads, backed by clear tracking and relentless testing.</p>
+        <p class="hero-subtitle animate-fade-up delay-1">I help ambitious brands acquire customers profitably through
+            Meta and Google Ads, backed by clear tracking and relentless testing.</p>
         <!-- Dashboard Cards -->
-        <div class="dashboard-grid animate-scale-in delay-3">
+        <div class="dashboard-scale">
+        <div class="dashboard-grid">
             <!-- Card 1: Monthly Ad Spend -->
             <div class="card balance-card">
                 <div class="card-label">Monthly Ad Spend</div>
@@ -1693,24 +2533,31 @@
                     <svg viewBox="0 0 400 150" preserveAspectRatio="none" style="width:100%;height:100%;">
                         <defs>
                             <linearGradient id="line1" x1="0" y1="0" x2="1" y2="0">
-                                <stop offset="0%" stop-color="#f97316"/><stop offset="100%" stop-color="#ef4444"/>
+                                <stop offset="0%" stop-color="#f97316" />
+                                <stop offset="100%" stop-color="#ef4444" />
                             </linearGradient>
                             <linearGradient id="line2" x1="0" y1="0" x2="1" y2="0">
-                                <stop offset="0%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#f97316"/>
+                                <stop offset="0%" stop-color="#fbbf24" />
+                                <stop offset="100%" stop-color="#f97316" />
                             </linearGradient>
                             <linearGradient id="line3" x1="0" y1="0" x2="1" y2="0">
-                                <stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="rgba(255,255,255,0.5)"/>
+                                <stop offset="0%" stop-color="#fff" />
+                                <stop offset="100%" stop-color="rgba(255,255,255,0.5)" />
                             </linearGradient>
                         </defs>
-                        <line x1="0" y1="30" x2="400" y2="30" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-                        <line x1="0" y1="75" x2="400" y2="75" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-                        <line x1="0" y1="120" x2="400" y2="120" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-                        <path d="M 0 128 C 60 122, 110 108, 150 100 C 200 90, 240 78, 290 62 C 330 50, 365 32, 400 22" fill="none" stroke="url(#line1)" stroke-width="2.5" stroke-linecap="round" opacity="0.95"/>
-                        <path d="M 0 118 C 60 114, 110 105, 150 98 C 200 92, 240 84, 290 72 C 330 62, 365 50, 400 42" fill="none" stroke="url(#line2)" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
-                        <path d="M 0 132 C 60 130, 110 126, 150 122 C 200 118, 240 112, 290 104 C 330 98, 365 90, 400 82" fill="none" stroke="url(#line3)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-                        <circle cx="400" cy="22" r="4" fill="#f97316"/>
-                        <circle cx="400" cy="42" r="4" fill="#fbbf24"/>
-                        <circle cx="400" cy="82" r="4" fill="rgba(255,255,255,0.7)"/>
+                        <line x1="0" y1="30" x2="400" y2="30" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                        <line x1="0" y1="75" x2="400" y2="75" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                        <line x1="0" y1="120" x2="400" y2="120" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                        <path d="M 0 128 C 60 122, 110 108, 150 100 C 200 90, 240 78, 290 62 C 330 50, 365 32, 400 22"
+                            fill="none" stroke="url(#line1)" stroke-width="2.5" stroke-linecap="round" opacity="0.95" />
+                        <path d="M 0 118 C 60 114, 110 105, 150 98 C 200 92, 240 84, 290 72 C 330 62, 365 50, 400 42"
+                            fill="none" stroke="url(#line2)" stroke-width="2.5" stroke-linecap="round" opacity="0.9" />
+                        <path
+                            d="M 0 132 C 60 130, 110 126, 150 122 C 200 118, 240 112, 290 104 C 330 98, 365 90, 400 82"
+                            fill="none" stroke="url(#line3)" stroke-width="2" stroke-linecap="round" opacity="0.6" />
+                        <circle cx="400" cy="22" r="4" fill="#f97316" />
+                        <circle cx="400" cy="42" r="4" fill="#fbbf24" />
+                        <circle cx="400" cy="82" r="4" fill="rgba(255,255,255,0.7)" />
                     </svg>
                 </div>
                 <div class="chart-legend">
@@ -1737,18 +2584,29 @@
                 <div class="card-label">Spend by channel</div>
                 <div class="channel-list">
                     <div class="channel-row">
-                        <div class="channel-name"><span class="channel-dot" style="background:#f97316;"></span>Meta Ads</div>
-                        <div class="channel-track"><div class="channel-fill" style="width:52%; background:linear-gradient(90deg,#f97316,#ef4444);"></div></div>
+                        <div class="channel-name"><span class="channel-dot" style="background:#f97316;"></span>Meta Ads
+                        </div>
+                        <div class="channel-track">
+                            <div class="channel-fill"
+                                style="width:52%; background:linear-gradient(90deg,#f97316,#ef4444);"></div>
+                        </div>
                         <div class="channel-pct">52%</div>
                     </div>
                     <div class="channel-row">
-                        <div class="channel-name"><span class="channel-dot" style="background:#fbbf24;"></span>Google Ads</div>
-                        <div class="channel-track"><div class="channel-fill" style="width:38%; background:linear-gradient(90deg,#fbbf24,#f97316);"></div></div>
+                        <div class="channel-name"><span class="channel-dot" style="background:#fbbf24;"></span>Google
+                            Ads</div>
+                        <div class="channel-track">
+                            <div class="channel-fill"
+                                style="width:38%; background:linear-gradient(90deg,#fbbf24,#f97316);"></div>
+                        </div>
                         <div class="channel-pct">38%</div>
                     </div>
                     <div class="channel-row">
-                        <div class="channel-name"><span class="channel-dot" style="background:rgba(255,255,255,0.5);"></span>LinkedIn</div>
-                        <div class="channel-track"><div class="channel-fill" style="width:10%; background:rgba(255,255,255,0.5);"></div></div>
+                        <div class="channel-name"><span class="channel-dot"
+                                style="background:rgba(255,255,255,0.5);"></span>LinkedIn</div>
+                        <div class="channel-track">
+                            <div class="channel-fill" style="width:10%; background:rgba(255,255,255,0.5);"></div>
+                        </div>
                         <div class="channel-pct">10%</div>
                     </div>
                 </div>
@@ -1801,7 +2659,8 @@
                 </div>
             </div>
         </div>
- </section>
+        </div>
+    </section>
 
     <!-- About / Trust bar -->
     <section class="section about-section" id="about">
@@ -1830,7 +2689,8 @@
         <div class="profile-grid">
             <div class="profile-photo-card animate-scale-in">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                    <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-6 8-6s8 2 8 6"/>
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M4 20c0-4 3.5-6 8-6s8 2 8 6" />
                 </svg>
             </div>
             <div class="profile-copy animate-fade-up delay-1">
@@ -1839,9 +2699,12 @@
                     <div class="profile-role">Performance Marketer &middot; Meta &amp; Google Ads</div>
                 </div>
                 <div class="section-eyebrow">About me</div>
-                <h2 class="section-title" style="font-size: clamp(22px, 3vw, 30px);">A performance marketer focused on profitable, explainable growth</h2>
-                <p>I'm Sai. I combine media buying, creative testing, funnel thinking, and analytics to help businesses turn paid traffic into qualified leads and revenue.</p>
-                <p>My work is grounded in a simple principle: every campaign should have a clear objective, reliable measurement, and a practical path to improvement.</p>
+                <h2 class="section-title" style="font-size: clamp(22px, 3vw, 30px);">A performance marketer focused on
+                    profitable, explainable growth</h2>
+                <p>I'm Sai. I combine media buying, creative testing, funnel thinking, and analytics to help businesses
+                    turn paid traffic into qualified leads and revenue.</p>
+                <p>My work is grounded in a simple principle: every campaign should have a clear objective, reliable
+                    measurement, and a practical path to improvement.</p>
                 <div class="profile-chips">
                     <span class="profile-chip">3+ years running paid media</span>
                     <span class="profile-chip">15+ campaigns launched</span>
@@ -1861,7 +2724,8 @@
             </div>
         </div>
         <div class="tool-stack animate-fade-up delay-3">
-            <span>Meta Ads</span><span>Google Ads</span><span>GA4</span><span>Google Tag Manager</span><span>Looker Studio</span><span>Shopify</span><span>HubSpot</span><span>Canva</span>
+            <span>Meta Ads</span><span>Google Ads</span><span>GA4</span><span>Google Tag Manager</span><span>Looker
+                Studio</span><span>Shopify</span><span>HubSpot</span><span>Canva</span>
         </div>
     </section>
 
@@ -1870,23 +2734,27 @@
         <div class="section-head animate-fade-up">
             <div class="section-eyebrow">My approach</div>
             <h2 class="section-title">A clear system for profitable growth</h2>
-            <p class="section-subtitle">From research to optimization, every decision is tied to measurable business outcomes.</p>
+            <p class="section-subtitle">From research to optimization, every decision is tied to measurable business
+                outcomes.</p>
         </div>
         <div class="steps-track">
             <div class="step animate-fade-up delay-1">
                 <div class="step-node">01</div>
                 <div class="step-title">Research &amp; strategy</div>
-                <div class="step-desc">I study your audience, offer, competitors, and funnel to build a focused acquisition plan.</div>
+                <div class="step-desc">I study your audience, offer, competitors, and funnel to build a focused
+                    acquisition plan.</div>
             </div>
             <div class="step animate-fade-up delay-2">
                 <div class="step-node">02</div>
                 <div class="step-title">Launch &amp; track</div>
-                <div class="step-desc">I build campaigns, creative tests, pixels, events, and dashboards for reliable measurement.</div>
+                <div class="step-desc">I build campaigns, creative tests, pixels, events, and dashboards for reliable
+                    measurement.</div>
             </div>
             <div class="step animate-fade-up delay-3">
                 <div class="step-node">03</div>
                 <div class="step-title">Optimize &amp; scale</div>
-                <div class="step-desc">I improve CPA and ROAS continuously, then scale the combinations that produce profitable growth.</div>
+                <div class="step-desc">I improve CPA and ROAS continuously, then scale the combinations that produce
+                    profitable growth.</div>
             </div>
         </div>
     </section>
@@ -1902,20 +2770,24 @@
                     <span></span><span></span><span></span>
                 </div>
             </div>
-            <p class="journey-subtitle">A practical, data-led process that connects customer insight, strong creative, accurate tracking, and continuous experimentation.</p>
+            <p class="journey-subtitle">A practical, data-led process that connects customer insight, strong creative,
+                accurate tracking, and continuous experimentation.</p>
         </div>
         <div class="journey-map">
             <svg class="journey-path" viewBox="0 0 1000 430" preserveAspectRatio="none" aria-hidden="true">
                 <defs>
                     <linearGradient id="journeyGradient" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0" stop-color="#f97316"/><stop offset="1" stop-color="#ef4444"/>
+                        <stop offset="0" stop-color="#f97316" />
+                        <stop offset="1" stop-color="#ef4444" />
                     </linearGradient>
                 </defs>
-                <path d="M 70 48 C 200 48, 210 270, 340 270 C 470 270, 410 47, 540 47 C 670 47, 680 282, 810 282" fill="none" stroke="url(#journeyGradient)" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 10"/>
-                <circle cx="70" cy="48" r="7" fill="#0a0a0a" stroke="#f97316" stroke-width="3"/>
-                <circle cx="340" cy="270" r="7" fill="#0a0a0a" stroke="#f45f19" stroke-width="3"/>
-                <circle cx="540" cy="47" r="7" fill="#0a0a0a" stroke="#f14e27" stroke-width="3"/>
-                <circle cx="810" cy="282" r="7" fill="#0a0a0a" stroke="#ef4444" stroke-width="3"/>
+                <path d="M 70 48 C 200 48, 210 270, 340 270 C 470 270, 410 47, 540 47 C 670 47, 680 282, 810 282"
+                    fill="none" stroke="url(#journeyGradient)" stroke-width="3" stroke-linecap="round"
+                    stroke-dasharray="8 10" />
+                <circle cx="70" cy="48" r="7" fill="#0a0a0a" stroke="#f97316" stroke-width="3" />
+                <circle cx="340" cy="270" r="7" fill="#0a0a0a" stroke="#f45f19" stroke-width="3" />
+                <circle cx="540" cy="47" r="7" fill="#0a0a0a" stroke="#f14e27" stroke-width="3" />
+                <circle cx="810" cy="282" r="7" fill="#0a0a0a" stroke="#ef4444" stroke-width="3" />
             </svg>
             <div class="journey-step step-1 animate-fade-up delay-1">
                 <div class="step-box">
@@ -1961,50 +2833,74 @@
         <div class="section-head animate-fade-up">
             <div class="section-eyebrow">Services</div>
             <h2 class="section-title">Full-funnel performance marketing expertise</h2>
-            <p class="section-subtitle">Strategy, media buying, measurement, and optimization work together to turn attention into revenue.</p>
+            <p class="section-subtitle">Strategy, media buying, measurement, and optimization work together to turn
+                attention into revenue.</p>
         </div>
         <div class="features-grid">
             <div class="feature-card animate-fade-up delay-1">
                 <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2 4 4 8-8 2 2"/><path d="M3 20h18"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12l2-2 4 4 8-8 2 2" />
+                        <path d="M3 20h18" />
+                    </svg>
                 </div>
                 <div class="feature-title">Meta Ads</div>
-                <div class="feature-desc">Audience strategy, creative testing, retargeting, and scalable Facebook and Instagram campaigns.</div>
+                <div class="feature-desc">Audience strategy, creative testing, retargeting, and scalable Facebook and
+                    Instagram campaigns.</div>
             </div>
             <div class="feature-card animate-fade-up delay-2">
                 <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 3v4"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="6" width="18" height="13" rx="2" />
+                        <path d="M3 10h18M7 3v4" />
+                    </svg>
                 </div>
                 <div class="feature-title">Google Ads</div>
-                <div class="feature-desc">High-intent Search, Performance Max, Shopping, YouTube, and remarketing campaigns.</div>
+                <div class="feature-desc">High-intent Search, Performance Max, Shopping, YouTube, and remarketing
+                    campaigns.</div>
             </div>
             <div class="feature-card animate-fade-up delay-3">
                 <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 3v18h18" />
+                        <path d="M7 15l4-5 3 3 5-7" />
+                    </svg>
                 </div>
                 <div class="feature-title">Analytics &amp; Attribution</div>
-                <div class="feature-desc">GA4, GTM, pixels, events, UTMs, and dashboards that reveal what truly drives conversions.</div>
+                <div class="feature-desc">GA4, GTM, pixels, events, UTMs, and dashboards that reveal what truly drives
+                    conversions.</div>
             </div>
             <div class="feature-card animate-fade-up delay-1">
                 <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7z" />
+                        <circle cx="12" cy="9" r="2.5" />
+                    </svg>
                 </div>
                 <div class="feature-title">Conversion Optimization</div>
-                <div class="feature-desc">Landing-page and funnel experiments designed to lift conversion rates and lower acquisition costs.</div>
+                <div class="feature-desc">Landing-page and funnel experiments designed to lift conversion rates and
+                    lower acquisition costs.</div>
             </div>
             <div class="feature-card animate-fade-up delay-2">
                 <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="4" y="11" width="16" height="9" rx="2" />
+                        <path d="M8 11V7a4 4 0 018 0v4" />
+                    </svg>
                 </div>
                 <div class="feature-title">Creative Strategy</div>
-                <div class="feature-desc">Performance-led concepts, hooks, briefs, and iterative ad testing shaped by real campaign data.</div>
+                <div class="feature-desc">Performance-led concepts, hooks, briefs, and iterative ad testing shaped by
+                    real campaign data.</div>
             </div>
             <div class="feature-card animate-fade-up delay-3">
                 <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-6"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 20V10M18 20V4M6 20v-6" />
+                    </svg>
                 </div>
                 <div class="feature-title">Reporting &amp; Insights</div>
-                <div class="feature-desc">Clear reporting that turns campaign numbers into decisions your team can act on.</div>
+                <div class="feature-desc">Clear reporting that turns campaign numbers into decisions your team can act
+                    on.</div>
             </div>
         </div>
     </section>
@@ -2014,13 +2910,15 @@
         <div class="section-head animate-fade-up">
             <div class="section-eyebrow">Case Studies</div>
             <h2 class="section-title">Selected campaign results</h2>
-            <p class="section-subtitle">A snapshot of how strategy, testing, and disciplined optimization created measurable growth.</p>
+            <p class="section-subtitle">A snapshot of how strategy, testing, and disciplined optimization created
+                measurable growth.</p>
         </div>
         <div class="pricing-grid">
             <div class="price-card animate-fade-up delay-1">
                 <div class="price-plan">Lead Generation</div>
                 <div class="price-amount">-38%<span> CPA</span></div>
-                <div class="price-desc">Improved lead quality while reducing acquisition cost for a service business.</div>
+                <div class="price-desc">Improved lead quality while reducing acquisition cost for a service business.
+                </div>
                 <ul class="price-features">
                     <li>Google Search restructure</li>
                     <li>Intent-based keyword groups</li>
@@ -2063,39 +2961,55 @@
         <div class="section-head animate-fade-up">
             <div class="section-eyebrow">Insights</div>
             <h2 class="section-title">Performance marketing insights</h2>
-            <p class="section-subtitle">Practical thinking on paid media, creative testing, analytics, and sustainable campaign growth.</p>
+            <p class="section-subtitle">Practical thinking on paid media, creative testing, analytics, and sustainable
+                campaign growth.</p>
         </div>
         <div class="blog-grid">
             <div class="blog-card animate-fade-up delay-1">
-                <div class="blog-image" style="background: linear-gradient(135deg, rgba(249,115,22,0.25), rgba(239,68,68,0.15));">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>
+                <div class="blog-image"
+                    style="background: linear-gradient(135deg, rgba(249,115,22,0.25), rgba(239,68,68,0.15));">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M3 3v18h18" />
+                        <path d="M7 15l4-5 3 3 5-7" />
+                    </svg>
                 </div>
                 <div class="blog-content">
                     <div class="blog-tag">Paid Social</div>
                     <div class="blog-title">A practical framework for testing Meta ad creative</div>
-                    <div class="blog-excerpt">How to test hooks, formats, and offers without wasting budget or drawing false conclusions.</div>
+                    <div class="blog-excerpt">How to test hooks, formats, and offers without wasting budget or drawing
+                        false conclusions.</div>
                     <div class="blog-meta"><span>5 min read</span><span>Jul 2, 2026</span></div>
                 </div>
             </div>
             <div class="blog-card animate-fade-up delay-2">
-                <div class="blog-image" style="background: linear-gradient(135deg, rgba(251,191,36,0.25), rgba(249,115,22,0.15));">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg>
+                <div class="blog-image"
+                    style="background: linear-gradient(135deg, rgba(251,191,36,0.25), rgba(249,115,22,0.15));">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="6" width="18" height="13" rx="2" />
+                        <path d="M3 10h18" />
+                    </svg>
                 </div>
                 <div class="blog-content">
                     <div class="blog-tag">Google Ads</div>
                     <div class="blog-title">How to structure Search campaigns around intent</div>
-                    <div class="blog-excerpt">A cleaner account structure that improves relevance, learning speed, and control over spend.</div>
+                    <div class="blog-excerpt">A cleaner account structure that improves relevance, learning speed, and
+                        control over spend.</div>
                     <div class="blog-meta"><span>4 min read</span><span>Jun 24, 2026</span></div>
                 </div>
             </div>
             <div class="blog-card animate-fade-up delay-3">
-                <div class="blog-image" style="background: linear-gradient(135deg, rgba(239,68,68,0.25), rgba(249,115,22,0.15));">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+                <div class="blog-image"
+                    style="background: linear-gradient(135deg, rgba(239,68,68,0.25), rgba(249,115,22,0.15));">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="4" y="11" width="16" height="9" rx="2" />
+                        <path d="M8 11V7a4 4 0 018 0v4" />
+                    </svg>
                 </div>
                 <div class="blog-content">
                     <div class="blog-tag">Analytics</div>
                     <div class="blog-title">The tracking setup every growth campaign needs</div>
-                    <div class="blog-excerpt">A practical guide to events, attribution, UTMs, and dashboards that support better decisions.</div>
+                    <div class="blog-excerpt">A practical guide to events, attribution, UTMs, and dashboards that
+                        support better decisions.</div>
                     <div class="blog-meta"><span>6 min read</span><span>Jun 15, 2026</span></div>
                 </div>
             </div>
@@ -2107,7 +3021,8 @@
         <div class="section-head animate-fade-up">
             <div class="section-eyebrow">What you can expect</div>
             <h2 class="section-title">No black-box marketing</h2>
-            <p class="section-subtitle">Clear priorities, disciplined experiments, and reporting that connects platform metrics to business outcomes.</p>
+            <p class="section-subtitle">Clear priorities, disciplined experiments, and reporting that connects platform
+                metrics to business outcomes.</p>
         </div>
         <div class="principles-grid">
             <article class="principle-card animate-fade-up delay-1">
@@ -2137,19 +3052,23 @@
         <div class="faq-list">
             <details open class="animate-fade-up delay-1">
                 <summary>Which platforms do you manage?</summary>
-                <p>Meta Ads and Google Ads are my core channels, supported by GA4, Google Tag Manager, and reporting dashboards.</p>
+                <p>Meta Ads and Google Ads are my core channels, supported by GA4, Google Tag Manager, and reporting
+                    dashboards.</p>
             </details>
             <details class="animate-fade-up delay-2">
                 <summary>Can you audit an existing ad account?</summary>
-                <p>Yes. I can review account structure, tracking, audiences, creative, search terms, landing pages, and budget allocation, then prioritize the biggest opportunities.</p>
+                <p>Yes. I can review account structure, tracking, audiences, creative, search terms, landing pages, and
+                    budget allocation, then prioritize the biggest opportunities.</p>
             </details>
             <details class="animate-fade-up delay-3">
                 <summary>Do you create ad creatives?</summary>
-                <p>I develop creative strategy, hooks, briefs, and testing plans, and can collaborate with your designer or content team on production.</p>
+                <p>I develop creative strategy, hooks, briefs, and testing plans, and can collaborate with your designer
+                    or content team on production.</p>
             </details>
             <details class="animate-fade-up delay-4">
                 <summary>How do you measure success?</summary>
-                <p>We agree on business-focused KPIs before launch&mdash;such as qualified CPL, CAC, ROAS, revenue, or pipeline&mdash;and report against them consistently.</p>
+                <p>We agree on business-focused KPIs before launch&mdash;such as qualified CPL, CAC, ROAS, revenue, or
+                    pipeline&mdash;and report against them consistently.</p>
             </details>
         </div>
     </section>
@@ -2158,7 +3077,8 @@
     <section class="section cta-section">
         <div class="cta-banner animate-scale-in">
             <h2 class="cta-title">Let's find your next growth opportunity</h2>
-            <p class="cta-desc">Share your website and biggest acquisition challenge. I'll respond with a practical first step.</p>
+            <p class="cta-desc">Share your website and biggest acquisition challenge. I'll respond with a practical
+                first step.</p>
             <div class="cta-actions">
                 <a href="mailto:hello@example.com" class="cta-btn-primary">Email Sai</a>
                 <a href="#case-studies" class="cta-btn-secondary">Review Case Studies</a>
@@ -2173,14 +3093,17 @@
                 <a href="#" class="logo" style="text-decoration:none;">
                     <div class="logo-icon">
                         <svg viewBox="0 0 28 28" fill="none">
-                            <path d="M14 2L4 8v12l10 6 10-6V8L14 2z" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" fill="none"/>
-                            <path d="M14 8v12M8 11l6 3 6-3" stroke="rgba(255,255,255,0.6)" stroke-width="1.2" fill="none"/>
-                            <circle cx="14" cy="14" r="2" fill="rgba(249,115,22,0.8)"/>
+                            <path d="M14 2L4 8v12l10 6 10-6V8L14 2z" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"
+                                fill="none" />
+                            <path d="M14 8v12M8 11l6 3 6-3" stroke="rgba(255,255,255,0.6)" stroke-width="1.2"
+                                fill="none" />
+                            <circle cx="14" cy="14" r="2" fill="rgba(249,115,22,0.8)" />
                         </svg>
                     </div>
                     SAI GROWTH
                 </a>
-                <p class="footer-brand-desc">I help ambitious brands acquire customers profitably through paid media, creative testing, and clear measurement.</p>
+                <p class="footer-brand-desc">I help ambitious brands acquire customers profitably through paid media,
+                    creative testing, and clear measurement.</p>
             </div>
             <div>
                 <div class="footer-col-title">Portfolio</div>
@@ -2213,13 +3136,23 @@
             <span>&copy; 2026 Sai Growth. All rights reserved.</span>
             <div class="footer-socials">
                 <a href="#" aria-label="Twitter">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14.86 4.48 4.48 0 002-2.48 9.1 9.1 0 01-2.88 1.1 4.52 4.52 0 00-7.7 4.13A12.8 12.8 0 013 2.9a4.52 4.52 0 001.4 6.04A4.48 4.48 0 012.3 8.4v.05a4.52 4.52 0 003.63 4.43 4.5 4.5 0 01-2.04.08 4.53 4.53 0 004.22 3.14A9.06 9.06 0 012 18.4a12.8 12.8 0 006.92 2.03c8.3 0 12.85-6.88 12.85-12.85 0-.2 0-.39-.01-.58A9.18 9.18 0 0023 3z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M23 3a10.9 10.9 0 01-3.14.86 4.48 4.48 0 002-2.48 9.1 9.1 0 01-2.88 1.1 4.52 4.52 0 00-7.7 4.13A12.8 12.8 0 013 2.9a4.52 4.52 0 001.4 6.04A4.48 4.48 0 012.3 8.4v.05a4.52 4.52 0 003.63 4.43 4.5 4.5 0 01-2.04.08 4.53 4.53 0 004.22 3.14A9.06 9.06 0 012 18.4a12.8 12.8 0 006.92 2.03c8.3 0 12.85-6.88 12.85-12.85 0-.2 0-.39-.01-.58A9.18 9.18 0 0023 3z" />
+                    </svg>
                 </a>
                 <a href="#" aria-label="LinkedIn">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3v-12zM9 8.98h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v6.31h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96v5.7H9v-12z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 8.98h4v12H3v-12zM9 8.98h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v6.31h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96v5.7H9v-12z" />
+                    </svg>
                 </a>
                 <a href="#" aria-label="Instagram">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="5" />
+                        <circle cx="12" cy="12" r="4" />
+                        <circle cx="17.5" cy="6.5" r="1" />
+                    </svg>
                 </a>
             </div>
         </div>
@@ -2251,6 +3184,16 @@
             el.style.animationPlayState = 'paused';
             observer.observe(el);
         });
+
+        // Hero dashboard reveal: show big square for 3s, then slide small squares out from behind.
+        // Runs on every device now - the dashboard canvas scales to fit any screen width.
+        (function () {
+            const grid = document.querySelector('.dashboard-grid');
+            if (!grid) return;
+            grid.classList.add('reveal-ready');
+            setTimeout(() => grid.classList.add('revealed'), 3000);
+        })();
     </script>
 </body>
+
 </html>
