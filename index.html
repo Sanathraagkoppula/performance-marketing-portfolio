@@ -130,7 +130,7 @@
         }
 
         .nav-links {
-            display: flex;
+            display: none;
             gap: 32px;
             list-style: none;
             align-items: center;
@@ -165,7 +165,7 @@
         }
 
         .nav-right {
-            display: flex;
+            display: none;
             align-items: center;
             gap: 16px;
         }
@@ -201,7 +201,7 @@
 
         /* Mobile hamburger */
         .menu-toggle {
-            display: none;
+            display: flex;
             flex-direction: column;
             gap: 5px;
             background: none;
@@ -233,7 +233,7 @@
         }
 
         .mobile-nav {
-            display: none;
+            display: flex;
             position: fixed;
             inset: 0;
             background: rgba(9, 9, 9, .97);
@@ -2255,6 +2255,14 @@
         @media (min-width: 1024px) {
             .menu-toggle {
                 display: none;
+            }
+
+            .nav-links {
+                display: flex;
+            }
+
+            .nav-right {
+                display: flex;
             }
 
             .mobile-nav {
