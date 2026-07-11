@@ -911,16 +911,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 260px;
+            min-height: 300px;
             aspect-ratio: 1 / 1;
-            max-width: 320px;
+            max-width: 380px;
             margin: 0 auto;
             width: 100%;
         }
 
         .profile-photo-card svg {
             width: 30%;
-            max-width: 80px;
+            max-width: 100px;
             color: rgba(255, 255, 255, .55);
         }
 
@@ -2176,13 +2176,15 @@
             }
 
             .profile-grid {
-                grid-template-columns: 200px 1fr;
+                grid-template-columns: 260px 1fr;
                 gap: 20px;
             }
 
             .profile-photo-card {
-                aspect-ratio: auto;
-                min-height: 340px;
+                aspect-ratio: 1 / 1;
+                min-height: 0;
+                height: auto;
+                align-self: start;
                 margin: 0;
                 max-width: none;
             }
@@ -2309,7 +2311,7 @@
             }
 
             .profile-grid {
-                grid-template-columns: 260px 1fr .85fr;
+                grid-template-columns: 320px 1fr .8fr;
             }
 
             .profile-panel {
@@ -2322,7 +2324,10 @@
             }
 
             .profile-photo-card {
-                min-height: 340px;
+                aspect-ratio: 1 / 1;
+                min-height: 0;
+                height: auto;
+                align-self: start;
             }
 
             .cta-banner {
