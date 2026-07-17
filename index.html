@@ -873,6 +873,10 @@
             opacity: .2;
         }
 
+        .trusted-bg-logos img {
+            filter: brightness(0) invert(1);
+        }
+
         /* Layer 2: black overlay at 20% opacity, sits above the logos */
         .trusted-overlay {
             position: absolute;
@@ -2793,126 +2797,26 @@
     <!-- Trusted By -->
     <section class="section trusted-section">
         <div class="trusted-bg-logos" aria-hidden="true">
-            <!-- PLACEHOLDER 01 — replace with: <img src="logos/client-01.svg" alt=""> -->
-            <div class="trusted-logo-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M4 21V7l8-4 8 4v14" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <!-- PLACEHOLDER 02 — replace with: <img src="logos/client-02.svg" alt="Client 02 logo"> -->
-            <div class="trusted-logo-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <!-- PLACEHOLDER 03 — replace with: <img src="logos/client-03.svg" alt="Client 03 logo"> -->
-            <div class="trusted-logo-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <!-- PLACEHOLDER 04 — replace with: <img src="logos/client-04.svg" alt="Client 04 logo"> -->
-            <div class="trusted-logo-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M12 3c-4 4-6 8-6 11a6 6 0 0012 0c0-3-2-7-6-11z" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <!-- PLACEHOLDER 05 — replace with: <img src="logos/client-05.svg" alt="Client 05 logo"> -->
-            <div class="trusted-logo-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M12 2l8 4.6v9L12 20l-8-4.4v-9L12 2z" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <!-- PLACEHOLDER 06 — replace with: <img src="logos/client-06.svg" alt="Client 06 logo"> -->
-            <div class="trusted-logo-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M12 3l2.5 6.5L21 11l-5.5 4 1.5 7-5-3.5L7 22l1.5-7L3 11l6.5-1.5L12 3z" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <!-- PLACEHOLDER 07 — replace with: <img src="logos/client-07.svg" alt="Client 07 logo"> -->
-            <div class="trusted-logo-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M12 2l8 4.5v11L12 22l-8-4.5v-11L12 2z" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 6.5l8 4.5 8-4.5M12 11v11" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <!-- PLACEHOLDER 08 — replace with: <img src="logos/client-08.svg" alt="Client 08 logo"> -->
-            <div class="trusted-logo-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M12 3l9 5-9 5-9-5 9-5z" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 13l9 5 9-5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <!-- PLACEHOLDER 09 — replace with: <img src="logos/client-09.svg" alt="Client 09 logo"> -->
-            <div class="trusted-logo-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M4 21V7l8-4 8 4v14" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <!-- PLACEHOLDER 10 — replace with: <img src="logos/client-10.svg" alt="Client 10 logo"> -->
-            <div class="trusted-logo-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <!-- PLACEHOLDER 11 — replace with: <img src="logos/client-11.svg" alt="Client 11 logo"> -->
-            <div class="trusted-logo-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <!-- PLACEHOLDER 12 — replace with: <img src="logos/client-12.svg" alt="Client 12 logo"> -->
-            <div class="trusted-logo-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M12 3c-4 4-6 8-6 11a6 6 0 0012 0c0-3-2-7-6-11z" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <!-- PLACEHOLDER 13 — replace with: <img src="logos/client-13.svg" alt="Client 13 logo"> -->
-            <div class="trusted-logo-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M12 2l8 4.6v9L12 20l-8-4.4v-9L12 2z" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <!-- PLACEHOLDER 14 — replace with: <img src="logos/client-14.svg" alt="Client 14 logo"> -->
-            <div class="trusted-logo-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M12 3l2.5 6.5L21 11l-5.5 4 1.5 7-5-3.5L7 22l1.5-7L3 11l6.5-1.5L12 3z" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <!-- PLACEHOLDER 15 — replace with: <img src="logos/client-15.svg" alt="Client 15 logo"> -->
-            <div class="trusted-logo-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M12 2l8 4.5v11L12 22l-8-4.5v-11L12 2z" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 6.5l8 4.5 8-4.5M12 11v11" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <!-- PLACEHOLDER 16 — replace with: <img src="logos/client-16.svg" alt="Client 16 logo"> -->
-            <div class="trusted-logo-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M12 3l9 5-9 5-9-5 9-5z" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 13l9 5 9-5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <!-- PLACEHOLDER 17 — replace with: <img src="logos/client-17.svg" alt="Client 17 logo"> -->
-            <div class="trusted-logo-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M4 21V7l8-4 8 4v14" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <!-- PLACEHOLDER 18 — replace with: <img src="logos/client-18.svg" alt="Client 18 logo"> -->
-            <div class="trusted-logo-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5l8-3z" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <!-- PLACEHOLDER 19 — replace with: <img src="logos/client-19.svg" alt="Client 19 logo"> -->
-            <div class="trusted-logo-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <!-- PLACEHOLDER 20 — replace with: <img src="logos/client-20.svg" alt="Client 20 logo"> -->
-            <div class="trusted-logo-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M12 3c-4 4-6 8-6 11a6 6 0 0012 0c0-3-2-7-6-11z" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
+            <div class="trusted-logo-item"><img src="logos/client-01.svg" alt=""></div>
+            <div class="trusted-logo-item"><img src="logos/client-02.svg" alt=""></div>
+            <div class="trusted-logo-item"><img src="logos/client-03.svg" alt=""></div>
+            <div class="trusted-logo-item"><img src="logos/client-04.svg" alt=""></div>
+            <div class="trusted-logo-item"><img src="logos/client-05.svg" alt=""></div>
+            <div class="trusted-logo-item"><img src="logos/client-06.svg" alt=""></div>
+            <div class="trusted-logo-item"><img src="logos/client-07.svg" alt=""></div>
+            <div class="trusted-logo-item"><img src="logos/client-08.svg" alt=""></div>
+            <div class="trusted-logo-item"><img src="logos/client-09.svg" alt=""></div>
+            <div class="trusted-logo-item"><img src="logos/client-10.svg" alt=""></div>
+            <div class="trusted-logo-item"><img src="logos/client-11.svg" alt=""></div>
+            <div class="trusted-logo-item"><img src="logos/client-12.svg" alt=""></div>
+            <div class="trusted-logo-item"><img src="logos/client-13.svg" alt=""></div>
+            <div class="trusted-logo-item"><img src="logos/client-14.svg" alt=""></div>
+            <div class="trusted-logo-item"><img src="logos/client-15.svg" alt=""></div>
+            <div class="trusted-logo-item"><img src="logos/client-16.svg" alt=""></div>
+            <div class="trusted-logo-item"><img src="logos/client-17.svg" alt=""></div>
+            <div class="trusted-logo-item"><img src="logos/client-18.svg" alt=""></div>
+            <div class="trusted-logo-item"><img src="logos/client-19.svg" alt=""></div>
+            <div class="trusted-logo-item"><img src="logos/client-20.svg" alt=""></div>
         </div>
         <div class="trusted-overlay"></div>
         <div class="trusted-content animate-fade-up">
