@@ -908,7 +908,7 @@
             font-weight: 400;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: #ffff;
+            color: #fff;
         }
 
         @media (min-width: 640px) {
@@ -924,21 +924,6 @@
         @media (min-width: 1024px) {
             .trusted-bg-logos {
                 grid-template-columns: repeat(10, 1fr);
-            }
-        }
-
-        /* Large desktop / ultra-wide monitors: add columns so the full-bleed
-           logo strip keeps sensibly-sized square tiles instead of stretching
-           10 columns across a very wide viewport. */
-        @media (min-width: 1600px) {
-            .trusted-bg-logos {
-                grid-template-columns: repeat(14, 1fr);
-            }
-        }
-
-        @media (min-width: 2200px) {
-            .trusted-bg-logos {
-                grid-template-columns: repeat(18, 1fr);
             }
         }
 
@@ -2170,6 +2155,15 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .price-card.featured {
+                order: 0;
+                grid-column: 1 / -1;
+            }
+
             .blog-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -2236,18 +2230,6 @@
                 background: linear-gradient(90deg, transparent, rgba(249, 115, 22, .5), rgba(239, 68, 68, .5), transparent);
             }
 
-        }
-
-        /* ===================== JOURNEY MAP (>= 1060px) =====================
-           The absolute-positioned map needs ~960px of content width to fit
-           four 230px-wide step boxes without overlapping/overflowing (the
-           step-4 box at left:76% + 230px only clears the container once it
-           is >=~958px wide). That width isn't reliably available at the
-           640px tablet breakpoint - or even right at 1024px once section
-           padding is subtracted - so this layout gets its own breakpoint
-           and tablets keep the stacked/list journey layout until there's
-           enough room. */
-        @media (min-width: 1060px) {
             .journey-map {
                 display: block;
                 height: 430px;
