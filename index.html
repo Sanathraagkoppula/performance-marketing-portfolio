@@ -850,24 +850,30 @@
             inset: 0;
             z-index: 0;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
+            /* rows split the section height evenly, so square tiles never overflow */
+            grid-auto-rows: 1fr;
             gap: 6px;
             padding: 10px;
+            overflow: hidden;
         }
 
         .trusted-bg-logos .trusted-logo-item {
             display: flex;
             align-items: center;
             justify-content: center;
-            aspect-ratio: 2.4 / 1;
+            min-height: 0;
+            min-width: 0;
         }
 
+        /* Logos are square source files (160x160) */
         .trusted-bg-logos svg,
         .trusted-bg-logos img {
-            width: 80%;
-            height: auto;
-            max-width: 120px;
-            max-height: 44px;
+            width: auto;
+            height: 100%;
+            aspect-ratio: 1 / 1;
+            max-width: 100%;
+            max-height: 160px;
             object-fit: contain;
             color: #fff;
             opacity: .2;
@@ -907,13 +913,7 @@
 
         @media (min-width: 640px) {
             .trusted-bg-logos {
-                grid-template-columns: repeat(5, 1fr);
-            }
-
-            .trusted-bg-logos svg,
-            .trusted-bg-logos img {
-                max-width: 130px;
-                max-height: 46px;
+                grid-template-columns: repeat(7, 1fr);
             }
 
             .trusted-label {
@@ -923,7 +923,7 @@
 
         @media (min-width: 1024px) {
             .trusted-bg-logos {
-                grid-template-columns: repeat(7, 1fr);
+                grid-template-columns: repeat(10, 1fr);
             }
         }
 
@@ -2797,26 +2797,26 @@
     <!-- Trusted By -->
     <section class="section trusted-section">
         <div class="trusted-bg-logos" aria-hidden="true">
-            <div class="trusted-logo-item"><img src="logos/client-01.svg" alt=""></div>
-            <div class="trusted-logo-item"><img src="logos/client-02.svg" alt=""></div>
-            <div class="trusted-logo-item"><img src="logos/client-03.svg" alt=""></div>
-            <div class="trusted-logo-item"><img src="logos/client-04.svg" alt=""></div>
-            <div class="trusted-logo-item"><img src="logos/client-05.svg" alt=""></div>
-            <div class="trusted-logo-item"><img src="logos/client-06.svg" alt=""></div>
-            <div class="trusted-logo-item"><img src="logos/client-07.svg" alt=""></div>
-            <div class="trusted-logo-item"><img src="logos/client-08.svg" alt=""></div>
-            <div class="trusted-logo-item"><img src="logos/client-09.svg" alt=""></div>
-            <div class="trusted-logo-item"><img src="logos/client-10.svg" alt=""></div>
-            <div class="trusted-logo-item"><img src="logos/client-11.svg" alt=""></div>
-            <div class="trusted-logo-item"><img src="logos/client-12.svg" alt=""></div>
-            <div class="trusted-logo-item"><img src="logos/client-13.svg" alt=""></div>
-            <div class="trusted-logo-item"><img src="logos/client-14.svg" alt=""></div>
-            <div class="trusted-logo-item"><img src="logos/client-15.svg" alt=""></div>
-            <div class="trusted-logo-item"><img src="logos/client-16.svg" alt=""></div>
-            <div class="trusted-logo-item"><img src="logos/client-17.svg" alt=""></div>
-            <div class="trusted-logo-item"><img src="logos/client-18.svg" alt=""></div>
-            <div class="trusted-logo-item"><img src="logos/client-19.svg" alt=""></div>
-            <div class="trusted-logo-item"><img src="logos/client-20.svg" alt=""></div>
+            <div class="trusted-logo-item"><img src="logos/01.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div>
+            <div class="trusted-logo-item"><img src="logos/client-02.svg" alt="" width="160" height="160" loading="lazy" decoding="async"></div>
+            <div class="trusted-logo-item"><img src="logos/client-03.svg" alt="" width="160" height="160" loading="lazy" decoding="async"></div>
+            <div class="trusted-logo-item"><img src="logos/client-04.svg" alt="" width="160" height="160" loading="lazy" decoding="async"></div>
+            <div class="trusted-logo-item"><img src="logos/client-05.svg" alt="" width="160" height="160" loading="lazy" decoding="async"></div>
+            <div class="trusted-logo-item"><img src="logos/client-06.svg" alt="" width="160" height="160" loading="lazy" decoding="async"></div>
+            <div class="trusted-logo-item"><img src="logos/client-07.svg" alt="" width="160" height="160" loading="lazy" decoding="async"></div>
+            <div class="trusted-logo-item"><img src="logos/client-08.svg" alt="" width="160" height="160" loading="lazy" decoding="async"></div>
+            <div class="trusted-logo-item"><img src="logos/client-09.svg" alt="" width="160" height="160" loading="lazy" decoding="async"></div>
+            <div class="trusted-logo-item"><img src="logos/client-10.svg" alt="" width="160" height="160" loading="lazy" decoding="async"></div>
+            <div class="trusted-logo-item"><img src="logos/client-11.svg" alt="" width="160" height="160" loading="lazy" decoding="async"></div>
+            <div class="trusted-logo-item"><img src="logos/client-12.svg" alt="" width="160" height="160" loading="lazy" decoding="async"></div>
+            <div class="trusted-logo-item"><img src="logos/client-13.svg" alt="" width="160" height="160" loading="lazy" decoding="async"></div>
+            <div class="trusted-logo-item"><img src="logos/client-14.svg" alt="" width="160" height="160" loading="lazy" decoding="async"></div>
+            <div class="trusted-logo-item"><img src="logos/client-15.svg" alt="" width="160" height="160" loading="lazy" decoding="async"></div>
+            <div class="trusted-logo-item"><img src="logos/client-16.svg" alt="" width="160" height="160" loading="lazy" decoding="async"></div>
+            <div class="trusted-logo-item"><img src="logos/client-17.svg" alt="" width="160" height="160" loading="lazy" decoding="async"></div>
+            <div class="trusted-logo-item"><img src="logos/client-18.svg" alt="" width="160" height="160" loading="lazy" decoding="async"></div>
+            <div class="trusted-logo-item"><img src="logos/client-19.svg" alt="" width="160" height="160" loading="lazy" decoding="async"></div>
+            <div class="trusted-logo-item"><img src="logos/client-20.svg" alt="" width="160" height="160" loading="lazy" decoding="async"></div>
         </div>
         <div class="trusted-overlay"></div>
         <div class="trusted-content animate-fade-up">
