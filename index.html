@@ -837,11 +837,22 @@
         .trusted-section {
             position: relative;
             overflow: hidden;
-            width: 100vw;
-            max-width: 100vw;
+            /* keeps the label centred in the band; the absolutely positioned
+               logo layer and overlay are out of flow and unaffected */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* full-bleed via negative margins only - setting width AND both
+               margins over-constrains the box and lets it shift by the
+               scrollbar width between loads */
+            width: auto;
+            max-width: none;
             margin-left: calc(50% - 50vw);
             margin-right: calc(50% - 50vw);
-            padding: 64px 24px;
+            padding: 48px 16px;
+            /* locks the band's height so the logo wall can never resize
+               when the web font or the images finish loading */
+            min-height: 320px;
         }
 
         /* Layer 1: all client logos tiled as a background pattern */
@@ -850,12 +861,28 @@
             inset: 0;
             z-index: 0;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            /* 18 logos: column counts are factors of 18 so every row is full
+               and no logo is ever left dangling in a half-empty last row */
+            grid-template-columns: repeat(3, 1fr);
             /* rows split the section height evenly, so square tiles never overflow */
             grid-auto-rows: 1fr;
             gap: 6px;
             padding: 10px;
             overflow: hidden;
+            /* the wall is one pattern, so it is revealed as one block once
+               every logo has settled - see the reveal script at the bottom */
+            opacity: 0;
+            transition: opacity .45s ease;
+        }
+
+        .trusted-bg-logos.is-ready {
+            opacity: 1;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .trusted-bg-logos {
+                transition: none;
+            }
         }
 
         .trusted-bg-logos .trusted-logo-item {
@@ -866,13 +893,15 @@
             min-width: 0;
         }
 
-        /* Logos are square source files (160x160) */
+        /* The box is sized by the grid cell, never by the image's own
+           dimensions - so an image that has not decoded yet occupies exactly
+           the same space as one that has, and nothing reflows on arrival.
+           object-fit keeps each logo's real proportions inside that box. */
         .trusted-bg-logos svg,
         .trusted-bg-logos img {
-            width: auto;
+            width: 100%;
             height: 100%;
-            aspect-ratio: 1 / 1;
-            max-width: 100%;
+            max-width: 160px;
             max-height: 160px;
             object-fit: contain;
             color: #fff;
@@ -912,8 +941,13 @@
         }
 
         @media (min-width: 640px) {
+            .trusted-section {
+                padding: 64px 24px;
+                min-height: 248px;
+            }
+
             .trusted-bg-logos {
-                grid-template-columns: repeat(7, 1fr);
+                grid-template-columns: repeat(6, 1fr);
             }
 
             .trusted-label {
@@ -923,7 +957,7 @@
 
         @media (min-width: 1024px) {
             .trusted-bg-logos {
-                grid-template-columns: repeat(10, 1fr);
+                grid-template-columns: repeat(9, 1fr);
             }
         }
 
@@ -2797,24 +2831,24 @@
     <!-- Trusted By -->
     <section class="section trusted-section">
         <div class="trusted-bg-logos" aria-hidden="true">
-            <div class="trusted-logo-item"><img src="logos/01.jpg" alt="electric wisers" width="160" height="160" loading="lazy" decoding="async"></div>
-            <div class="trusted-logo-item"><img src="logos/02.jpg" alt="pyp-pick-your-property" width="160" height="160" loading="lazy" decoding="async"></div>
-            <div class="trusted-logo-item"><img src="logos/03.jpg" alt="st.peters-edu-schools" width="160" height="160" loading="lazy" decoding="async"></div>
-            <div class="trusted-logo-item"><img src="logos/04.jpg" alt="ss hospital" width="160" height="160" loading="lazy" decoding="async"></div>
-            <div class="trusted-logo-item"><img src="logos/05.jpg" alt="kanika_creations" width="160" height="160" loading="lazy" decoding="async"></div>
-            <div class="trusted-logo-item"><img src="logos/06.jpg" alt="talla padmavathi school" width="160" height="160" loading="lazy" decoding="async"></div>
-            <div class="trusted-logo-item"><img src="logos/07.jpg" alt="adphoenia solution" width="160" height="160" loading="lazy" decoding="async"></div>
-            <div class="trusted-logo-item"><img src="logos/08.jpg" alt="aananda" width="160" height="160" loading="lazy" decoding="async"></div>
-            <div class="trusted-logo-item"><img src="logos/09.jpg" alt="neon relic" width="160" height="160" loading="lazy" decoding="async"></div>
-            <div class="trusted-logo-item"><img src="logos/10.jpg" alt="gharki pathshala" width="160" height="160" loading="lazy" decoding="async"></div>
-            <div class="trusted-logo-item"><img src="logos/11.jpg" alt="tingilkar store" width="160" height="160" loading="lazy" decoding="async"></div>
-            <div class="trusted-logo-item"><img src="logos/12.jpg" alt="nag construtions & interiors" width="160" height="160" loading="lazy" decoding="async"></div>
-            <div class="trusted-logo-item"><img src="logos/13.jpg" alt="take a breakk" width="160" height="160" loading="lazy" decoding="async"></div>
-            <div class="trusted-logo-item"><img src="logos/14.jpg" alt="genco" width="160" height="160" loading="lazy" decoding="async"></div>
-            <div class="trusted-logo-item"><img src="logos/15.jpg" alt="dev desigin studios " width="160" height="160" loading="lazy" decoding="async"></div>
-            <div class="trusted-logo-item"><img src="logos/16.jpg" alt="chai city" width="160" height="160" loading="lazy" decoding="async"></div>
-            <div class="trusted-logo-item"><img src="logos/17.jpg" alt="raja rajeshwara" width="160" height="160" loading="lazy" decoding="async"></div>
-            <div class="trusted-logo-item"><img src="logos/18.jpg" alt="sr university" width="160" height="160" loading="lazy" decoding="async"></div>
+            <div class="trusted-logo-item"><img src="logos/01.jpg" alt="" data-brand="electric wisers" width="160" height="160" fetchpriority="low"></div>
+            <div class="trusted-logo-item"><img src="logos/02.jpg" alt="" data-brand="pyp-pick-your-property" width="160" height="160" fetchpriority="low"></div>
+            <div class="trusted-logo-item"><img src="logos/03.jpg" alt="" data-brand="st.peters-edu-schools" width="160" height="160" fetchpriority="low"></div>
+            <div class="trusted-logo-item"><img src="logos/04.jpg" alt="" data-brand="ss hospital" width="160" height="160" fetchpriority="low"></div>
+            <div class="trusted-logo-item"><img src="logos/05.jpg" alt="" data-brand="kanika_creations" width="160" height="160" fetchpriority="low"></div>
+            <div class="trusted-logo-item"><img src="logos/06.jpg" alt="" data-brand="talla padmavathi school" width="160" height="160" fetchpriority="low"></div>
+            <div class="trusted-logo-item"><img src="logos/07.jpg" alt="" data-brand="adphoenia solution" width="160" height="160" fetchpriority="low"></div>
+            <div class="trusted-logo-item"><img src="logos/08.jpg" alt="" data-brand="aananda" width="160" height="160" fetchpriority="low"></div>
+            <div class="trusted-logo-item"><img src="logos/09.jpg" alt="" data-brand="neon relic" width="160" height="160" fetchpriority="low"></div>
+            <div class="trusted-logo-item"><img src="logos/10.jpg" alt="" data-brand="gharki pathshala" width="160" height="160" fetchpriority="low"></div>
+            <div class="trusted-logo-item"><img src="logos/11.jpg" alt="" data-brand="tingilkar store" width="160" height="160" fetchpriority="low"></div>
+            <div class="trusted-logo-item"><img src="logos/12.jpg" alt="" data-brand="nag construtions &amp; interiors" width="160" height="160" fetchpriority="low"></div>
+            <div class="trusted-logo-item"><img src="logos/13.jpg" alt="" data-brand="take a breakk" width="160" height="160" fetchpriority="low"></div>
+            <div class="trusted-logo-item"><img src="logos/14.jpg" alt="" data-brand="genco" width="160" height="160" fetchpriority="low"></div>
+            <div class="trusted-logo-item"><img src="logos/15.jpg" alt="" data-brand="dev desigin studios" width="160" height="160" fetchpriority="low"></div>
+            <div class="trusted-logo-item"><img src="logos/16.jpg" alt="" data-brand="chai city" width="160" height="160" fetchpriority="low"></div>
+            <div class="trusted-logo-item"><img src="logos/17.jpg" alt="" data-brand="raja rajeshwara" width="160" height="160" fetchpriority="low"></div>
+            <div class="trusted-logo-item"><img src="logos/18.jpg" alt="" data-brand="sr university" width="160" height="160" fetchpriority="low"></div>
         </div>
         <div class="trusted-overlay"></div>
         <div class="trusted-content animate-fade-up">
@@ -3365,6 +3399,32 @@
             }, { threshold: 0.25 });
 
             mapObserver.observe(map);
+        })();
+
+        // Trusted-by wall: the 18 logos are one background pattern, not 18
+        // independent images. Hold the whole layer hidden until every file has
+        // settled, then fade it in as one block - otherwise they pop in one by
+        // one in whatever order the network and the decoder finish them.
+        (function () {
+            const wall = document.querySelector('.trusted-bg-logos');
+            if (!wall) return;
+
+            const imgs = Array.from(wall.querySelectorAll('img'));
+
+            const settled = imgs.map(img => img.complete
+                ? Promise.resolve()
+                : new Promise(resolve => {
+                    img.addEventListener('load', resolve, { once: true });
+                    img.addEventListener('error', resolve, { once: true });
+                }));
+
+            const reveal = () => wall.classList.add('is-ready');
+
+            Promise.all(settled).then(reveal);
+
+            // Safety net: a 404 or a stalled request must never leave the
+            // wall invisible.
+            setTimeout(reveal, 3000);
         })();
 
         // Hero dashboard reveal: show big square for 3s, then slide small squares out from behind.
