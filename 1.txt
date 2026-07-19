@@ -1,0 +1,2 @@
+<p class="hero-subtitle animate-fade-up delay-1">I help ambitious brands acquire customers profitably through
+            Meta and Google Ads, backed by clear tracking and relentless testing.</p>

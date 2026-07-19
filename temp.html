@@ -837,50 +837,51 @@
         .trusted-section {
             position: relative;
             overflow: hidden;
+            /* keeps the label centred in the band; the absolutely positioned
+               logo layer and overlay are out of flow and unaffected */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* full-bleed via negative margins only - setting width AND both
+               margins over-constrains the box and lets it shift by the
+               scrollbar width between loads */
             width: auto;
             max-width: none;
             margin-left: calc(50% - 50vw);
             margin-right: calc(50% - 50vw);
-            padding: 32px 16px 24px;
-            /* mobile: normal stacked flow */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: auto;
+            padding: 48px 16px;
         }
 
-        /* Text label — normal flow on mobile, overlay on desktop */
+        /* Text label sits in normal flow, above the marquee */
         .trusted-content {
             position: relative;
-            z-index: 3;
+            z-index: 2;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            min-height: 48px;
+            margin-bottom: 32px;
         }
 
         .trusted-label {
             text-align: center;
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 18px;
+            font-size: 22px;
             font-weight: 400;
             letter-spacing: 1.5px;
             text-transform: uppercase;
             color: #fff;
-            background: none;
-            padding: 0;
         }
 
         /* Single-row auto-scrolling logo marquee */
         .trusted-marquee {
             position: relative;
             width: 100%;
-            z-index: 1;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-            mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+            /* fade the strip out at both edges so logos scroll in/out smoothly */
+            -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+            /* revealed as one block once every logo has settled - see script at the bottom */
             opacity: 0;
             transition: opacity .45s ease;
         }
@@ -904,6 +905,7 @@
             align-items: center;
             width: max-content;
             gap: 20px;
+            /* two identical sets of logos back to back = seamless infinite loop */
             animation: trusted-scroll 60s linear infinite;
         }
 
@@ -917,14 +919,15 @@
             }
 
             to {
+                /* exactly half the track width, since the content is duplicated once */
                 transform: translateX(-50%);
             }
         }
 
         .trusted-track .trusted-logo-item {
             flex: 0 0 auto;
-            width: 110px;
-            height: 80px;
+            width: 200px;
+            height: 120px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -936,273 +939,39 @@
             max-height: 100%;
             object-fit: contain;
             color: #fff;
-            opacity: .45;
+            opacity: .55;
             filter: grayscale(1);
             transition: opacity .3s ease, filter .3s ease;
         }
 
         .trusted-track .trusted-logo-item:hover img {
-            opacity: .85;
+            opacity: 1;
             filter: grayscale(0);
         }
 
-        /* Tablet+ : switch to overlay layout (logos scroll behind text) */
         @media (min-width: 640px) {
             .trusted-section {
-                padding: 0 24px;
-                height: 180px;
-                display: block;
-            }
-
-            .trusted-content {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                margin-bottom: 0;
-                pointer-events: none;
+                padding: 64px 24px;
+                min-height: 0;
             }
 
             .trusted-label {
-                font-size: 36px;
-                background: radial-gradient(ellipse, rgba(9,9,9,.92) 0%, rgba(9,9,9,.78) 50%, transparent 80%);
-                padding: 20px 64px;
-                pointer-events: auto;
-            }
-
-            .trusted-marquee {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
+                font-size: 32px;
             }
 
             .trusted-track {
-                gap: 28px;
-            }
-
-            .trusted-track .trusted-logo-item {
-                width: 170px;
-                height: 120px;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .trusted-section {
-                height: 200px;
-            }
-
-            .trusted-label {
-                font-size: 42px;
-                padding: 24px 80px;
-            }
-
-            .trusted-track {
-                gap: 36px;
-            }
-
-            .trusted-track .trusted-logo-item {
-                width: 190px;
-                height: 140px;
-            }
-        }
-
-        /* ===================== Analytics Showcase ===================== */
-        .analytics-section {
-            position: relative;
-        }
-
-        .analytics-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .analytics-card {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            background: rgba(20, 20, 20, .6);
-            border: 1px solid rgba(255, 255, 255, .08);
-            transition: box-shadow .4s, border-color .4s;
-        }
-
-        .analytics-card:hover {
-            box-shadow: 0 24px 60px rgba(0, 0, 0, .5);
-            border-color: rgba(249, 115, 22, .3);
-        }
-
-        /* Inner carousel track */
-        .analytics-track {
-            display: flex;
-            transition: transform .5s cubic-bezier(.4, 0, .2, 1);
-            will-change: transform;
-        }
-
-        .analytics-slide {
-            min-width: 100%;
-            position: relative;
-        }
-
-        .analytics-slide img {
-            width: 100%;
-            height: auto;
-            display: block;
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
-            object-position: top left;
-        }
-
-        /* Info bar below the image */
-        .analytics-card-info {
-            padding: 18px 22px;
-            background: rgba(12, 12, 12, .9);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-        }
-
-        .analytics-card-label {
-            font-size: 11px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            color: #f97316;
-            margin-bottom: 4px;
-        }
-
-        .analytics-card-title {
-            font-size: 15px;
-            font-weight: 600;
-            color: #fff;
-            line-height: 1.3;
-        }
-
-        .analytics-card-desc {
-            font-size: 12px;
-            color: rgba(255, 255, 255, .45);
-            margin-top: 3px;
-            line-height: 1.4;
-        }
-
-        /* Dots inside each card */
-        .analytics-dots {
-            display: flex;
-            gap: 6px;
-            flex-shrink: 0;
-        }
-
-        .analytics-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, .2);
-            border: none;
-            padding: 0;
-            cursor: pointer;
-            transition: background .3s, transform .3s;
-        }
-
-        .analytics-dot.active {
-            background: #f97316;
-            transform: scale(1.3);
-        }
-
-        /* Progress bar at bottom of each card */
-        .analytics-progress {
-            height: 3px;
-            background: linear-gradient(90deg, #f97316, #ef4444);
-            border-radius: 0 0 16px 16px;
-            width: 0;
-            animation: analytics-timer 5s linear infinite;
-        }
-
-        @keyframes analytics-timer {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        /* Prev / Next arrows inside each card */
-        .analytics-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-100%);
-            z-index: 5;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, .15);
-            background: rgba(9, 9, 9, .65);
-            backdrop-filter: blur(6px);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background .3s, border-color .3s;
-            opacity: 0;
-        }
-
-        .analytics-card:hover .analytics-arrow {
-            opacity: 1;
-        }
-
-        .analytics-arrow:hover {
-            background: rgba(249, 115, 22, .3);
-            border-color: rgba(249, 115, 22, .5);
-        }
-
-        .analytics-arrow svg {
-            width: 14px;
-            height: 14px;
-        }
-
-        .analytics-arrow.prev { left: 8px; }
-        .analytics-arrow.next { right: 8px; }
-
-        /* Placeholder */
-        .analytics-placeholder {
-            aspect-ratio: 16 / 9;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            background: linear-gradient(160deg, rgba(249, 115, 22, .08), rgba(20, 20, 20, .6));
-            color: rgba(255, 255, 255, .25);
-            font-size: 13px;
-        }
-
-        .analytics-placeholder svg {
-            width: 40px;
-            height: 40px;
-            opacity: .3;
-        }
-
-        @media (min-width: 640px) {
-            .analytics-grid {
-                grid-template-columns: repeat(2, 1fr);
                 gap: 24px;
             }
 
-            .analytics-card-title {
-                font-size: 16px;
+            .trusted-track .trusted-logo-item {
+                width: 220px;
+                height: 130px;
             }
         }
 
         @media (min-width: 1024px) {
-            .analytics-card-title {
-                font-size: 17px;
-            }
-
-            .analytics-arrow {
-                width: 36px;
-                height: 36px;
+            .trusted-track {
+                gap: 28px;
             }
         }
 
@@ -1226,9 +995,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 0;
-            aspect-ratio: 16 / 9;
-            max-width: 480px;
+            min-height: 300px;
+            aspect-ratio: 1 / 1;
+            max-width: 380px;
             margin: 0 auto;
             width: 100%;
         }
@@ -2471,20 +2240,17 @@
             }
 
             .profile-grid {
-                grid-template-columns: 340px 1fr;
-                grid-template-rows: auto auto;
+                grid-template-columns: 260px 1fr;
                 gap: 20px;
             }
 
             .profile-photo-card {
-                aspect-ratio: 16 / 9;
+                aspect-ratio: 1 / 1;
                 min-height: 0;
                 height: auto;
                 align-self: start;
                 margin: 0;
                 max-width: none;
-                grid-column: 1;
-                grid-row: 1;
             }
 
             .profile-copy,
@@ -2493,13 +2259,7 @@
             }
 
             .profile-panel {
-                grid-column: 1;
-                grid-row: 2;
-            }
-
-            .profile-copy {
-                grid-column: 2;
-                grid-row: 1 / 3;
+                grid-column: 1 / -1;
             }
 
             .steps-track {
@@ -2615,17 +2375,11 @@
             }
 
             .profile-grid {
-                grid-template-columns: 420px 1fr;
+                grid-template-columns: 320px 1fr .8fr;
             }
 
             .profile-panel {
-                grid-column: 1;
-                grid-row: 2;
-            }
-
-            .profile-copy {
-                grid-column: 2;
-                grid-row: 1 / 3;
+                grid-column: auto;
             }
 
             .profile-copy,
@@ -2634,7 +2388,7 @@
             }
 
             .profile-photo-card {
-                aspect-ratio: 16 / 9;
+                aspect-ratio: 1 / 1;
                 min-height: 0;
                 height: auto;
                 align-self: start;
@@ -2753,7 +2507,7 @@
             }
 
             .profile-photo-card {
-                min-height: 0;
+                min-height: 220px;
             }
 
             .profile-copy,
@@ -2906,6 +2660,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <h1 class="hero-title animate-fade-up">Performance marketing<br>that drives real growth</h1>
+        <p class="hero-subtitle animate-fade-up delay-1">I help ambitious brands acquire customers profitably through
+            Meta and Google Ads, backed by clear tracking and relentless testing.</p>
         <!-- Dashboard Cards -->
         <div class="dashboard-scale">
         <div class="dashboard-grid">
@@ -3119,7 +2875,10 @@
     <section class="section profile-section" id="profile">
         <div class="profile-grid">
             <div class="profile-photo-card animate-scale-in">
-                <img src="main/01.jpg" alt="sai_photo" style="width:100%;height:100%;object-fit:cover;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M4 20c0-4 3.5-6 8-6s8 2 8 6" />
+                </svg>
             </div>
             <div class="profile-copy animate-fade-up delay-1">
                 <div class="profile-name-block">
@@ -3152,12 +2911,12 @@
             </div>
         </div>
         <div class="tool-stack animate-fade-up delay-3">
-            <span>Digital Marketing Strategy</span><span>Paid Media Management</span><span>Search Engine Optimization</span><span>Social Media Marketing</span><span>Content Creation
-            </span><span>Website Design & Optimization</span><span>Market Research & Analytics</span><span>Team Leadership</span><span>Lead Generation</span>
+            <span>Meta Ads</span><span>Google Ads</span><span>GA4</span><span>Google Tag Manager</span><span>Looker
+                Studio</span><span>Shopify</span><span>HubSpot</span><span>Canva</span>
         </div>
     </section>
 
-    <!-- Steps -
+    <!-- Steps -->
     <section class="section" style="padding-top: 0;">
         <div class="section-head animate-fade-up">
             <div class="section-eyebrow">My approach</div>
@@ -3185,7 +2944,7 @@
                     profitable growth.</div>
             </div>
         </div>
-    </section>-->
+    </section>
 
     <!-- Journey -->
     <section class="section journey-section">
@@ -3384,61 +3143,6 @@
         </div>
     </section>
 
-    <!-- Analytics Showcase -->
-    <section class="section analytics-section" id="analytics">
-        <div class="section-head animate-fade-up">
-            <div class="section-eyebrow">Analytics</div>
-            <h2 class="section-title">Growth, in real numbers</h2>
-            <p class="section-subtitle">Screenshots from live dashboards showing the impact of strategy, testing, and
-                disciplined optimisation.</p>
-        </div>
-        <div class="analytics-grid">
-
-            <!-- ===== Google Ads carousel ===== -->
-            <div class="analytics-card animate-fade-up delay-1" data-carousel>
-                <div class="analytics-track">
-                    <!-- Add more slides here — just copy a slide block and change the src -->
-                    <div class="analytics-slide"><img src="graphs/01.png" alt="Google Ads overview"></div>
-                    <div class="analytics-slide"><div class="analytics-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><polyline points="7 15 11 10 14 13 17 9"/></svg>Add screenshot</div></div>
-                    <div class="analytics-slide"><div class="analytics-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><polyline points="7 15 11 10 14 13 17 9"/></svg>Add screenshot</div></div>
-                </div>
-                <button class="analytics-arrow prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
-                <button class="analytics-arrow next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 6 15 12 9 18"/></svg></button>
-                <div class="analytics-card-info">
-                    <div>
-                        <div class="analytics-card-label">Google Ads</div>
-                        <div class="analytics-card-title">29.66% conversion rate · $145 CPA</div>
-                        <div class="analytics-card-desc">Campaign performance across Search &amp; Display.</div>
-                    </div>
-                    <div class="analytics-dots"></div>
-                </div>
-                <div class="analytics-progress"></div>
-            </div>
-
-            <!-- ===== Meta Ads carousel ===== -->
-            <div class="analytics-card animate-fade-up delay-2" data-carousel>
-                <div class="analytics-track">
-                    <!-- Add more slides here — just copy a slide block and change the src -->
-                    <div class="analytics-slide"><img src="graphs/02.png" alt="Meta Ads dashboard"></div>
-                    <div class="analytics-slide"><div class="analytics-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><polyline points="7 15 11 10 14 13 17 9"/></svg>Add screenshot</div></div>
-                    <div class="analytics-slide"><div class="analytics-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><polyline points="7 15 11 10 14 13 17 9"/></svg>Add screenshot</div></div>
-                </div>
-                <button class="analytics-arrow prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
-                <button class="analytics-arrow next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 6 15 12 9 18"/></svg></button>
-                <div class="analytics-card-info">
-                    <div>
-                        <div class="analytics-card-label">Meta Ads</div>
-                        <div class="analytics-card-title">Campaign-level ROAS growth</div>
-                        <div class="analytics-card-desc">Before &amp; after optimisation across Meta campaigns.</div>
-                    </div>
-                    <div class="analytics-dots"></div>
-                </div>
-                <div class="analytics-progress"></div>
-            </div>
-
-        </div>
-    </section>
-
     <!-- Blogs -->
     <section class="section" id="blogs">
         <div class="section-head animate-fade-up">
@@ -3564,6 +3268,7 @@
                 first step.</p>
             <div class="cta-actions">
                 <a href="mailto:hello@example.com" class="cta-btn-primary">Email Sai</a>
+                <a href="#case-studies" class="cta-btn-secondary">Review Case Studies</a>
             </div>
         </div>
     </section>
@@ -3744,80 +3449,6 @@
             if (!grid) return;
             grid.classList.add('reveal-ready');
             setTimeout(() => grid.classList.add('revealed'), 3000);
-        })();
-
-        // Analytics mini-carousels: each [data-carousel] card gets its own
-        // auto-advancing slideshow (5 s interval), arrows, dots, and progress bar.
-        (function () {
-            document.querySelectorAll('[data-carousel]').forEach(card => {
-                const track = card.querySelector('.analytics-track');
-                const slides = track.querySelectorAll('.analytics-slide');
-                const dotsWrap = card.querySelector('.analytics-dots');
-                const progress = card.querySelector('.analytics-progress');
-                const prevBtn = card.querySelector('.analytics-arrow.prev');
-                const nextBtn = card.querySelector('.analytics-arrow.next');
-                const total = slides.length;
-                let current = 0;
-                let timer = null;
-
-                // Build dots
-                slides.forEach((_, i) => {
-                    const dot = document.createElement('button');
-                    dot.className = 'analytics-dot' + (i === 0 ? ' active' : '');
-                    dot.addEventListener('click', () => goTo(i));
-                    dotsWrap.appendChild(dot);
-                });
-
-                function goTo(i) {
-                    current = ((i % total) + total) % total;
-                    track.style.transform = 'translateX(-' + (current * 100) + '%)';
-                    dotsWrap.querySelectorAll('.analytics-dot').forEach((d, j) =>
-                        d.classList.toggle('active', j === current));
-                    restartProgress();
-                    resetTimer();
-                }
-
-                function restartProgress() {
-                    if (!progress) return;
-                    progress.style.animation = 'none';
-                    progress.offsetHeight;
-                    progress.style.animation = 'analytics-timer 5s linear infinite';
-                }
-
-                function next() { goTo(current + 1); }
-                function prev() { goTo(current - 1); }
-
-                prevBtn && prevBtn.addEventListener('click', prev);
-                nextBtn && nextBtn.addEventListener('click', next);
-
-                function resetTimer() {
-                    clearInterval(timer);
-                    timer = setInterval(next, 5000);
-                }
-
-                // Pause on hover
-                card.addEventListener('mouseenter', () => {
-                    clearInterval(timer);
-                    if (progress) progress.style.animationPlayState = 'paused';
-                });
-                card.addEventListener('mouseleave', () => {
-                    resetTimer();
-                    if (progress) progress.style.animationPlayState = 'running';
-                });
-
-                // Touch swipe
-                let startX = 0;
-                card.addEventListener('touchstart', e => {
-                    startX = e.changedTouches[0].screenX;
-                }, { passive: true });
-                card.addEventListener('touchend', e => {
-                    const diff = startX - e.changedTouches[0].screenX;
-                    if (Math.abs(diff) > 50) diff > 0 ? next() : prev();
-                }, { passive: true });
-
-                restartProgress();
-                resetTimer();
-            });
         })();
     </script>
 </body>
