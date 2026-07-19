@@ -3659,20 +3659,16 @@
             </div>
         </div>
     </footer>
-
     <script>
         function closeMenu() {
             document.querySelector('.mobile-nav').classList.remove('active');
             document.querySelector('.menu-toggle').classList.remove('active');
         }
-
-        // Intersection Observer for scroll animations
         const observerOptions = {
             root: null,
             rootMargin: '0px',
             threshold: 0.1
         };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -3681,93 +3677,60 @@
                 }
             });
         }, observerOptions);
-
         document.querySelectorAll('.animate-fade-up, .animate-scale-in, .animate-fade-in').forEach(el => {
             el.style.animationPlayState = 'paused';
             observer.observe(el);
         });
-
-        // Journey map: draw the connecting line on scroll, then loop a flowing-dash effect,
-        // and reveal each step's text in sync.
         (function () {
             const map = document.querySelector('.journey-map');
             const svg = document.querySelector('.journey-path');
             const path = svg ? svg.querySelector('path') : null;
             if (!map || !svg || !path) return;
-
             const steps = map.querySelectorAll('.journey-step');
             const originalDash = path.getAttribute('stroke-dasharray') || '8 10';
-
-            // Start fully hidden, ready to be "drawn".
-            let length = 1600; // sensible fallback
+            let length = 1600;
             try { length = path.getTotalLength(); } catch (e) {}
             path.style.strokeDasharray = length;
             path.style.strokeDashoffset = length;
-
             const mapObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (!entry.isIntersecting) return;
-
-                    // Draw the line.
                     requestAnimationFrame(() => {
                         path.style.strokeDashoffset = '0';
                     });
-
-                    // Pop the node circles in and reveal step text together.
                     svg.classList.add('revealed');
                     steps.forEach(step => step.classList.add('in-view'));
-
-                    // Once fully drawn, switch to the dotted style with a gentle flowing loop.
                     setTimeout(() => {
                         path.style.strokeDasharray = originalDash;
                         path.style.strokeDashoffset = '0';
                         svg.classList.add('dash-flow');
                     }, 2450);
-
                     mapObserver.unobserve(entry.target);
                 });
             }, { threshold: 0.25 });
-
             mapObserver.observe(map);
         })();
-
-        // Trusted-by marquee: hold the scrolling strip hidden until every
-        // logo file has settled, then fade it in as one block - otherwise
-        // logos pop in one by one in whatever order the network and the
-        // decoder finish them.
         (function () {
             const wall = document.querySelector('.trusted-marquee');
             if (!wall) return;
 
             const imgs = Array.from(wall.querySelectorAll('img'));
-
             const settled = imgs.map(img => img.complete
                 ? Promise.resolve()
                 : new Promise(resolve => {
                     img.addEventListener('load', resolve, { once: true });
                     img.addEventListener('error', resolve, { once: true });
                 }));
-
             const reveal = () => wall.classList.add('is-ready');
-
             Promise.all(settled).then(reveal);
-
-            // Safety net: a 404 or a stalled request must never leave the
-            // wall invisible.
             setTimeout(reveal, 3000);
         })();
-
-        // Hero dashboard reveal: show big square for 3s, then slide small squares out from behind.
-        // Runs on every device now - the dashboard canvas scales to fit any screen width.
         (function () {
             const grid = document.querySelector('.dashboard-grid');
             if (!grid) return;
             grid.classList.add('reveal-ready');
             setTimeout(() => grid.classList.add('revealed'), 3000);
         })();
-
-        // Analytics mini-carousels: each [data-carousel] card gets its own
-        // auto-advancing slideshow (5 s interval), arrows, dots, and progress bar.
         (function () {
             document.querySelectorAll('[data-carousel]').forEach(card => {
                 const track = card.querySelector('.analytics-track');
@@ -3779,15 +3742,12 @@
                 const total = slides.length;
                 let current = 0;
                 let timer = null;
-
-                // Build dots
                 slides.forEach((_, i) => {
                     const dot = document.createElement('button');
                     dot.className = 'analytics-dot' + (i === 0 ? ' active' : '');
                     dot.addEventListener('click', () => goTo(i));
                     dotsWrap.appendChild(dot);
                 });
-
                 function goTo(i) {
                     current = ((i % total) + total) % total;
                     track.style.transform = 'translateX(-' + (current * 100) + '%)';
@@ -3796,26 +3756,20 @@
                     restartProgress();
                     resetTimer();
                 }
-
                 function restartProgress() {
                     if (!progress) return;
                     progress.style.animation = 'none';
                     progress.offsetHeight;
                     progress.style.animation = 'analytics-timer 5s linear infinite';
                 }
-
                 function next() { goTo(current + 1); }
                 function prev() { goTo(current - 1); }
-
                 prevBtn && prevBtn.addEventListener('click', prev);
                 nextBtn && nextBtn.addEventListener('click', next);
-
                 function resetTimer() {
                     clearInterval(timer);
                     timer = setInterval(next, 5000);
                 }
-
-                // Pause on hover
                 card.addEventListener('mouseenter', () => {
                     clearInterval(timer);
                     if (progress) progress.style.animationPlayState = 'paused';
@@ -3824,8 +3778,6 @@
                     resetTimer();
                     if (progress) progress.style.animationPlayState = 'running';
                 });
-
-                // Touch swipe
                 let startX = 0;
                 card.addEventListener('touchstart', e => {
                     startX = e.changedTouches[0].screenX;
@@ -3834,12 +3786,10 @@
                     const diff = startX - e.changedTouches[0].screenX;
                     if (Math.abs(diff) > 50) diff > 0 ? next() : prev();
                 }, { passive: true });
-
                 restartProgress();
                 resetTimer();
             });
         })();
     </script>
 </body>
-
 </html>
