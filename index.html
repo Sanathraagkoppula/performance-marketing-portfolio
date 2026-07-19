@@ -1980,6 +1980,126 @@
             padding-right: 24px;
         }
 
+        /* ===================== Testimonials ===================== */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: rgba(20, 20, 20, .6);
+            border: 1px solid rgba(255, 255, 255, .07);
+            border-radius: 20px;
+            padding: 28px 26px;
+            position: relative;
+            overflow: hidden;
+            transition: border-color .3s, transform .3s;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(249, 115, 22, .25);
+            transform: translateY(-2px);
+        }
+
+        .testimonial-card::before {
+            content: '\201C';
+            position: absolute;
+            top: -8px;
+            left: 20px;
+            font-size: 96px;
+            font-family: Georgia, serif;
+            color: rgba(249, 115, 22, .15);
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 14px;
+        }
+
+        .testimonial-stars svg {
+            width: 14px;
+            height: 14px;
+            fill: #f97316;
+        }
+
+        .testimonial-text {
+            font-size: 14px;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, .72);
+            margin-bottom: 22px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-top: 1px solid rgba(255, 255, 255, .06);
+            padding-top: 18px;
+        }
+
+        .testimonial-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(249, 115, 22, .5), rgba(239, 68, 68, .5));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .testimonial-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+
+        .testimonial-role {
+            font-size: 11px;
+            color: rgba(255, 255, 255, .38);
+            text-transform: uppercase;
+            letter-spacing: .6px;
+        }
+
+        .testimonial-badge {
+            margin-left: auto;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+            color: #f97316;
+            background: rgba(249, 115, 22, .1);
+            border: 1px solid rgba(249, 115, 22, .2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            flex-shrink: 0;
+        }
+
+        @media (min-width: 640px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
         /* ===================== CTA ===================== */
         .cta-section {
             padding-top: 20px;
@@ -2907,6 +3027,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#features">Services</a></li>
             <li><a href="#analytics">Analytics</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
             <!--li><a href="#case-studies">Case Studies</a></li>
             <li><a href="#blogs">Insights</a></li-->
         </ul>
@@ -2924,9 +3045,8 @@
     <div class="mobile-nav">
         <a href="#about" onclick="closeMenu()">About</a>
         <a href="#features" onclick="closeMenu()">Services</a>
-        <a href="#case-studies" onclick="closeMenu()">Case Studies</a>
-        <a href="#blogs" onclick="closeMenu()">Insights</a>
         <a href="#analytics" onclick="closeMenu()">Analytics</a>
+        <a href="#testimonials" onclick="closeMenu()">Reviews</a>
         <a href="#" class="open-account" onclick="closeMenu()">Let's Talk</a>
     </div>
 
@@ -3575,6 +3695,132 @@
                 <p>We agree on business-focused KPIs before launch&mdash;such as qualified CPL, CAC, ROAS, revenue, or
                     pipeline&mdash;and report against them consistently.</p>
             </details>
+        </div>
+    </section>
+
+    <!-- Client Testimonials -->
+    <section class="section" id="testimonials">
+        <div class="section-head animate-fade-up">
+            <div class="section-eyebrow">Client Words</div>
+            <h2 class="section-title">What clients say about my work</h2>
+            <p class="section-subtitle">Real feedback from the teams and businesses I've had the privilege of working with.</p>
+        </div>
+        <div class="testimonials-grid">
+
+            <div class="testimonial-card animate-fade-up delay-1">
+                <div class="testimonial-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="testimonial-text">Sai completely transformed our Google Ads account. Within three months our cost per lead dropped by over 40% while our lead volume nearly doubled. His attention to the numbers and his clear reporting made it easy for our team to trust every decision.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">RK</div>
+                    <div>
+                        <div class="testimonial-name">Rajesh Kumar</div>
+                        <div class="testimonial-role">Founder, E-commerce Brand</div>
+                    </div>
+                    <div class="testimonial-badge">Google Ads</div>
+                </div>
+            </div>
+
+            <div class="testimonial-card animate-fade-up delay-2">
+                <div class="testimonial-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="testimonial-text">What sets Sai apart is how he combines creative instinct with rigorous data. Our Meta campaigns were stagnant for months before he stepped in. He restructured the audiences, refreshed the creatives, and our ROAS jumped from 1.8x to 4.2x in six weeks.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">PS</div>
+                    <div>
+                        <div class="testimonial-name">Priya Sharma</div>
+                        <div class="testimonial-role">Marketing Director, D2C Brand</div>
+                    </div>
+                    <div class="testimonial-badge">Meta Ads</div>
+                </div>
+            </div>
+
+            <div class="testimonial-card animate-fade-up delay-3">
+                <div class="testimonial-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="testimonial-text">Sai's tracking setup alone was worth every rupee. We'd been flying blind for a year — no reliable conversion data, broken UTMs, messy attribution. He fixed everything in Google Tag Manager in days and gave us dashboards we actually understood and used.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">AM</div>
+                    <div>
+                        <div class="testimonial-name">Arjun Menon</div>
+                        <div class="testimonial-role">CEO, SaaS Startup</div>
+                    </div>
+                    <div class="testimonial-badge">Analytics</div>
+                </div>
+            </div>
+
+            <div class="testimonial-card animate-fade-up delay-1">
+                <div class="testimonial-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="testimonial-text">We hired Sai to manage our Search campaigns during our peak season and he delivered beyond expectations. His keyword strategy and negative list management cut wasted spend by 35% and our top-of-funnel quality improved significantly. Highly recommend.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">NR</div>
+                    <div>
+                        <div class="testimonial-name">Nandini Rao</div>
+                        <div class="testimonial-role">Head of Growth, Retail Chain</div>
+                    </div>
+                    <div class="testimonial-badge">PPC Strategy</div>
+                </div>
+            </div>
+
+            <div class="testimonial-card animate-fade-up delay-2">
+                <div class="testimonial-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="testimonial-text">The landing page A/B testing Sai ran for us was a game changer. Small, thoughtful tweaks to headline copy and CTA placement led to a 22% uplift in conversion rate over two months. His process is structured, transparent, and genuinely collaborative.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">VT</div>
+                    <div>
+                        <div class="testimonial-name">Vikram Teja</div>
+                        <div class="testimonial-role">Co-founder, EdTech Platform</div>
+                    </div>
+                    <div class="testimonial-badge">CRO</div>
+                </div>
+            </div>
+
+            <div class="testimonial-card animate-fade-up delay-3">
+                <div class="testimonial-stars">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                <p class="testimonial-text">Sai managed our full digital marketing ops — paid, SEO, email, and social — with remarkable consistency. He built a culture of learning within the team, introduced clear weekly reporting, and kept every campaign accountable to real business outcomes, not just vanity metrics.</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">SP</div>
+                    <div>
+                        <div class="testimonial-name">Suresh Pillai</div>
+                        <div class="testimonial-role">Director, Digital Agency</div>
+                    </div>
+                    <div class="testimonial-badge">Full-Service</div>
+                </div>
+            </div>
+
         </div>
     </section>
 
